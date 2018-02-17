@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CPA TodoBox | Page Name</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-cpapm/css/fontello.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+	<link href="assets/css/animate.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css" rel="stylesheet">
+   
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+</head>
+<body>
+	
+	<div id="page-container" class="page-sidebar-fixed page-header-fixed">
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+            <div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"> <span>CMS Admin</span> </a>
+					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div><!-- sandwich end -->
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+                        <form class="navbar-form full-width">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter keyword">
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+					</li>
+					<li class="">
+						<a href="javascript:;" class="timer-toggle">
+							<i class="cpa-icon cpa-icon-time"></i>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+							<i class="fa fa-plus m-r-5"></i> 
+							<span class="hidden-xs">New Item</span>
+						</a>
+						
+						<ul class="dropdown-menu media-list pull-right animated fadeInDown">
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-star"></i> New Campaign</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-file-o"></i> New Page</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-compass"></i> New A/B Test</a>
+                            </li>
+                            
+                            
+						</ul>
+					</li>
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="assets/img/user-13.jpg" alt=""> 
+							<span class="hidden-xs">John Smith</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu animated fadeInLeft">
+							<li class="arrow"></li>
+							<li><a href="javascript:;">Edit Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:;">Log Out</a></li>
+						</ul>
+					</li>
+				</ul><!-- end header navigation right -->
+			</div>
+            <!-- end container-fluid -->
+		</div><!-- end #header -->
+		
+		<div id="sidebar" class="sidebar">			
+				
+			<ul class="nav">
+				
+				<li class="">
+					<a href="javascript:;">						
+						<i class="cpa-icon cpa-icon-meter"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-task"></i>
+						<span>Jobs</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-progress"></i>
+						<span>Tasks</span>
+					</a>
+                </li>
+                <li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-calendar"></i>
+						<span>Calendar</span>
+					</a>
+				</li>
+				
+				<li class="has-sub">
+					<a href="javascript:;">
+						<b class="caret pull-right"></b>
+						<i class="cpa-icon cpa-icon-chartbar"></i>
+						<span>Reports</span>
+					</a>
+
+					<ul class="sub-menu">
+						<li><a href="#">Report 1</a></li>
+						<li><a href="#">Report 2</a></li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-template"></i>
+						<span>Templates</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-briefcase"></i> 
+						<span>Clients</span>
+					</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-users"></i> 
+						<span>Users</span>
+					</a>
+				</li>
+				
+				
+				
+				<!-- begin sidebar minify button -->
+				<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+				<!-- end sidebar minify button -->
+			</ul><!-- end sidebar nav -->
+			
+		</div>
+		<div class="sidebar-bg"></div><!-- end #sidebar -->
+		
+		<!-- begin #content -->
+
+		<div id="cpm-user-list-view" class="">
+			<!-- begin page-header -->
+			<div class="page-header">
+				<div class="content">
+					<a href="#" class="pull-left btn btn-back"><i class="icon"></i></a>
+					<h1>Users</h1><!-- end page-header -->	
+				</div>           				
+			</div><!-- end page-header -->
+			
+			<!-- begin tab-row -->
+			<div class="tab-row">
+				<div class="content">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#">Menu 1</a></li>
+						<li><a href="#">Menu 2</a></li>
+						<li><a href="#">Menu 3</a></li>
+					</ul>	
+				</div>
+           				
+			</div><!-- end tab-row -->
+
+			<div class="content">
+            		
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- begin btn-row -->
+					<div class="pagelist-btn-row clearfix">
+
+						<ul class="nav navbar-nav navbar-left">
+							<li>
+								<a href="#" class="btn btn-success"><i class="cpa-icon cpa-icon-add m-r-5"></i><span>Add User</span></a>
+							</li>
+							<li>
+								<a href="#" data-toggle="collapse" data-target="#page-filter" class="btn btn-default btn-toggle-filter"><i class="cpa-icon cpa-icon-filtershow m-r-5"></i><span>Show Filter</span></a>
+							</li>
+						</ul>   
+
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<a href="#" class="btn btn-default"><i class="cpa-icon cpa-icon-export"></i><span>Export</span></a>
+							</li>
+						</ul>
+					</div><!-- end btn-row -->
+
+					<!-- begin #page-filter -->
+					<div class="panel panel-filter collapse" id="page-filter">
+                        <div class="panel-body">
+                            <form class="form-inline" action="/" method="POST">
+								<div class="form-group m-r-10">
+									<input class="form-control" placeholder="User" id="usersListFilter_user">
+                                </div>
+                                
+                                <div class="form-group m-r-10">
+									<input class="form-control" placeholder="Emails" id="usersListFilter_emails">
+                                </div>
+
+                                <div class="form-group m-r-10">
+									<select class="form-control" id="usersListFilter_Position">
+                                        <option value="" selected>Position</option>
+                                        <option value="1">Executive</option>
+                                        <option value="2">Management</option>
+                                    </select>
+                                </div>
+                                
+								<div class="form-group m-r-10">
+									<select class="form-control" id="usersListFilter_Role">
+                                        <option value="" selected>Role</option>
+                                        <option value="1">Role 1</option>
+                                        <option value="2">Role 2</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+									<select class="form-control" id="usersListFilter_Status">
+                                        <option value="" selected>Status</option>
+                                        <option value="1">In Progress</option>
+                                        <option value="2">Planned</option>
+                                    </select>
+                                </div>
+								<button type="submit" class="btn btn-white">Clear</button>
+							</form>
+                        </div>
+                    </div><!-- end #page-filter -->
+
+					<!-- begin page-list-table Ungrouped-->                    
+					<div class="pagelist-content table-responsive">
+						<table class="table table-pagelist">
+							<thead>
+								<tr>
+									
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">User <span>(8)</span> <i class="cpa-icon cpa-icon-downtriangle m-l-5"></i></a>
+										</div>
+									</th>
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Email <i class="cpa-icon cpa-icon-downtriangle m-l-5"></i></a>                                            
+										</div>
+									</th>
+
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Position <i class="cpa-icon cpa-icon-downtriangle m-l-5"></i></a>                                            
+										</div>
+									</th>
+									
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Role <i class="cpa-icon cpa-icon-downtriangle m-l-5"></i></a>                                            
+										</div>
+									</th>
+									
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Status <i class="cpa-icon cpa-icon-downtriangle m-l-5"></i></a>                                            
+										</div>
+									</th>							
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="pagelist-short"><a href="#">John Smith</a></td>
+									<td class="pagelist-middle">jsmith@somedomain.com</td>
+									<td class="pagelist-short">manager</td>
+									<td class="pagelist-short">role 1</td>
+									<td class="pagelist-short">Active</td>
+								</tr>
+								<tr>
+									<td class="pagelist-short"><a href="#">John Smith</a></td>
+									<td class="pagelist-middle">jsmith@somedomain.com</td>
+									<td class="pagelist-short">manager</td>
+									<td class="pagelist-short">role 1</td>
+									<td class="pagelist-short">Active</td>
+                                </tr>		
+                                <tr>
+									<td class="pagelist-short"><a href="#">John Smith</a></td>
+									<td class="pagelist-middle">jsmith@somedomain.com</td>
+									<td class="pagelist-short">manager</td>
+									<td class="pagelist-short">role 1</td>
+									<td class="pagelist-short">Active</td>
+								</tr>
+								<tr>
+									<td class="pagelist-short"><a href="#">John Smith</a></td>
+									<td class="pagelist-middle">jsmith@somedomain.com</td>
+									<td class="pagelist-short">manager</td>
+									<td class="pagelist-short">role 1</td>
+									<td class="pagelist-short">Active</td>
+                                </tr>	
+                                <tr>
+									<td class="pagelist-short"><a href="#">John Smith</a></td>
+									<td class="pagelist-middle">jsmith@somedomain.com</td>
+									<td class="pagelist-short">manager</td>
+									<td class="pagelist-short">role 1</td>
+									<td class="pagelist-short">Active</td>
+								</tr>
+								<tr>
+									<td class="pagelist-short"><a href="#">John Smith</a></td>
+									<td class="pagelist-middle">jsmith@somedomain.com</td>
+									<td class="pagelist-short">manager</td>
+									<td class="pagelist-short">role 1</td>
+									<td class="pagelist-short">Active</td>
+                                </tr>	
+                                <tr>
+									<td class="pagelist-short"><a href="#">John Smith</a></td>
+									<td class="pagelist-middle">jsmith@somedomain.com</td>
+									<td class="pagelist-short">manager</td>
+									<td class="pagelist-short">role 1</td>
+									<td class="pagelist-short">Active</td>
+								</tr>
+								<tr>
+									<td class="pagelist-short"><a href="#">John Smith</a></td>
+									<td class="pagelist-middle">jsmith@somedomain.com</td>
+									<td class="pagelist-short">manager</td>
+									<td class="pagelist-short">role 1</td>
+									<td class="pagelist-short">Active</td>
+								</tr>																	
+							</tbody>
+						</table>
+						
+					</div><!-- end page-list-table Ungrouped -->
+
+					<!-- begin page-form-->                    
+					<div class="pagelist-content pagelist-form">
+						<form class="form-horizontal" action="/" method="POST">
+							<fieldset>
+								<legend>Job Details</legend>
+								<div class="form-group required">
+									<label class="col-md-4 control-label">Name:</label>
+									<div class="col-md-8">
+										<input type="text" class="form-control" placeholder="Enter the Job's name">
+									</div>
+								</div>
+
+								<div class="form-group required">
+									<label class="col-md-4 control-label">Client:</label>
+									<div class="col-md-8">
+										<select class="form-control">
+											<option value="1">Please select</option>
+											<option value="1">Option 1</option>
+											<option value="2">Option 2</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group required">
+									<label class="col-md-4 control-label">Type:</label>
+									<div class="col-md-8">
+										<select class="form-control">
+											<option value="1">Please select</option>
+											<option value="1">Option 1</option>
+											<option value="2">Option 2</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-4 control-label">Use Template:</label>
+									<div class="col-md-8">
+										<select class="form-control">
+											<option value="1">Please select</option>
+											<option value="1">Option 1</option>
+											<option value="2">Option 2</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-4 control-label">Description:</label>
+									<div class="col-md-8">
+										<textarea class="form-control" rows="4"></textarea>
+									</div>
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<legend>Dates</legend>
+
+								<div class="form-group">
+									<label class="col-md-4 control-label">Start Date:</label>
+									<div class="col-md-8">
+										<div class="input-group date" id="jobstart-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
+                                            <input type="text" class="form-control" placeholder="Select Date">
+                                            <span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
+                                        </div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-4 control-label">End Date:</label>
+									<div class="col-md-8">
+										<div class="input-group date" id="jobend-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
+                                            <input type="text" class="form-control" placeholder="Select Date">
+                                            <span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
+                                        </div>
+									</div>
+								</div>
+							</fieldset>
+
+							<fieldset class="checklist">		
+								<legend>Assigned Users</legend>						
+								<div class="form-group">
+									<div class="col-md-8">
+										<div class="checkbox select-all col-md-3">
+											<label class="control-label">
+												<input type="checkbox"> Select All
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-md-8">
+										<div class="checkbox col-md-3">
+											<label class="control-label">
+												<input type="checkbox"> John Doe
+											</label>
+										</div>
+
+										<div class="checkbox col-md-3">
+											<label class="control-label">
+												<input type="checkbox"> manager
+											</label>
+										</div>
+
+										<div class="checkbox col-md-3">
+											<label class="control-label">
+												<input type="checkbox"> reviewer
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-md-8">
+										<div class="checkbox col-md-3">
+											<label class="control-label">
+												<input type="checkbox"> Jim Beam
+											</label>
+										</div>
+
+										<div class="checkbox col-md-3">
+											<label class="control-label">
+												<input type="checkbox"> manager
+											</label>
+										</div>
+
+										<div class="checkbox col-md-3">
+											<label class="control-label">
+												<input type="checkbox"> reviewer
+											</label>
+										</div>
+									</div>
+								</div>
+								
+							</fieldset>
+
+							<fieldset class="checklist">		
+								<legend>Email Notifications</legend>						
+								<div class="form-group">
+									<div class="col-md-8">
+										<div class="checkbox select-all col-xs-12">
+											<label class="control-label">
+												<input type="checkbox"> Select All
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-md-8">
+										<div class="checkbox col-xs-12">
+											<label class="control-label">
+												<input type="checkbox"> Notify when user is assigned to task
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-md-8">
+										<div class="checkbox col-xs-12">
+											<label class="control-label">
+												<input type="checkbox"> Notify when task status is changed
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-md-8">
+										<div class="checkbox col-xs-12">
+											<label class="control-label">
+												<input type="checkbox"> Notify when task is completed 
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-md-8">
+										<div class="checkbox col-xs-12">
+											<label class="control-label">
+												<input type="checkbox"> Notify when comments are posted
+											</label>
+										</div>
+									</div>
+								</div>
+								
+							</fieldset>
+
+							<fieldset>								
+								<legend>&nbsp;</legend>
+								<div class="form-group">
+									<div class="col-md-8 ">
+										<button type="submit" class="btn btn-success m-r-5">Add Job</button>
+										<button type="submit" class="btn btn-default">Cancel</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+						
+					</div><!-- end page-form-->    
+                        
+			    </div>
+
+			</div><!-- end row -->
+			</div>
+		</div><!-- end #content -->
+	</div>
+	
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>	
+	<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    
+	<!-- Include Date Picker -->
+	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script src="assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+    <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+	<script src="assets/js/scripts.js"></script>
+    
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+	<script src="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+	
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+</body>
+</html>

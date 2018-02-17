@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CPA TodoBox | Page Name</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-cpapm/css/fontello.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+	<link href="assets/css/animate.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css" rel="stylesheet">
+   
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+</head>
+<body>
+	
+	<div id="page-container" class="page-sidebar-fixed page-header-fixed">
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+            <div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"> <span>CPA TODOBOX</span> </a>
+					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div><!-- sandwich end -->
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+                        <form class="navbar-form full-width">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter keyword">
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+					</li>
+					<li class="">
+						<a href="#modal-timer" class="timer-toggle animated infinite timer" data-toggle="modal">
+							<i class="cpa-icon cpa-icon-time"></i>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+							<i class="fa fa-plus"></i> 
+							<span class="hidden-xs">New Item</span>
+						</a>
+						
+						<ul class="dropdown-menu media-list pull-right animated fadeInDown">
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-star"></i> New Campaign</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-file-o"></i> New Page</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-compass"></i> New A/B Test</a>
+                            </li>
+                            
+                            
+						</ul>
+					</li>
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="assets/img/user-13.jpg" alt=""> 
+							<span class="hidden-xs">John Smith</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu animated fadeInLeft">
+							<li class="arrow"></li>
+							<li><a href="javascript:;">Edit Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:;">Log Out</a></li>
+						</ul>
+					</li>
+				</ul><!-- end header navigation right -->
+			</div>
+            <!-- end container-fluid -->
+		</div><!-- end #header -->
+		
+		<div id="sidebar" class="sidebar">			
+				
+			<ul class="nav">
+				
+				<li class="">
+					<a href="javascript:;">						
+						<i class="cpa-icon cpa-icon-meter"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-task"></i>
+						<span>Jobs</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-progress"></i>
+						<span>Tasks</span>
+					</a>
+                </li>
+                <li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-calendar"></i>
+						<span>Calendar</span>
+					</a>
+				</li>
+				
+				<li class="has-sub">
+					<a href="javascript:;">
+						<b class="caret pull-right"></b>
+						<i class="cpa-icon cpa-icon-chartbar"></i>
+						<span>Reports</span>
+					</a>
+
+					<ul class="sub-menu">
+						<li><a href="#">Report 1</a></li>
+						<li><a href="#">Report 2</a></li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-template"></i>
+						<span>Templates</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-briefcase"></i> 
+						<span>Clients</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-users"></i> 
+						<span>Users</span>
+					</a>
+				</li>
+				
+				
+				
+				<!-- begin sidebar minify button -->
+				<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+				<!-- end sidebar minify button -->
+			</ul><!-- end sidebar nav -->
+			
+		</div>
+		<div class="sidebar-bg"></div><!-- end #sidebar -->
+		
+		<!-- begin #content -->
+
+		<div id="cpm-user-list-view" class="">
+			<!-- begin page-header -->
+			<div class="page-header">
+				<div class="content">
+					<form><button type="button" class="pull-left btn btn-default btn-back"><i class="cpa-icon cpa-icon-back"></i>&nbsp;</button></form>
+					<h1>Prepare Tax Return</h1><!-- end page-header -->	
+				</div>           				
+			</div><!-- end page-header -->
+			<!-- begin tab-row -->
+			<div class="tab-row">
+				<div class="content">
+					<form>
+						<ul class="nav nav-tabs">
+							<li class="active"><button>Overview</button></li>
+							<li><button>Tasks</button></li>
+							<li><button>Files</button></li>
+							<li><button>Notes</button></li>
+							<li><button>Activity</button></li>
+						</ul>	
+					</form>
+				</div>
+           				
+			</div><!-- end tab-row -->
+
+			<div class="content">
+            		
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- begin btn-row -->
+					<div class="pagelist-btn-row clearfix">
+						<form>
+						<ul class="nav navbar-nav navbar-left">
+							<li>
+								<button type="button" class="btn btn-success"><i class="cpa-icon cpa-icon-edit"></i><span>Edit</span></button>
+							</li>
+							<li>
+								<button type="button" data-target="#modal-archive" class="btn btn-default" data-toggle="modal">
+                                    <i class="cpa-icon cpa-icon-folder"></i><span>Archive</span>
+                                </button>
+							</li>
+                            <li>
+								<button type="button" data-target="#modal-delete" class="btn btn-default" data-toggle="modal">
+                                    <i class="cpa-icon cpa-icon-bin"></i><span>Delete</span>
+                                </button>
+							</li>
+						</ul>   
+						</form>
+					</div><!-- end btn-row -->
+
+					 <!-- begin page-list-panel-->  
+                    <hr>                  
+					<h3>Prepare Tax Return (<a href="#">Newman LLC</a>)</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, a vitae pariatur doloribus neque. Saepe eaque officia quae, doloremque atque ducimus nobis animi dolor tempora neque inventore quia dicta sunt.</p>
+					
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+							<div class="widget widget-stats widget-default">
+								<div class="stats-icon"><i class="cpa-icon cpa-icon-task"></i></div>
+								<div class="stats-info">
+									<h4>Completed Tasks</h4>
+									<p><span>3</span>/5</p>	
+									No Overdue Tasks
+								</div>
+								<div class="stats-progress">
+									<div class="progress-bar" style="width: 40%"></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="widget widget-stats widget-default">
+								<div class="stats-icon"><i class="cpa-icon cpa-icon-task"></i></div>
+								<div class="stats-info">
+									<h4>Hours Worked</h4>
+									<p><span>35</span>hrs <span>25</span>min</p>	
+									remaining 3 hrs 30 min
+								</div>
+								<div class="stats-progress">
+									<div class="progress-bar" style="width: 40%"></div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+			    </div>
+
+			</div><!-- end row -->
+			</div>
+		</div><!-- end #content -->
+		<div class="modal modal-timer fade in" id="modal-timer">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Add Timer</h4>
+					</div>
+					<div class="modal-body timer-dial">
+						00:00:00
+					</div>
+					<div class="modal-body clearfix">
+						<div class="col-xs-12">
+							<form class="form-horizontal" action="/" method="POST">
+								<fieldset>
+								<div class="form-group">
+									<select class="form-control" id="">
+										<option value="" selected>Select job</option>
+										<option value="1">File Tax Return</option>
+										<option value="2">File 941 Return</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<select class="form-control" id="">
+										<option value="" selected>Select task</option>
+										<option value="1">File Tax Return</option>
+										<option value="2">File 941 Return</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="col-xs-4">Is it billable?</label>
+									<div class="col-xs-8">
+										<label class="radio-inline">
+											<input type="radio" name="optradio">Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="optradio">No
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="">
+										<textarea class="form-control" rows="4" placeholder="Comments"></textarea>
+									</div>
+								</div>
+								</fieldset>
+
+								<fieldset>								
+									<legend>&nbsp;</legend>
+									<div class="form-group">
+										
+										<button type="submit" class="btn btn-success">Start</button>
+										<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+										
+									</div>
+								</fieldset>
+
+							</form>
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+        <div class="modal modal-archive fade in" id="modal-archive">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Archive Job</h4>
+					</div>
+					
+					<div class="modal-body clearfix">
+						<i class="cpa-icon cpa-icon-attention pull-left icon-thumb"></i>
+						<p>Are you sure you want to archive Job 1?</p>	
+						
+					</div>
+					<div class="modal-footer">
+						<form>
+							<fieldset>				
+								<div class="form-group">									
+									<button type="submit" class="btn btn-danger">Archive</button>
+									<button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>									
+								</div>
+							</fieldset>
+						</form>						
+					</div>
+				</div>
+			</div>
+        </div>
+        
+        <div class="modal modal-delete fade in" id="modal-delete">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Delete Job</h4>
+					</div>
+					
+					<div class="modal-body clearfix">
+						<i class="cpa-icon cpa-icon-attention pull-left icon-thumb"></i>
+						<p>Are you sure you want to delete Job 2?</p>	
+						<p>All data associated with this Job will be deleted. This action is irreversible. </p>	
+						
+					</div>
+					
+					<div class="modal-footer">
+						<form>
+							<fieldset>				
+								<div class="form-group">									
+									<button type="submit" class="btn btn-danger">Delete</button>
+									<button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>									
+								</div>
+							</fieldset>
+						</form>						
+					</div>
+				</div>
+			</div>
+        </div>
+	</div>
+	
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>	
+	<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    
+	<!-- Include Date Picker -->
+	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script src="assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+    <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+	<script src="assets/js/scripts.js"></script>
+    
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+	<script src="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+	
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+</body>
+</html>

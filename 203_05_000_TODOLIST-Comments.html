@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CPA TodoBox | Page Name</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Mater,ial+Icons" rel="stylesheet">
+	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-cpapm/css/fontello.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
+	<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />	
+	<link href="assets/css/animate.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css" rel="stylesheet">
+   
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+</head>
+<body>
+	
+	<div id="page-container" class="page-sidebar-fixed page-header-fixed">
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+            <div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"> <span>CPA TodoBox</span> </a>
+					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div><!-- sandwich end -->
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+                        <form class="navbar-form full-width">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter keyword">
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+					</li>
+					<li class="">
+						<a href="#modal-timer" class="timer-toggle animated infinite timer" data-toggle="modal">
+							<i class="cpa-icon cpa-icon-time"></i>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+							<i class="fa fa-plus"></i> 
+							<span class="hidden-xs">New Item</span>
+						</a>
+						
+						<ul class="dropdown-menu media-list pull-right animated fadeInDown">
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-star"></i> New Campaign</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-file-o"></i> New Page</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-compass"></i> New A/B Test</a>
+                            </li>
+                            
+                            
+						</ul>
+					</li>
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="assets/img/user-13.jpg" alt=""> 
+							<span class="hidden-xs">John Smith</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu animated fadeInLeft">
+							<li class="arrow"></li>
+							<li><a href="javascript:;">Edit Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:;">Log Out</a></li>
+						</ul>
+					</li>
+				</ul><!-- end header navigation right -->
+			</div>
+            <!-- end container-fluid -->
+		</div><!-- end #header -->
+		
+		<div id="sidebar" class="sidebar">			
+				
+			<ul class="nav">
+				
+				<li class="">
+					<a href="javascript:;">						
+						<i class="cpa-icon cpa-icon-meter"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-task"></i>
+						<span>Jobs</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-progress"></i>
+						<span>Tasks</span>
+					</a>
+                </li>
+                <li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-calendar"></i>
+						<span>Calendar</span>
+					</a>
+				</li>
+				
+				<li class="has-sub">
+					<a href="javascript:;">
+						<b class="caret pull-right"></b>
+						<i class="cpa-icon cpa-icon-chartbar"></i>
+						<span>Reports</span>
+					</a>
+
+					<ul class="sub-menu">
+						<li><a href="#">Report 1</a></li>
+						<li><a href="#">Report 2</a></li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-template"></i>
+						<span>Templates</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-briefcase"></i> 
+						<span>Clients</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-users"></i> 
+						<span>Users</span>
+					</a>
+				</li>
+				
+				
+				
+				<!-- begin sidebar minify button -->
+				<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+				<!-- end sidebar minify button -->
+			</ul><!-- end sidebar nav -->
+			
+		</div>
+		<div class="sidebar-bg"></div><!-- end #sidebar -->
+		
+		<!-- begin #content -->
+
+		<div id="" class="">
+			<!-- begin page-header -->
+			<div class="page-header">
+				<div class="content">
+					<h1>Sample Job Name</h1><!-- end page-header -->	
+				</div>           				
+			</div><!-- end page-header -->
+
+			<div class="tab-row">
+				<div class="content">
+					<form>
+						<ul class="nav nav-tabs">
+							<li class="active"><button>Details</button></li>
+							<li><button>Tasks</button></li>
+							<li><button>Documents</button></li>
+							<li><button>Time</button></li>
+							<li><button>Comments</button></li>
+							<li><button>Activity</button></li>
+						</ul>	
+					</form>
+				</div>           				
+			</div><!-- end tab-row -->
+
+			<div class="content">
+            		
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- begin btn-row -->
+					<div class="pagelist-btn-row clearfix">
+                            <form>
+                                <ul class="nav navbar-nav navbar-left">
+                                    <li>
+                                        <button type="button" class="btn btn-success" data-target="#section-add-comment, #section-comment-list" data-toggle="collapse"><i class="cpa-icon cpa-icon-add"></i><span>Add Comment</span></button>
+                                    </li>
+                                </ul>  
+                            </form>				
+                        </div><!-- end btn-row -->
+					
+					
+					<!-- begin page-list-panels -->                    
+					<div class="pagelist-content">                         
+
+                        <div class="row panel-pagelist">
+                            <div class="col-xs-12">
+                                <section class="comment-list collapse in" id="section-comment-list">
+                                    <div class="section-header clearfix">                            
+                                        <h3>Comments</h3>
+                                    </div>                                    
+                                    
+                                    <div class="panel-group">
+                                        <div class="panel panel-default panel-comments">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a>Job</a>
+                                                </h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="panel-group accordion" id="accordion">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" aria-expanded="false">
+                                                            <h4 class="panel-title">
+                                                                <b class="caret"></b>
+                                                                <span class="user">Bill Smith</span>
+                                                                <span>added a comment - 17/Jul/2017 9:50PM</span>
+                                                            </h4>
+                                                            <span class="comment-exerpt">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                                            </span>
+                                                            <div class="btn-group pull-right">
+                                                                <button type="button" class="btn btn-icon" data-target="#section-edit-comment, #section-comment-list" data-toggle="collapse">
+                                                                    <i class="cpa-icon cpa-icon-edit"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-icon" data-target="#modal-deleteComment" data-toggle="modal">
+                                                                    <i class="cpa-icon cpa-icon-bin"></i>
+                                                                </button>																				
+                                                            </div> 
+                                                        </div>
+                                                        <div id="collapse1" class="panel-collapse collapse" aria-expanded="false">
+                                                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                            commodo consequat.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" aria-expanded="false">
+                                                            <h4 class="panel-title">
+                                                                <b class="caret"></b>
+                                                                <span class="user">Bill Smith</span>
+                                                                <span>added a comment - 17/Jul/2017 9:50PM</span>
+                                                            </h4>
+                                                            <span class="comment-exerpt">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                                            </span>
+                                                            <div class="btn-group pull-right">
+                                                                <button type="button" class="btn btn-icon" data-target="#section-edit-comment, #section-comment-list" data-toggle="collapse">
+                                                                    <i class="cpa-icon cpa-icon-edit"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-icon" data-target="#modal-deleteComment" data-toggle="modal">
+                                                                    <i class="cpa-icon cpa-icon-bin"></i>
+                                                                </button>																				
+                                                            </div> 
+                                                        </div>
+                                                        <div id="collapse2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                        commodo consequat.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-group">
+                                        <div class="panel panel-default panel-comments">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a>Task 1 Name</a>
+                                                </h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="panel-group accordion" id="accordion1">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion1" data-target="#collapse3" aria-expanded="false">
+                                                            <h4 class="panel-title">
+                                                                <b class="caret"></b>
+                                                                <span class="user">Bill Smith</span>
+                                                                <span>added a comment - 17/Jul/2017 9:50PM</span>
+                                                            </h4>
+                                                            <span class="comment-exerpt">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                                            </span>
+                                                            <div class="btn-group pull-right">
+                                                                <button type="button" class="btn btn-icon" data-target="#section-edit-comment, #section-comment-list" data-toggle="collapse">
+                                                                    <i class="cpa-icon cpa-icon-edit"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-icon" data-target="#modal-deleteComment" data-toggle="modal">
+                                                                    <i class="cpa-icon cpa-icon-bin"></i>
+                                                                </button>																				
+                                                            </div> 
+                                                        </div>
+                                                        <div id="collapse3" class="panel-collapse collapse" aria-expanded="false">
+                                                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                            commodo consequat.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion1" data-target="#collapse4" aria-expanded="false">
+                                                            <h4 class="panel-title">
+                                                                <b class="caret"></b>
+                                                                <span class="user">Bill Smith</span>
+                                                                <span>added a comment - 17/Jul/2017 9:50PM</span>
+                                                            </h4>
+                                                            <span class="comment-exerpt">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                                            </span>
+                                                            <div class="btn-group pull-right">
+                                                                <button type="button" class="btn btn-icon" data-target="#section-edit-comment, #section-comment-list" data-toggle="collapse">
+                                                                    <i class="cpa-icon cpa-icon-edit"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-icon" data-target="#modal-deleteComment" data-toggle="modal">
+                                                                    <i class="cpa-icon cpa-icon-bin"></i>
+                                                                </button>																				
+                                                            </div> 
+                                                        </div>
+                                                        <div id="collapse4" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                        commodo consequat.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+
+                                </section>
+
+                                <section class="edit-comment collapse" id="section-edit-comment">
+                                    <div class="section-header clearfix">                            
+                                        <h3>Edit Comments</h3>
+                                    </div>                                    
+                                    
+                                    <form class="form-horizontal" action="/" method="POST">
+                                        <fieldset>
+                                        
+                                            <div class="form-group required">
+                                                <label class="col-md-4 control-label">Attach to:</label>
+                                                <div class="col-md-8">
+                                                    <select class="form-control">
+                                                        <option value="1">Pease Select</option>
+                                                        <option value="2">Task 1 Name</option>
+                                                        <option value="3">Task 2 Name</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+            
+                                            <div class="form-group">
+                                                <div class="col-xs-12">
+                                                    <textarea class="form-control" rows="4"></textarea>
+                                                </div>
+                                            </div>                             					
+            
+                                        </fieldset>
+            
+                                    
+            
+                                        <fieldset>								
+                                            <div class="form-group">
+                                                <div class="col-md-8 ">
+                                                    <button type="button" class="btn btn-success" data-target="#section-edit-comment, #section-comment-list" data-toggle="collapse">Save</button>
+                                                    <button type="button" class="btn btn-default" data-target="#section-edit-comment, #section-comment-list" data-toggle="collapse">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </section>
+                                <section class="add-comment collapse" id="section-add-comment">
+                                    <div class="section-header clearfix">                            
+                                        <h3>Add Comments</h3>
+                                    </div>                                    
+                                    
+                                    <form class="form-horizontal" action="/" method="POST">
+                                        <fieldset>
+                                        
+                                            <div class="form-group required">
+                                                <label class="col-md-4 control-label">Attach to:</label>
+                                                <div class="col-md-8">
+                                                    <select class="form-control">
+                                                        <option value="1">Pease Select</option>
+                                                        <option value="2">Task 1 Name</option>
+                                                        <option value="3">Task 2 Name</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+            
+                                            <div class="form-group">
+                                                <div class="col-xs-12">
+                                                    <textarea class="form-control" rows="4"></textarea>
+                                                </div>
+                                            </div>                             					
+            
+                                        </fieldset>
+            
+                                    
+            
+                                        <fieldset>								
+                                            <div class="form-group">
+                                                <div class="col-md-8 ">
+                                                    <button type="button" class="btn btn-success" data-target="#section-add-comment, #section-comment-list" data-toggle="collapse">Add</button>
+                                                    <button type="button" class="btn btn-default" data-target="#section-add-comment, #section-comment-list" data-toggle="collapse">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </section>
+                            </div>
+                        </div>
+
+
+					</div><!-- end page-list-panels -->
+			    </div>
+
+			</div><!-- end row -->
+			</div>
+		</div><!-- end #content -->
+
+		<div class="modal modal-editFile modal-primary fade in" id="modal-editFile">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Edit File</h4>
+					</div>
+					<div class="modal-body p0 clearfix">						
+						<form action="/" method="" class="form-horizontal">		
+							<section id="billing" class="panel-group">
+								<div class="panel">
+								<fieldset>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">File Name: </label>
+										<div class="col-sm-9">
+											<div class="input-group" id="">
+												<input type="text" class="form-control" placeholder="">
+												<span class="input-group-addon">.txt</span>
+											</div>																				
+										</div>	
+									</div>
+								</fieldset>
+								<fieldset>
+									
+									<div class="form-group">
+										<legend>Assign To</legend>
+										<label class="col-sm-3 control-label">Job: </label>
+										<div class="col-sm-6 input-block">
+											<select class="form-control " id="">
+												<option value="" selected="">--Select Job --</option>
+												<option value="1">Job Name</option>
+												<option value="2">Job Name</option>
+												<option value="3">Job Name</option>
+												<option value="4">Job Name</option>
+												<option value="5">Job Name</option>
+											</select>
+										</div>	
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Task: </label>
+										<div class="col-sm-6 input-block">
+											<select class="form-control " id="">
+												<option value="" selected="">--Select Task --</option>
+												<option value="1">Task Name</option>
+												<option value="2">Task Name</option>
+												<option value="3">Task Name</option>
+												<option value="4">Task Name</option>
+												<option value="5">Task Name</option>
+											</select>
+										</div>	
+									</div>
+								</fieldset>
+								
+								
+
+								<fieldset class="action-bar">												
+									<button type="submit" class="btn btn-success">Save</button>
+									<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
+								</fieldset>	
+								</div>
+
+							</section>						
+						</form>					
+					</div>
+					
+				</div>
+			</div>
+		</div>	
+
+		<div class="modal modal-delete fade in" id="modal-deleteComment">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Delete Comment</h4>
+					</div>
+					
+					<div class="modal-body clearfix">
+						<section>
+							<i class="cpa-icon cpa-icon-attention pull-left icon-thumb"></i>
+							<p>Are you sure you want to delete this comment?</p>	
+						</section>					
+					</div>
+					
+					<div class="modal-footer">
+						<form>
+							<fieldset>													
+								<button type="submit" class="btn btn-danger">Delete</button>
+								<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>			
+							</fieldset>
+						</form>						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		
+	</div>
+	
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>	
+	<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    
+	<!-- Include Date Picker -->
+	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script src="assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+    <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+	<script src="assets/js/scripts.js"></script>
+    
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+	<script src="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+	
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+</body>
+</html>

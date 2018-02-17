@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CPA TodoBox | Page Name</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-cpapm/css/fontello.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+	<link href="assets/css/animate.css" rel="stylesheet" />
+	<link href="assets/plugins/dropzone/min/dropzone.min.css" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	
+   
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+</head>
+<body>
+	
+	<div id="page-container" class="page-sidebar-fixed page-header-fixed">
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+            <div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"> <span>CPA TodoBox</span> </a>
+					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div><!-- sandwich end -->
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+                        <form class="navbar-form full-width">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter keyword">
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+					</li>
+					<li class="">
+						<a href="#modal-timer" class="timer-toggle" data-toggle="modal">
+							<i class="cpa-icon cpa-icon-time"></i>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+							<i class="fa fa-plus"></i> 
+							<span class="hidden-xs">New Item</span>
+						</a>
+						
+						<ul class="dropdown-menu media-list pull-right animated fadeInDown">
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-star"></i> New Campaign</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-file-o"></i> New Page</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-compass"></i> New A/B Test</a>
+                            </li>
+                            
+                            
+						</ul>
+					</li>
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="assets/img/user-13.jpg" alt=""> 
+							<span class="hidden-xs">John Smith</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu animated fadeInLeft">
+							<li class="arrow"></li>
+							<li><a href="javascript:;">Edit Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:;">Log Out</a></li>
+						</ul>
+					</li>
+				</ul><!-- end header navigation right -->
+			</div>
+            <!-- end container-fluid -->
+		</div><!-- end #header -->
+		
+		<div id="sidebar" class="sidebar">			
+				
+			<ul class="nav">
+				
+				<li class="">
+					<a href="javascript:;">						
+						<i class="cpa-icon cpa-icon-meter"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-task"></i>
+						<span>Jobs</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-progress"></i>
+						<span>Tasks</span>
+					</a>
+                </li>
+                <li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-calendar"></i>
+						<span>Calendar</span>
+					</a>
+				</li>
+				
+				<li class="has-sub">
+					<a href="javascript:;">
+						<b class="caret pull-right"></b>
+						<i class="cpa-icon cpa-icon-chartbar"></i>
+						<span>Reports</span>
+					</a>
+
+					<ul class="sub-menu">
+						<li><a href="#">Report 1</a></li>
+						<li><a href="#">Report 2</a></li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-template"></i>
+						<span>Templates</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-briefcase"></i> 
+						<span>Clients</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-users"></i> 
+						<span>Users</span>
+					</a>
+				</li>
+				
+				
+				
+				<!-- begin sidebar minify button -->
+				<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+				<!-- end sidebar minify button -->
+			</ul><!-- end sidebar nav -->
+			
+		</div>
+		<div class="sidebar-bg"></div><!-- end #sidebar -->
+		
+		<!-- begin #content -->
+
+		<div id="cpm-user-list-view" class="">
+			<!-- begin page-header -->
+			<div class="page-header">
+				<div class="content">
+					<form><button type="button" class="pull-left btn btn-default btn-back"><i class="cpa-icon cpa-icon-back"></i>&nbsp;</button></form>
+					<h1>Edit Task</h1><!-- end page-header -->	
+				</div>           				
+			</div><!-- end page-header -->
+			
+
+			<div class="content">
+            		
+			<div class="row">
+				<div class="col-md-12">
+
+					
+
+					<!-- begin page-form-->                    
+					<div class="pagelist-content pagelist-form">
+						<form class="form-horizontal" action="/" method="POST">
+							<fieldset>
+								<legend>Task Details</legend>
+								<div class="form-group required">
+									<label class="col-md-4 control-label">Task Name:</label>
+									<div class="col-md-8">
+										<input type="text" class="form-control" placeholder="e.g. Some Text">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-4 control-label">Task Description:</label>
+									<div class="col-md-8">
+										<textarea class="form-control" rows="4"></textarea>
+									</div>
+								</div>
+
+								<div class="form-group required">
+									<label class="col-md-4 control-label">Job Name:</label>
+									<div class="col-md-8">
+										<select class="form-control">
+											<option value="0" selected>Please Select </option>
+											<option value="">Option 1</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group required">
+									<label class="col-md-4 control-label">Task List:</label>
+									<div class="col-md-8">
+										<select class="form-control">
+											<option value="0" selected>Please Select </option>
+											<option value="">Option 1</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-4 control-label">Start Date:</label>
+									<div class="col-md-8">
+										<div class="input-group date" id="jobstart-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
+                                            <input type="text" class="form-control" placeholder="Select Date">
+                                            <span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
+                                        </div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-4 control-label">Due Date:</label>
+									<div class="col-md-8">
+										<div class="input-group date" id="jobstart-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
+                                            <input type="text" class="form-control" placeholder="Select Date">
+                                            <span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
+                                        </div>
+									</div>
+								</div>
+
+								<div class="form-group ">
+									<label class="col-md-4 control-label">Estimated Hours:</label>
+									<div class="col-md-8">
+										<input type="text" class="form-control text-right" placeholder="10.00">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-4 control-label">Assign to:</label>
+									<div class="col-md-8">
+										<select class="form-control">
+											<option value="0" selected>Please Select </option>
+											<option value="">Option 1</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-4 control-label">Attach Files:</label>
+									<div class="col-md-8">
+										<select class="form-control">
+											<option value="0" selected>Please Select </option>
+											<option value="">Option 1</option>
+										</select>
+									</div>
+								</div>	
+								<div id="dropzone" class="form-group">                              
+                                    <div class="dropzone">
+										<div class="dz-message needsclick">
+											Drop files here or click to upload.<br>
+											<span class="dz-note needsclick">
+												(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)
+											</span>
+                                   		</div> 
+									</div>                               
+                            	</div>							
+
+							</fieldset>
+
+							<fieldset>
+								<legend>Time Log</legend>
+								<div class="pagelist-content table-responsive">
+									<table class="table table-pagelist">
+										<thead>
+											<tr>
+												
+												<th>
+													<div class="">
+														<a href="#" class="pagelist-header-link"> Description <i class="cpa-icon cpa-icon-downtriangle"></i></a>
+													</div>
+												</th>
+												<th>
+													<div class="">
+														<a href="#" class="pagelist-header-link">Duration <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+													</div>
+												</th>
+												<th>
+													<div class="">
+														<a href="#" class="pagelist-header-link">Start Date/Time <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+													</div>
+												</th>
+												<th>
+													<div class="">
+														<a href="#" class="pagelist-header-link">End Date/Time <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+													</div>
+												</th>
+												<th>
+													<div class="">
+														<a href="#" class="pagelist-header-link">User <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+													</div>
+												</th>
+												
+											</tr>
+										</thead>
+										<tbody>                                
+											<tr>
+												<td class="">Completed Task 1</td>
+												<td class="cell-composite">1 hrs 30 min 
+													<div class="btn-group">													
+													<button type="button" class="btn btn-icon">
+															<i class="cpa-icon cpa-icon-bin"></i>
+													</button>											
+											</div><!-- end header navigation right -->
+												</td>
+												<td class="">5-July-2017 8:12 a.m.</td>
+												<td class="">5-July-2017 8:12 a.m.</td>
+												<td class="">John Doe</td>
+											</tr>
+											<tr>
+												<td class="">Completed Task 1</td>
+												<td class="cell-composite">1 hrs 30 min 
+													<div class="btn-group">													
+													<button type="button" class="btn btn-icon">
+															<i class="cpa-icon cpa-icon-bin"></i>
+													</button>											
+											</div><!-- end header navigation right -->
+												</td>
+												<td class="">5-July-2017 8:12 a.m.</td>
+												<td class="">5-July-2017 8:12 a.m.</td>
+												<td class="">John Doe</td>
+											</tr>                     																		
+																													
+										</tbody>
+									</table>
+									
+								</div>
+
+							</fieldset>
+
+							<fieldset>								
+								<legend>&nbsp;</legend>
+								<div class="form-group">
+									<div class="col-md-8 ">
+										<button type="submit" class="btn btn-success">Add Task</button>
+										<button type="submit" class="btn btn-default">Cancel</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+						
+					</div><!-- end page-form-->    
+                        
+			    </div>
+
+			</div><!-- end row -->
+			</div>
+		</div><!-- end #content -->
+		<div class="modal modal-timer fade in" id="modal-timer">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Add Timer</h4>
+					</div>
+					<div class="modal-body timer-dial">
+						00:00:00
+					</div>
+					<div class="modal-body clearfix">
+						<div class="col-xs-12">
+							<form class="form-horizontal" action="/" method="POST">
+								<div class="form-group">
+									<select class="form-control" id="">
+										<option value="" selected>Select job</option>
+										<option value="1">File Tax Return</option>
+										<option value="2">File 941 Return</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<select class="form-control" id="">
+										<option value="" selected>Select task</option>
+										<option value="1">File Tax Return</option>
+										<option value="2">File 941 Return</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="col-xs-4">Is it billable?</label>
+									<div class="col-xs-8">
+										<label class="radio-inline">
+											<input type="radio" name="optradio">Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="optradio">No
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="">
+										<textarea class="form-control" rows="4" placeholder="Comments"></textarea>
+									</div>
+								</div>
+
+							</form>
+						</div>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="javascript:;" class="btn btn-success">Start</a>
+						<a href="javascript:;" class="btn btn-white" data-dismiss="modal">Close</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>	
+	<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    
+	<!-- Include Date Picker -->
+	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script src="assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+	<script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<script src="assets/plugins/dropzone/min/dropzone.min.js"></script>
+
+	<script src="assets/js/scripts.js"></script>
+    
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+	<script src="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+	
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+</body>
+</html>

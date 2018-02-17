@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CMS Admin | Dashboard</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/css/animate.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.css" rel="stylesheet" />
+	<link href="assets/css/theme/default.css" rel="stylesheet" id="theme" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css" rel="stylesheet">
+   
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+</head>
+<body>
+	
+	<div id="page-container" class="page-sidebar-fixed page-header-fixed">
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"><i class="navbar-logo"></i> <span>CPA CMS</span> </a>
+					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div><!-- sandwich end -->
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="assets/img/user-13.jpg" alt="" /> 
+							<span class="hidden-xs">John Smith</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu animated fadeInLeft">
+							<li class="arrow"></li>
+							<li><a href="javascript:;">Edit Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:;">Log Out</a></li>
+						</ul>
+					</li>
+				</ul><!-- end header navigation right -->
+			</div><!-- end container-fluid -->
+		</div><!-- end #header -->
+		
+		<div id="sidebar" class="sidebar">			
+				
+			<ul class="nav">
+				
+				<li class="">
+					<a href="javascript:;">						
+						<i class="fa fa-laptop"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">
+						<i class="fa fa-users"></i>
+						<span>Users</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="fa fa-credit-card"></i>
+						<span>Clients</span>
+					</a>
+				</li>
+				<li class="has-sub">
+					<a href="javascript:;">
+						<b class="caret pull-right"></b>
+						<i class="fa fa-cogs"></i>
+						<span>Settings</span>
+					</a>
+					<ul class="sub-menu">
+						<li><a href="javascript:;">Account</a></li>
+					</ul>
+				</li>
+
+				<li class="has-sub">
+					<a href="javascript:;">
+						<b class="caret pull-right"></b>
+						<i class="fa fa-bar-chart"></i> 
+						<span>Reports</span>
+					</a>
+					<ul class="sub-menu">
+						<li><a href="#">Report by Date</a></li>
+						<li><a href="#">Report by User</a></li>
+						<li><a href="#">Report by Client</a></li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="javascript:;">
+						<b class="caret pull-right"></b>
+						<i class="fa fa-compass"></i> 
+						<span>Links</span>
+					</a>
+					<ul class="sub-menu">
+						<li><a href="#">File Vault</a></li>
+						<li><a href="#">Website</a></li>
+						<li><a href="#">Email</a></li>
+					</ul>
+				</li>
+				
+				
+				
+				<!-- begin sidebar minify button -->
+				<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+				<!-- end sidebar minify button -->
+			</ul><!-- end sidebar nav -->
+			
+		</div>
+		<div class="sidebar-bg"></div><!-- end #sidebar -->
+		
+		<!-- begin #content -->
+		<div id="content" class="content">
+			<ol class="breadcrumb pull-right">
+				<li><a href="javascript:;">Home</a></li>
+				<li><a href="javascript:;">Pages</a></li>
+				<li class="active">New Page</li>
+			</ol><!-- end breadcrumb -->
+			<h1 class="page-header">Pages <small>All Pages Overview</small></h1><!-- end page-header -->
+			
+			<div class="row">
+				<div class="col-md-12">
+					<div class="pagelist-btn-row clearfix">
+                        <a href="#" class="btn btn-sm btn-primary"><i class="fa fa-plus m-r-5"></i> Add</a>
+                        <a href="#" class="btn btn-sm btn-primary ">Edit</a>
+						<span>&nbsp;|&nbsp;</span>
+                        <a href="#" class="btn btn-sm btn-danger ">Delete</a>
+                    
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<form class="navbar-form full-width">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Enter keyword">
+										<button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+									</div>
+								</form>
+							</li>
+						</ul>
+					</div>
+					
+                    <div class="p-30 bg-white">
+                            <div class="pagelist-content">
+								<table class="table table-pagelist table-responsive">
+									<thead>
+										<tr>
+											<th class="email-select"><a href="#" data-click="pagelist-select-all"><i class="fa fa-square-o fa-fw"></i></a></th>
+											<th>
+												<div class="">
+													<a href="#" class="pagelist-header-link"> Title <i class="fa fa-angle-down m-l-5"></i></a>
+												</div>
+											</th>
+											<th>
+												<div class="">
+													<a href="#" class="pagelist-header-link">Details <i class="fa fa-angle-down m-l-5"></i></a>                                            
+												</div>
+											</th>
+
+											<th>
+												<div class="">
+													<a href="#" class="pagelist-header-link">Date <i class="fa fa-angle-down m-l-5"></i></a>                                            
+												</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="pagelist-select"><a href="#" data-click="pagelist-select-single"><i class="fa fa-square-o fa-fw"></i></a></td>
+											<td class="pagelist-sender">Page title here</td>
+											<td class="pagelist-subject">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+											<td class="pagelist-date">11/4/2014</td>
+										</tr>
+										<tr>
+											<td class="pagelist-select"><a href="#" data-click="pagelist-select-single"><i class="fa fa-square-o fa-fw"></i></a></td>
+											<td class="pagelist-sender">Page title here</td>
+											<td class="pagelist-subject">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+											<td class="pagelist-date">11/4/2014</td>
+										</tr>
+										<tr>
+											<td class="pagelist-select"><a href="#" data-click="pagelist-select-single"><i class="fa fa-square-o fa-fw"></i></a></td>
+											<td class="pagelist-sender">Page title here</td>
+											<td class="pagelist-subject">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+											<td class="pagelist-date">11/4/2014</td>
+										</tr>
+										<tr>
+											<td class="pagelist-select"><a href="#" data-click="pagelist-select-single"><i class="fa fa-square-o fa-fw"></i></a></td>
+											<td class="pagelist-sender">Page title here</td>
+											<td class="pagelist-subject">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+											<td class="pagelist-date">11/4/2014</td>
+										</tr>
+										<tr>
+											<td class="pagelist-select"><a href="#" data-click="pagelist-select-single"><i class="fa fa-square-o fa-fw"></i></a></td>
+											<td class="pagelist-sender">Page title here</td>
+											<td class="pagelist-subject">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+											<td class="pagelist-date">11/4/2014</td>
+										</tr>									
+									</tbody>
+								</table>
+								<div class="pagelist-footer clearfix">
+									<span>23 pages</span>
+									<ul class="pagination pagination-sm m-t-0 m-b-0 pull-right">
+										<li class="disabled"><a href="javascript:;"><i class="fa fa-angle-double-left"></i></a></li>
+										<li class="disabled"><a href="javascript:;"><i class="fa fa-angle-left"></i></a></li>
+										<li class=""><span>1 of 3</span></li>
+										<li><a href="javascript:;"><i class="fa fa-angle-right"></i></a></li>
+										<li><a href="javascript:;"><i class="fa fa-angle-double-right"></i></a></li>
+									</ul>
+								</div>
+							</div>
+                        </div>
+			    </div>
+
+			</div><!-- end row -->
+			
+		</div><!-- end #content -->
+	</div>
+	
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>	
+	<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<script src="assets/js/scripts.js"></script>
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+	<script src="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+	
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CPA TodoBox | Page Name</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-cpapm/css/fontello.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+	<link href="assets/css/animate.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css" rel="stylesheet">
+   
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+</head>
+<body>
+	
+	<div id="page-container" class="page-sidebar-fixed page-header-fixed">
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+            <div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"> <span>CPA TODOBOX</span> </a>
+					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div><!-- sandwich end -->
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+                        <form class="navbar-form full-width">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter keyword">
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+					</li>
+					<li class="">
+						<a href="#modal-timer" class="timer-toggle animated infinite timer" data-toggle="modal">
+							<i class="cpa-icon cpa-icon-time"></i>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+							<i class="fa fa-plus"></i> 
+							<span class="hidden-xs">New Item</span>
+						</a>
+						
+						<ul class="dropdown-menu media-list pull-right animated fadeInDown">
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-star"></i> New Campaign</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-file-o"></i> New Page</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-compass"></i> New A/B Test</a>
+                            </li>
+                            
+                            
+						</ul>
+					</li>
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="assets/img/user-13.jpg" alt=""> 
+							<span class="hidden-xs">John Smith</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu animated fadeInLeft">
+							<li class="arrow"></li>
+							<li><a href="javascript:;">Edit Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:;">Log Out</a></li>
+						</ul>
+					</li>
+				</ul><!-- end header navigation right -->
+			</div>
+            <!-- end container-fluid -->
+		</div><!-- end #header -->
+		
+		<div id="sidebar" class="sidebar">			
+				
+			<ul class="nav">
+				
+				<li class="">
+					<a href="javascript:;">						
+						<i class="cpa-icon cpa-icon-meter"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-task"></i>
+						<span>Jobs</span>
+					</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-progress"></i>
+						<span>Tasks</span>
+					</a>
+                </li>
+                <li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-calendar"></i>
+						<span>Calendar</span>
+					</a>
+				</li>
+				
+				<li class="has-sub">
+					<a href="javascript:;">
+						<b class="caret pull-right"></b>
+						<i class="cpa-icon cpa-icon-chartbar"></i>
+						<span>Reports</span>
+					</a>
+
+					<ul class="sub-menu">
+						<li><a href="#">Report 1</a></li>
+						<li><a href="#">Report 2</a></li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-template"></i>
+						<span>Templates</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-briefcase"></i> 
+						<span>Clients</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-users"></i> 
+						<span>Users</span>
+					</a>
+				</li>
+				
+				
+				
+				<!-- begin sidebar minify button -->
+				<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+				<!-- end sidebar minify button -->
+			</ul><!-- end sidebar nav -->
+			
+		</div>
+		<div class="sidebar-bg"></div><!-- end #sidebar -->
+		
+		<!-- begin #content -->
+
+		<div id="cpm-user-list-view" class="">
+			<!-- begin page-header -->
+			<div class="page-header">
+				<div class="content">
+					<form><button type="button" class="pull-left btn btn-default btn-back"><i class="cpa-icon cpa-icon-back"></i>&nbsp;</button></form>
+					<h1>My Todo List</h1><!-- end page-header -->	
+				</div>           				
+			</div><!-- end page-header -->
+
+			<div class="tab-row">
+				<div class="content">
+					<form>
+						<ul class="nav nav-tabs">
+							<li class="active"><button>All Completed <span>(123)</span></button></li>
+							<li><button>Last Week <span>(123)</span></button></li>
+							<li><button>Today <span>(123)</span></button></li>
+							<li><button>This Week <span>(123)</span></button></li>
+							<li><button>Next Week <span>(123)</span></button></li>
+							<li><button>Later <span>(123)</span></button></li>
+						</ul>	
+					</form>
+				</div>
+           				
+			</div><!-- end tab-row -->
+
+			<div class="content">
+            		
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- begin btn-row -->
+					<div class="pagelist-btn-row clearfix">
+						<form>
+						<ul class="nav navbar-nav navbar-left">
+							<li>
+								<button type="button" class="btn btn-success">
+                                    <i class="cpa-icon cpa-icon-add"></i><span>Add Item</span>
+                                </button>
+							</li>
+							<li class="dropdown">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <i class="cpa-icon cpa-icon-group"></i>
+                                    <span><strong>Group by:</strong> None</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><button type="button" class="btn btn-link">Task list</button></li>
+                                    <li><button type="button" class="btn btn-link">Status</button></li>
+                                    <li><button type="button" class="btn btn-link">None</button></li>
+                                </ul>
+							</li>
+                            
+							<li>
+								<button type="button" data-toggle="collapse" data-target="#page-filter" class="btn btn-default btn-toggle-filter"><i class="cpa-icon cpa-icon-filtershow"></i><span>Show Filter</span></button>
+							</li>
+						</ul>
+						</form>
+                    </div><!-- end btn-row -->
+
+                    <!-- begin #page-filter -->
+					<div class="panel panel-filter collapse" id="page-filter">
+                        <div class="panel-body">
+                            <form class="form-inline" action="/" method="POST">
+								<div class="form-group">
+									<input type="text" class="form-control" id="" placeholder="Item">
+                                </div>
+                                
+                                <div class="form-group">
+									<div class="input-group" id="default-daterange">
+										<input type="text" name="default-daterange" class="form-control" value="" placeholder="Due Date" />
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button"><i class="cpa-icon cpa-icon-date"></i></button>
+										</span>
+									</div>
+                                </div>
+                                
+								<div class="form-group">
+									<select class="form-control" id="">
+                                        <option value="" selected>Turnaround Time</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                    </select>
+                                </div>
+                                
+								<div class="form-group">
+									<select class="form-control" id="">
+                                        <option value="" selected>Assigned By</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                    </select>
+                                </div>
+
+                                
+								<button type="submit" class="btn btn-white">Clear</button>
+							</form>
+                        </div>
+                    </div><!-- end #page-filter -->                
+					<!-- begin page-list-table-->                    
+					<div class="pagelist-content table-responsive">
+						<table class="table table-pagelist table-mytodo">
+							<thead>
+								<tr>									
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link"> Type <i class="cpa-icon cpa-icon-downtriangle"></i></a>
+										</div>
+                                    </th>
+                                    <th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Description <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+                                    </th>
+                                    <th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Client <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+                                    </th>
+                                    
+                                    <th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Status <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+									</th>
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Due Date <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+									</th>
+
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Assigned by <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+									</th>
+								</tr>
+                            </thead>
+                            <tbody>                                
+								<tr>
+                                    <td>
+                                        <span class="label label-success">
+                                            <input type="checkbox" class="custom-checkbox" id="checkbox-1-1" /><label for="checkbox-1-1"></label>
+                                            task
+                                        </span>
+                                    </td>
+									<td class="cell-composite">
+										<div class="clearfix">
+											<div class="row-primary">
+												<a href="#">Enter Data</a>
+											</div>
+											
+											<div class="btn-group">
+												<button type="button" class="btn btn-icon" data-target="#modal-timer" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-time"></i>
+												</button>
+												<button type="button" class="btn btn-icon">
+														<i class="cpa-icon cpa-icon-range"></i>
+												</button>
+																						
+											</div><!-- end header navigation right -->
+										
+										</div>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing do...</p>
+										
+										
+									</td>
+                                    <td>Jimmy Johnes LLC</td>
+                                    <td>Planned</td>
+                                    <td>11-29-2017</td>
+                                    <td>Jim Trone</td>
+                                </tr>
+                                
+                                <tr>
+                                        <td>
+                                            <span class="label label-primary">
+                                                e-mail
+                                            </span>
+                                        </td>
+                                        <td class="cell-composite">
+                                            <div class="clearfix">
+                                                <div class="row-primary">
+                                                    <a href="#">Enter Data</a>
+                                                </div>
+                                                
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-icon" data-target="#modal-timer" data-toggle="modal">
+                                                        <i class="cpa-icon cpa-icon-time"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-icon">
+                                                            <i class="cpa-icon cpa-icon-range"></i>
+                                                    </button>
+                                                                                            
+                                                </div><!-- end header navigation right -->
+                                            
+                                            </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing do...</p>
+                                            
+                                            
+                                        </td>
+                                        <td>Jimmy Johnes LLC</td>
+                                        <td>Planned</td>
+                                        <td>11-29-2017</td>
+                                        <td>Jim Trone</td>
+                                    </tr>
+
+                                    <tr>
+                                            <td>
+                                                <span class="label label-warning">
+                                                    <input type="checkbox" class="custom-checkbox" id="checkbox-1-2" /><label for="checkbox-1-2"></label>
+                                                    note
+                                                </span>
+                                            </td>
+                                            <td class="cell-composite">
+                                                <div class="clearfix">
+                                                    <div class="row-primary">
+                                                        <a href="#">Enter Data</a>
+                                                    </div>
+                                                    
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-icon" data-target="#modal-timer" data-toggle="modal">
+                                                            <i class="cpa-icon cpa-icon-time"></i>
+                                                        </button>
+                                                        <button type="button" class="btn btn-icon">
+                                                                <i class="cpa-icon cpa-icon-range"></i>
+                                                        </button>
+                                                                                                
+                                                    </div><!-- end header navigation right -->
+                                                
+                                                </div>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing do...</p>
+                                                
+                                                
+                                            </td>
+                                            <td>Jimmy Johnes LLC</td>
+                                            <td>Planned</td>
+                                            <td>11-29-2017</td>
+                                            <td>Jim Trone</td>
+                                        </tr>
+
+                                        <tr>
+                                                <td>
+                                                    <span class="label label-info">
+                                                        job
+                                                    </span>
+                                                </td>
+                                                <td class="cell-composite">
+                                                    <div class="clearfix">
+                                                        <div class="row-primary">
+                                                            <a href="#">Enter Data</a>
+                                                        </div>
+                                                        
+                                                        <div class="btn-group">
+                                                            <button type="button" class="btn btn-icon" data-target="#modal-timer" data-toggle="modal">
+                                                                <i class="cpa-icon cpa-icon-time"></i>
+                                                            </button>
+                                                            <button type="button" class="btn btn-icon">
+                                                                    <i class="cpa-icon cpa-icon-range"></i>
+                                                            </button>
+                                                                                                    
+                                                        </div><!-- end header navigation right -->
+                                                    
+                                                    </div>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing do...</p>
+                                                    
+                                                    
+                                                </td>
+                                                <td>Jimmy Johnes LLC</td>
+                                                <td>Planned</td>
+                                                <td>11-29-2017</td>
+                                                <td>Jim Trone</td>
+                                            </tr>
+								
+                                																		
+							</tbody>
+						</table>
+						
+					</div><!-- end page-list-table Ungrouped -->
+			    </div>
+
+			</div><!-- end row -->
+			</div>
+		 
+		</div><!-- end #content -->
+		<div class="modal modal-timer fade in" id="modal-timer">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Add Timer</h4>
+					</div>
+					<div class="modal-body timer-dial">
+						00:00:00
+					</div>
+					<div class="modal-body clearfix">
+						<div class="col-xs-12">
+							<form class="form-horizontal" action="/" method="POST">
+								<div class="form-group">
+									<select class="form-control" id="">
+										<option value="" selected>Select job</option>
+										<option value="1">File Tax Return</option>
+										<option value="2">File 941 Return</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<select class="form-control" id="">
+										<option value="" selected>Select task</option>
+										<option value="1">File Tax Return</option>
+										<option value="2">File 941 Return</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="col-xs-4">Is it billable?</label>
+									<div class="col-xs-8">
+										<label class="radio-inline">
+											<input type="radio" name="optradio">Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="optradio">No
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="">
+										<textarea class="form-control" rows="4" placeholder="Comments"></textarea>
+									</div>
+								</div>
+
+							</form>
+						</div>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="javascript:;" class="btn btn-success">Start</a>
+						<a href="javascript:;" class="btn btn-white" data-dismiss="modal">Close</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>	
+	<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    
+	<!-- Include Date Picker -->
+	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script src="assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+    <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+	<script src="assets/js/scripts.js"></script>
+    
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+	<script src="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+	<script type="text/javascript">
+  $('tbody').sortable();
+</script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+</body>
+</html>

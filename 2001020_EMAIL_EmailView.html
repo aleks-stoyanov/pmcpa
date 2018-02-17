@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CPA TodoBox | Page Name</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-cpapm/css/fontello.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+	<link href="assets/css/animate.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css" rel="stylesheet">
+   
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+</head>
+<body>
+	
+	<div id="page-container" class="page-sidebar-fixed page-header-fixed">
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+            <div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"> <span>CPA TODOBOX</span> </a>
+                    <ul class="nav navbar-nav navbar-toggle-module">
+                        <li class="">
+                            <a href="#" class="active">
+                                <i class="cpa-icon cpa-icon-envelope"></i>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="">
+                                <i class="cpa-icon cpa-icon-task"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div><!-- sandwich end -->
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+                        <form class="navbar-form full-width">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter keyword">
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+					</li>
+					<li class="">
+						<a href="#modal-timer" class="timer-toggle animated infinite timer" data-toggle="modal">
+							<i class="cpa-icon cpa-icon-time"></i>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+							<i class="fa fa-plus"></i> 
+							<span class="hidden-xs">New Item</span>
+						</a>
+						
+						<ul class="dropdown-menu media-list pull-right animated fadeInDown">
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-star"></i> New Campaign</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-file-o"></i> New Page</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-compass"></i> New A/B Test</a>
+                            </li>
+                            
+                            
+						</ul>
+					</li>
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="assets/img/user-13.jpg" alt=""> 
+							<span class="hidden-xs">John Smith</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu animated fadeInLeft">
+							<li class="arrow"></li>
+							<li><a href="javascript:;">Edit Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:;">Log Out</a></li>
+						</ul>
+					</li>
+				</ul><!-- end header navigation right -->
+			</div>
+            <!-- end container-fluid -->
+		</div><!-- end #header -->
+		
+		<div id="sidebar" class="sidebar">			
+				
+			<ul class="nav">
+                <li class="">
+                    <button class="btn btn-success">						
+                        Compose
+                    </button>
+                </li>
+				
+				<li class="">
+					<a href="javascript:;">	
+                        <span class="badge pull-right">10</span>					
+						<i class="cpa-icon cpa-icon-inbox"></i>
+						<span>Inbox</span>
+					</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-edit"></i>
+						<span>Drafts</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-sent"></i>
+						<span>Sent</span>
+					</a>
+                </li>
+                <li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-cloud"></i>
+						<span>Archive</span>
+					</a>
+				</li>
+				
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-bin"></i>
+						<span>Trash</span>
+					</a>
+                </li>
+                <li class="">
+                        <hr>
+                    </li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-folderalt"></i>
+						<span>Company A</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-folderalt"></i> 
+						<span>Company B</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;" class="pull-right">
+						<i class="cpa-icon cpa-icon-add"></i> 
+						<span>New Folder</span>
+					</a>
+				</li>
+				
+				
+				
+				<!-- begin sidebar minify button -->
+				<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+				<!-- end sidebar minify button -->
+			</ul><!-- end sidebar nav -->
+			
+		</div>
+		<div class="sidebar-bg"></div><!-- end #sidebar -->
+		
+		<!-- begin #content -->
+
+		<div id="cpm-user-list-view" class="">
+			<!-- begin page-header -->
+			<div class="page-header">
+				<div class="content">
+					<form><button type="button" class="pull-left btn btn-default btn-back"><i class="cpa-icon cpa-icon-back"></i>&nbsp;</button></form>
+					<h1>View Email</h1><!-- end page-header -->	
+				</div>           				
+			</div><!-- end page-header -->
+
+			<div class="content">
+            		
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- begin btn-row -->
+					<div class="pagelist-btn-row clearfix">
+						<form>
+						<ul class="nav navbar-nav navbar-left">
+							<li>
+								<button type="button" class="btn btn-default">
+                                    <i class="cpa-icon cpa-icon-change"></i><span>Change Status</span>
+                                </button>
+							</li>
+							<li>
+								<button type="button" class="btn btn-default">
+                                    <i class="cpa-icon cpa-icon-folder"></i><span>Add Comment</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-default">
+                                    <i class="cpa-icon cpa-icon-edit"></i><span>Edit</span>
+                                </button>
+                            </li>
+                            <li class="dropdown">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <i class="cpa-icon cpa-icon-morealt"></i>
+                                    <span>More</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><button type="button" class="btn btn-link">Option</button></li>
+                                    <li><button type="button" class="btn btn-link">Option</button></li>
+                                    <li><button type="button" class="btn btn-link">Option</button></li>
+                                </ul>
+                            </li>
+							
+						</ul>
+						</form>
+                    </div><!-- end btn-row -->
+
+                                  
+                    <!-- begin list email--> 
+                    <div class="row">
+                        <div class="col-md-7">
+                              
+
+                            <section>
+								<div class="section-header clearfix">                            
+									<form>
+										<ul class="nav navbar-nav navbar-right">
+											<li>
+												<button type="button" class="btn btn-icon">
+													<i class="cpa-icon cpa-icon-replyall"></i>
+												</button>
+											</li>
+											<li>
+												<button type="button" class="btn btn-icon">
+													<i class="cpa-icon cpa-icon-forward"></i>
+												</button>
+											</li>
+											<li>
+												<button type="button" class="btn btn-icon">
+													<i class="cpa-icon cpa-icon-printer"></i>
+												</button>
+											</li>
+										</ul>
+									</form>
+									<h3>Some Email Subject Line</h3>
+								</div>  
+
+								<div class="email-listing">
+									<div class="pull-right">July the 19 at 8:00 a.m. (3 days ago)</div>
+
+									<p><strong>John Doe</strong> &lt;<a href="mailto:johndoe@hotmail.com">johndoe@hotmail.com</a>&gt;</p>
+									<p><strong>To:</strong> peterpan@hotmail.com</p>
+									
+									<p>
+									Dear Peter,<br />
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+									Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+									Tam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   
+									</p>
+									<p>Sincerely,<br />John Doe</p>  
+									
+									<hr>
+									
+									<div class="email-attachments">
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="email-attachments-item">
+													<div class="icon-thumb">
+														<i class="cpa-icon cpa-icon-document"></i>
+													</div>
+												
+													<div class="attachment-details">  
+														<div class="clearfix">                                                                                          
+															<button class="btn btn-link pull-right"><i class="cpa-icon cpa-icon-download"></i> Download</button>                                                
+															<span class="pull-left">JPG</span>                                                
+														</div>
+														<div class="clearfix">                                                                                          
+															<a href="#">filenameheasdasdasdrei...</a>                                               
+														</div>											
+														<div class="clearfix">                                                                                          
+															<div class="pull-right">4KB</div>
+															<div class="pull-left">6 days ago</div>                                                 
+														</div>                                                                                      
+													</div>
+												</div>
+											</div>
+										
+											<div class="col-sm-6">
+												<div class="email-attachments-item">
+													<div class="icon-thumb">
+														<i class="cpa-icon cpa-icon-document"></i>
+													</div>
+												
+													<div class="attachment-details">  
+														<div class="clearfix">                                                                                          
+															<button class="btn btn-link pull-right"><i class="cpa-icon cpa-icon-download"></i> Download</button>                                                
+															<span class="pull-left">JPG</span>                                                
+														</div>
+														<div class="clearfix">                                                                                          
+															<a href="#">filenameheasdasdasdrei...</a>                                               
+														</div>											
+														<div class="clearfix">                                                                                          
+															<div class="pull-right">4KB</div>
+															<div class="pull-left">6 days ago</div>                                                 
+														</div>                                                                                      
+													</div>
+												</div>
+											</div>
+
+											<div class="col-sm-6">
+												<div class="email-attachments-item">
+													<div class="icon-thumb">
+														<i class="cpa-icon cpa-icon-document"></i>
+													</div>
+												
+													<div class="attachment-details">  
+														<div class="clearfix">                                                                                          
+															<button class="btn btn-link pull-right"><i class="cpa-icon cpa-icon-download"></i> Download</button>                                                
+															<span class="pull-left">JPG</span>                                                
+														</div>
+														<div class="clearfix">                                                                                          
+															<a href="#">filenameheasdasdasdrei...</a>                                               
+														</div>											
+														<div class="clearfix">                                                                                          
+															<div class="pull-right">4KB</div>
+															<div class="pull-left">6 days ago</div>                                                 
+														</div>                                                                                      
+													</div>
+												</div>
+											</div>
+												
+											<div class="col-sm-6">
+												<div class="email-attachments-item">
+													<div class="icon-thumb">
+														<i class="cpa-icon cpa-icon-document"></i>
+													</div>
+													
+													<div class="attachment-details">  
+														<div class="clearfix">                                                                                          
+															<button class="btn btn-link pull-right"><i class="cpa-icon cpa-icon-download"></i> Download</button>                                                
+															<span class="pull-left">JPG</span>                                                
+														</div>
+														<div class="clearfix">                                                                                          
+															<a href="#">filenameheasdasdasdrei...</a>                                               
+														</div>											
+														<div class="clearfix">                                                                                          
+															<div class="pull-right">4KB</div>
+															<div class="pull-left">6 days ago</div>                                                 
+														</div>                                                                                      
+													</div>
+												</div>
+											</div>	
+											
+										</div>
+									</div>
+								</div>
+                            </section>                           
+							
+							<hr>
+
+							<section>
+								<div class="email-listing">
+									<div class="pull-right">July the 19 at 8:00 a.m. (3 days ago)</div>
+
+									<p><strong>John Doe</strong> &lt;<a href="mailto:johndoe@hotmail.com">johndoe@hotmail.com</a>&gt;</p>
+									<p><strong>To:</strong> peterpan@hotmail.com</p>
+									
+									<p>
+									Dear Peter,<br />
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+									Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+									Tam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   
+									</p>
+									<p>Sincerely,<br />John Doe</p>  
+								</div>                                  
+							</section>
+                            
+                        </div>
+
+                        <div class="col-md-4 col-md-offset-1">
+							<section>
+								<div class="section-header clearfix">                            
+									<h3>Dates &amp; Status</h3>
+								</div>
+								<ul class="list-group hanging-titles">
+									<li class="list-group-item">
+										<h5>Created:</h5>
+										<p>15 July 2017</p>
+									</li>
+									<li class="list-group-item">
+										<h5>Created:</h5>
+										<p>15 July 2017</p>
+									</li>
+									<li class="list-group-item">
+										<h5>Status:</h5>
+										<p>In Progress</p>
+									</li>
+								</ul>
+							</section>
+
+							<section>
+								<div class="section-header clearfix">                            
+									<h3>People</h3>
+								</div>
+								<ul class="list-group hanging-titles">
+									<li class="list-group-item">
+										<h5>Assigned to:</h5>
+										<p>John Smith</p>
+									</li>
+									<li class="list-group-item">
+										<h5>Assigned by:</h5>
+										<p>Peter Smith</p>
+									</li>
+								</ul>
+							</section>
+
+							<section>
+								<div class="section-header clearfix">                            
+									<h3>Time tracking</h3>
+								</div>
+								<ul class="list-group hanging-titles">
+									<li class="list-group-item">
+										<h5>Logged:</h5>
+										<p>15 min</p>
+									</li>
+								</ul>
+							</section> 
+							<section>
+								<div class="section-header clearfix">                            
+									<h3>Linked to</h3>
+								</div>
+								<ul class="list-group activity-labels">
+									<li class="list-group-item row">
+										<div class="col-xs-3">
+											<span class="label label-info">job</span>
+										</div>
+										<div class="col-xs-8">
+											<p><a href="#">Some sample job that is going on multiline for two lines</a></p>
+										</div>
+										<div class="col-xs-1">
+											<button class="btn btn-icon"><i class="cpa-icon cpa-icon-bin"></i></button>
+										</div>
+									</li>     
+									<li class="list-group-item row">
+										<div class="col-xs-3">
+											<span class="label label-success">client</span>
+										</div>
+										<div class="col-xs-8">
+											<p><a href="#">Some client name</a></p>
+										</div>
+										<div class="col-xs-1">
+											<button class="btn btn-icon"><i class="cpa-icon cpa-icon-bin"></i></button>
+										</div>
+									</li>   
+									                        
+								</ul>
+							</section>
+
+						</div>
+					</div>   
+					
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="section-header clearfix">                            
+								<h3>Activity</h3>
+							</div>
+							<ul class="nav nav-tabs">
+								<li class="active"><a data-toggle="tab" href="#comments">Comments</a></li>
+								<li><a data-toggle="tab" href="#timelog">Time Log</a></li>
+							</ul>
+							
+							<div class="tab-content">
+								<div id="comments" class="tab-pane fade in active">
+									<div class="panel-group" id="accordion">
+										<div class="panel panel-default">
+											<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1">
+											<h4 class="panel-title" >
+												<b class="caret"></b>
+												<i class="cpa-icon cpa-icon-users"></i>
+												<a href="#">Bill Smith</a>
+												<span>added a comment <small>17/Jul/2017 9:50PM</small> </span>
+											</h4>
+											</div>
+											<div id="collapse1" class="panel-collapse collapse in">
+											<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+											sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+											minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+											commodo consequat.</div>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading"  data-toggle="collapse" data-parent="#accordion" data-target="#collapse2">
+												<h4 class="panel-title" >
+													<b class="caret"></b>
+													<i class="cpa-icon cpa-icon-users"></i>
+													<a href="#">Bill Smith</a>
+													<span>added a comment <small>17/Jul/2017 9:50PM</small> </span>
+												</h4>
+											</div>
+											<div id="collapse2" class="panel-collapse collapse">
+											<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+											sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+											minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+											commodo consequat.</div>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading"  data-toggle="collapse" data-parent="#accordion" data-target="#collapse3">
+												<h4 class="panel-title" >
+													<b class="caret"></b>
+													<i class="cpa-icon cpa-icon-users"></i>
+													<a href="#">Bill Smith</a>
+													<span>added a comment <small>17/Jul/2017 9:50PM</small> </span>
+												</h4>
+											</div>
+											<div id="collapse3" class="panel-collapse collapse">
+											<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+											sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+											minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+											commodo consequat.</div>
+											</div>
+										</div>
+									</div>
+									<form><button class="btn btn-default"><i class="cpa-icon cpa-icon-comment"></i> Add comment</button></form>
+								</div>
+								<div id="timelog" class="tab-pane fade">
+									<div class="pagelist-content table-responsive">
+										<table class="table table-pagelist">
+											<thead>
+												<tr>
+													
+													<th>
+														<div class="">
+															<a href="#" class="pagelist-header-link">User <i class="cpa-icon cpa-icon-downtriangle"></i></a>
+														</div>
+													</th>
+													<th>
+														<div class="">
+															<a href="#" class="pagelist-header-link">Start Date/Time <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+														</div>
+													</th>
+													<th>
+														<div class="">
+															<a href="#" class="pagelist-header-link">End Date/Time <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+														</div>
+													</th>
+													<th>
+														<div class="">
+															<a href="#" class="pagelist-header-link">Duration <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+														</div>
+													</th>														
+													<th>
+														<div class="">
+															<a href="#" class="pagelist-header-link">User <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+														</div>
+													</th>
+													
+												</tr>
+											</thead>
+											<tbody>                                
+												<tr>
+													<td class=""><label><input type="checkbox"></label>John Doe</td>
+													<td class="">5-July-2017 8:12 a.m.</td>
+													<td class="">5-July-2017 8:12 a.m.</td>
+													<td class="">1 hrs 30 min </td>
+													<td class="">Completed Task 1</td>
+												</tr>                     																		
+												<tr>
+													<td class=""><label><input type="checkbox"></label>John Doe</td>
+													<td class="">5-July-2017 8:12 a.m.</td>
+													<td class="">5-July-2017 8:12 a.m.</td>
+													<td class="">1 hrs 30 min </td>
+													<td class="">Completed Task 1</td>
+												</tr>																	
+											</tbody>
+										</table>
+										<form><button class="btn btn-default"><i class="cpa-icon cpa-icon-time"></i> Log more time</button></form>
+										
+									</div>
+								</div>
+							</div>
+						</div>						
+					</div> 
+					
+			    </div>
+
+			</div><!-- end row -->
+			</div>
+		 
+		</div><!-- end #content -->
+		<div class="modal modal-timer fade in" id="modal-timer">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Add Timer</h4>
+					</div>
+					<div class="modal-body timer-dial">
+						00:00:00
+					</div>
+					<div class="modal-body clearfix">
+						<div class="col-xs-12">
+							<form class="form-horizontal" action="/" method="POST">
+								<div class="form-group">
+									<select class="form-control" id="">
+										<option value="" selected>Select job</option>
+										<option value="1">File Tax Return</option>
+										<option value="2">File 941 Return</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<select class="form-control" id="">
+										<option value="" selected>Select task</option>
+										<option value="1">File Tax Return</option>
+										<option value="2">File 941 Return</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="col-xs-4">Is it billable?</label>
+									<div class="col-xs-8">
+										<label class="radio-inline">
+											<input type="radio" name="optradio">Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="optradio">No
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="">
+										<textarea class="form-control" rows="4" placeholder="Comments"></textarea>
+									</div>
+								</div>
+
+							</form>
+						</div>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="javascript:;" class="btn btn-success">Start</a>
+						<a href="javascript:;" class="btn btn-white" data-dismiss="modal">Close</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>	
+	<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    
+	<!-- Include Date Picker -->
+	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script src="assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+    <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+	<script src="assets/js/scripts.js"></script>
+    
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+	<script src="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+	<script type="text/javascript">
+  $('tbody').sortable();
+</script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+</body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CPA TodoBox | Page Name</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Mater,ial+Icons" rel="stylesheet">
+	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-cpapm/css/fontello.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
+	<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />	
+	<link href="assets/css/animate.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css" rel="stylesheet">
+   
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+</head>
+<body>
+	
+	<div id="page-container" class="page-sidebar-fixed page-header-fixed">
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+            <div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"> <span>CPA TodoBox</span> </a>
+					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div><!-- sandwich end -->
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+                        <form class="navbar-form full-width">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter keyword">
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+					</li>
+					<li class="">
+						<a href="#modal-timer" class="timer-toggle animated infinite timer" data-toggle="modal">
+							<i class="cpa-icon cpa-icon-time"></i>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+							<i class="fa fa-plus"></i> 
+							<span class="hidden-xs">New Item</span>
+						</a>
+						
+						<ul class="dropdown-menu media-list pull-right animated fadeInDown">
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-star"></i> New Campaign</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-file-o"></i> New Page</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-compass"></i> New A/B Test</a>
+                            </li>
+                            
+                            
+						</ul>
+					</li>
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="assets/img/user-13.jpg" alt=""> 
+							<span class="hidden-xs">John Smith</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu animated fadeInLeft">
+							<li class="arrow"></li>
+							<li><a href="javascript:;">Edit Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:;">Log Out</a></li>
+						</ul>
+					</li>
+				</ul><!-- end header navigation right -->
+			</div>
+            <!-- end container-fluid -->
+		</div><!-- end #header -->
+		
+		<div id="sidebar" class="sidebar">			
+				
+			<ul class="nav">
+				
+				<li class="">
+					<a href="javascript:;">						
+						<i class="cpa-icon cpa-icon-meter"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-task"></i>
+						<span>Jobs</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-progress"></i>
+						<span>Tasks</span>
+					</a>
+                </li>
+                <li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-calendar"></i>
+						<span>Calendar</span>
+					</a>
+				</li>
+				
+				<li class="has-sub">
+					<a href="javascript:;">
+						<b class="caret pull-right"></b>
+						<i class="cpa-icon cpa-icon-chartbar"></i>
+						<span>Reports</span>
+					</a>
+
+					<ul class="sub-menu">
+						<li><a href="#">Report 1</a></li>
+						<li><a href="#">Report 2</a></li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-template"></i>
+						<span>Templates</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-briefcase"></i> 
+						<span>Clients</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-users"></i> 
+						<span>Users</span>
+					</a>
+				</li>
+				
+				
+				
+				<!-- begin sidebar minify button -->
+				<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+				<!-- end sidebar minify button -->
+			</ul><!-- end sidebar nav -->
+			
+		</div>
+		<div class="sidebar-bg"></div><!-- end #sidebar -->
+		
+		<!-- begin #content -->
+
+		<div id="" class="">
+			<!-- begin page-header -->
+			<div class="page-header">
+				<div class="content">
+					<h1>Sample Job Name</h1><!-- end page-header -->	
+				</div>           				
+			</div><!-- end page-header -->
+
+			<div class="tab-row">
+				<div class="content">
+					<form>
+						<ul class="nav nav-tabs">
+							<li><button>Details</button></li>
+							<li><button>Tasks</button></li>
+							<li class="active"><button>Documents</button></li>
+							<li><button>Time</button></li>
+							<li><button>Comments</button></li>
+							<li><button>Activity</button></li>
+						</ul>	
+					</form>
+				</div>           				
+			</div><!-- end tab-row -->
+
+			<div class="content">
+            		
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- begin #upload-form -->
+					<div id="upload-form" class="upload-form"> 
+						<form class="" action="/" method="POST">							                             
+							<div class="dropzone dz-clickable" id="dropzone">
+								<div class="dz-message needsclick" id="dropzone-dropfiles" data-target="#file-upload-table" data-toggle="collapse">
+									Drop files here or click to upload									
+								</div> 								
+							</div>
+
+							<div class="row upload-table collapse" id="file-upload-table" aria-expanded="true">
+								<div class="col-sm-8 file-list">
+									<table class="table table-pagelist">															
+										<tbody>                                
+											<tr>
+												<td>Sample File 1.txt</td>																
+												<td>12 Kb</td>
+												
+												<td class="tr-actions">
+													<div class="btn-group">	
+														<button type="button" class="close" aria-hidden="true">×</button>								
+													</div>
+												</td>																
+											</tr>
+											<tr>
+												<td>Sample File 2.txt</td>																
+												<td>12 Kb</td>
+												
+												<td class="tr-actions">
+													<div class="btn-group">	
+														<button type="button" class="close" aria-hidden="true">×</button>								
+													</div>
+												</td>																
+											</tr>	
+											<tr>
+												<td>Sample File 3.txt</td>																
+												<td>12 Kb</td>
+												
+												<td class="tr-actions">
+													<div class="btn-group">	
+														<button type="button" class="close" aria-hidden="true">×</button>								
+													</div>
+												</td>																
+											</tr>																									
+										</tbody>
+									</table>
+								</div>
+
+								
+								<div class="col-sm-4 file-upload-controls">
+									<div class="form-group col-xs-12">
+										<select name="" id="" class="form-control">
+											<option value="">Job folder</option>
+											<option value="">Task 1 Name</option>
+											<option value="">Task 2 Name</option>
+										</select>
+									</div>	
+									
+									<div class="form-group col-xs-12">
+										<button type="button" class="btn btn-success" data-toggle="collapse" 
+											data-target="#file-upload-table, #file-upload-progress">Upload</button>
+										<button type="button" class="btn btn-default" data-toggle="collapse" data-target="#file-upload-table, #file-table">Cancel</button>
+									</div>
+								</div>									
+							
+							</div>
+
+							<div class="row file-upload-progress collapse" id="file-upload-progress" aria-expanded="true" style="">
+								<div class="col-sm-10">
+									<div class="progress progress-lg active">
+										<div class="progress-bar progress-bar-success" style="width:100%;">
+											SampleFile1.txt
+										</div>
+										<button type="button" class="close dismiss-file" aria-hidden="true">×</button>
+									</div>
+								
+									<div class="progress progress-lg active">
+										<div class="progress-bar progress-bar-success" style="width:50%;">
+											SampleFile1.txt
+										</div>
+										<button type="button" class="close dismiss-file" aria-hidden="true">×</button>
+									</div>
+
+									<div class="progress progress-lg active">
+										<div class="progress-bar progress-bar-success" style="width:0%;">
+											SampleFile3.txt
+										</div>
+										<button type="button" class="close dismiss-file" aria-hidden="true">×</button>
+									</div>
+								</div>	
+							</div>
+						</form>
+                    </div>    
+					
+					<!-- begin page-list-table Ungrouped-->                    
+					<div class="pagelist-content table-responsive">
+						<table class="table table-pagelist">
+							<thead>
+								<tr>									
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link sorted">Filename <i class="cpa-icon cpa-icon-downtriangle"></i></a>
+										</div>
+									</th>
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Size <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+									</th>
+
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Date Uploaded <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+									</th>
+									
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Assigned to <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+									</th>	
+
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">&nbsp;</a>                                            
+										</div>
+									</th>
+								</tr>
+							</thead>
+
+							<!-- Table Section -->
+							<tbody class="tsection-spacer">
+								<tr>                                        
+									<td colspan="10"></td>
+								</tr>
+							</tbody>
+
+                            <thead class="tsection-header">
+								<tr>                                        
+									<th>Job Folder</th>
+									<th></th>
+									<th></th>
+									<th></th>									
+									<th></th>
+								</tr>
+							</thead>
+							<tbody class="tsection-body">
+								<tr>
+									<td>File Name1.txt</td>
+									<td>1 MB</td>
+									<td>11 Oct 2017</td>
+									<td>Billy Johnon</td>
+									<td class="tr-actions">
+										<div class="btn-group">
+											<button type="button" class="btn btn-icon">
+													<i class="cpa-icon cpa-icon-downloadalt"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-editFile" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-edit"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-deletefile" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-bin"></i>
+											</button>																				
+										</div>
+									</td>
+								</tr>								
+								<tr>
+									<td>File Name 2.php</td>
+									<td>12 KB</td>
+									<td>19 Oct 2017</td>
+									<td>Jeremy Johnes</td>
+									<td class="tr-actions">
+										<div class="btn-group">
+											<button type="button" class="btn btn-icon">
+												<i class="cpa-icon cpa-icon-downloadalt"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-editFile" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-edit"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-deletefile" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-bin"></i>
+											</button>										
+										</div>
+									</td>
+								</tr>															
+							</tbody>
+
+
+							<!-- Table Section -->
+							<tbody class="tsection-spacer">
+								<tr>                                        
+									<td colspan="10"></td>
+								</tr>
+							</tbody>							
+                            <thead class="tsection-header">
+								<tr>                                        
+									<th>Task 1 Name</th>
+									<th></th>
+									<th></th>
+									<th></th>									
+									<th></th>
+								</tr>
+							</thead>
+							<tbody class="tsection-body">
+								<tr>
+									<td>File Name3.txt</td>
+									<td>1 MB</td>
+									<td>11 Oct 2017</td>
+									<td>Billy Johnon</td>
+									<td class="tr-actions">
+										<div class="btn-group">
+											<button type="button" class="btn btn-icon">
+													<i class="cpa-icon cpa-icon-downloadalt"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-editFile" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-edit"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-deletefile" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-bin"></i>
+											</button>																				
+										</div>
+									</td>
+								</tr>								
+								<tr>
+									<td>File Name 4.php</td>
+									<td>12 KB</td>
+									<td>19 Oct 2017</td>
+									<td>Jeremy Johnes</td>
+									<td class="tr-actions">
+										<div class="btn-group">
+											<button type="button" class="btn btn-icon">
+												<i class="cpa-icon cpa-icon-downloadalt"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-editFile" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-edit"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-deletefile" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-bin"></i>
+											</button>										
+										</div>
+									</td>
+								</tr>															
+							</tbody>
+
+							
+							
+							<!-- Table Section New Section -->
+							<tbody class="tsection-spacer">
+								<tr>                                        
+									<td colspan="10"></td>
+								</tr>
+							</tbody>
+							<thead class="tsection-header">
+								<tr>                                        
+									<th>Task 2 Name</th>
+									<th></th>
+									<th></th>
+									<th></th>									
+									<th></th>
+								</tr>
+							</thead>
+							<tbody class="tsection-body">
+								<tr>
+									<td>File Name5.txt</td>
+									<td>1 MB</td>
+									<td>11 Oct 2017</td>
+									<td>Billy Johnon</td>
+									<td class="tr-actions">
+										<div class="btn-group">
+											<button type="button" class="btn btn-icon">
+													<i class="cpa-icon cpa-icon-downloadalt"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-editFile" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-edit"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-deletefile" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-bin"></i>
+											</button>																				
+										</div>
+									</td>
+								</tr>								
+								<tr>
+									<td>File Name 6.php</td>
+									<td>12 KB</td>
+									<td>19 Oct 2017</td>
+									<td>Jeremy Johnes</td>
+									<td class="tr-actions">
+										<div class="btn-group">
+											<button type="button" class="btn btn-icon">
+												<i class="cpa-icon cpa-icon-downloadalt"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-editFile" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-edit"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-deletefile" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-bin"></i>
+											</button>									
+										</div>
+									</td>
+								</tr>															
+							</tbody>
+							<tbody class="tsection-spacer">
+								<tr>                                        
+									<td colspan="10"></td>
+								</tr>
+							</tbody>
+                            							
+							
+						</table>
+						
+					</div><!-- end page-list-table Ungrouped -->
+			    </div>
+
+			</div><!-- end row -->
+			</div>
+		</div><!-- end #content -->
+
+		<div class="modal modal-editFile modal-primary fade in" id="modal-editFile">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Edit File</h4>
+					</div>
+					<div class="modal-body p0 clearfix">						
+						<form action="/" method="" class="form-horizontal">		
+							<section id="billing" class="panel-group">
+								<div class="panel">
+								<fieldset>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">File Name: </label>
+										<div class="col-sm-9">
+											<div class="input-group" id="">
+												<input type="text" class="form-control" placeholder="">
+												<span class="input-group-addon">.txt</span>
+											</div>																				
+										</div>	
+									</div>
+								</fieldset>
+								<fieldset>
+									
+									<div class="form-group">
+										<legend>Assign To</legend>
+										<label class="col-sm-3 control-label">Job: </label>
+										<div class="col-sm-6 input-block">
+											<select class="form-control " id="">
+												<option value="" selected="">--Select Job --</option>
+												<option value="1">Job Name</option>
+												<option value="2">Job Name</option>
+												<option value="3">Job Name</option>
+												<option value="4">Job Name</option>
+												<option value="5">Job Name</option>
+											</select>
+										</div>	
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Task: </label>
+										<div class="col-sm-6 input-block">
+											<select class="form-control " id="">
+												<option value="" selected="">--Select Task --</option>
+												<option value="1">Task Name</option>
+												<option value="2">Task Name</option>
+												<option value="3">Task Name</option>
+												<option value="4">Task Name</option>
+												<option value="5">Task Name</option>
+											</select>
+										</div>	
+									</div>
+								</fieldset>
+								
+								
+
+								<fieldset class="action-bar">												
+									<button type="submit" class="btn btn-success">Save</button>
+									<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
+								</fieldset>	
+								</div>
+
+							</section>						
+						</form>					
+					</div>
+					
+				</div>
+			</div>
+		</div>	
+
+		<div class="modal modal-delete fade in" id="modal-deletefile">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Delete File</h4>
+					</div>
+					
+					<div class="modal-body clearfix">
+						<section>
+							<i class="cpa-icon cpa-icon-attention pull-left icon-thumb"></i>
+							<p>Are you sure you want to delete this file?</p>	
+						</section>					
+					</div>
+					
+					<div class="modal-footer">
+						<form>
+							<fieldset>													
+								<button type="submit" class="btn btn-danger">Delete</button>
+								<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>			
+							</fieldset>
+						</form>						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		
+	</div>
+	
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>	
+	<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    
+	<!-- Include Date Picker -->
+	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script src="assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+    <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+	<script src="assets/js/scripts.js"></script>
+    
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+	<script src="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+	
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+</body>
+</html>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CPA TodoBox | Page Name</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Mater,ial+Icons" rel="stylesheet">
+	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-cpapm/css/fontello.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
+	<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />	
+	<link href="assets/css/animate.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css" rel="stylesheet">
+   
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+</head>
+<body>
+	
+	<div id="page-container" class="page-sidebar-fixed page-header-fixed">
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+            <div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"> <span>CPA TodoBox</span> </a>
+					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div><!-- sandwich end -->
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+                        <form class="navbar-form full-width">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter keyword">
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+					</li>
+					<li class="">
+						<a href="#modal-timer" class="timer-toggle animated infinite timer" data-toggle="modal">
+							<i class="cpa-icon cpa-icon-time"></i>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+							<i class="fa fa-plus"></i> 
+							<span class="hidden-xs">New Item</span>
+						</a>
+						
+						<ul class="dropdown-menu media-list pull-right animated fadeInDown">
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-star"></i> New Campaign</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-file-o"></i> New Page</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-compass"></i> New A/B Test</a>
+                            </li>
+                            
+                            
+						</ul>
+					</li>
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="assets/img/user-13.jpg" alt=""> 
+							<span class="hidden-xs">John Smith</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu animated fadeInLeft">
+							<li class="arrow"></li>
+							<li><a href="javascript:;">Edit Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:;">Log Out</a></li>
+						</ul>
+					</li>
+				</ul><!-- end header navigation right -->
+			</div>
+            <!-- end container-fluid -->
+		</div><!-- end #header -->
+		
+		<div id="sidebar" class="sidebar">			
+				
+			<ul class="nav">
+				
+				<li class="">
+					<a href="javascript:;">						
+						<i class="cpa-icon cpa-icon-meter"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-task"></i>
+						<span>Jobs</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-progress"></i>
+						<span>Tasks</span>
+					</a>
+                </li>
+                <li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-calendar"></i>
+						<span>Calendar</span>
+					</a>
+				</li>
+				
+				<li class="has-sub">
+					<a href="javascript:;">
+						<b class="caret pull-right"></b>
+						<i class="cpa-icon cpa-icon-chartbar"></i>
+						<span>Reports</span>
+					</a>
+
+					<ul class="sub-menu">
+						<li><a href="#">Report 1</a></li>
+						<li><a href="#">Report 2</a></li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-template"></i>
+						<span>Templates</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-briefcase"></i> 
+						<span>Clients</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-users"></i> 
+						<span>Users</span>
+					</a>
+				</li>
+				
+				
+				
+				<!-- begin sidebar minify button -->
+				<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+				<!-- end sidebar minify button -->
+			</ul><!-- end sidebar nav -->
+			
+		</div>
+		<div class="sidebar-bg"></div><!-- end #sidebar -->
+		
+		<!-- begin #content -->
+
+		<div id="" class="">
+			<!-- begin page-header -->
+			<div class="page-header">
+				<div class="content">
+					<h1>Jobs</h1><!-- end page-header -->	
+				</div>           				
+			</div><!-- end page-header -->
+
+			<div class="tab-row">
+				<div class="content">
+					<form>
+						<ul class="nav nav-tabs">
+							<li class="active"><button>Single</button></li>
+							<li><button>Recurring</button></li>
+							<li><button>Archived</button></li>
+						</ul>	
+					</form>
+				</div>           				
+			</div><!-- end tab-row -->
+
+			<div class="content">
+            		
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- begin btn-row -->
+					<div class="pagelist-btn-row clearfix">
+						<form>
+							<ul class="nav navbar-nav navbar-left">
+								<li>
+									<button type="button" class="btn btn-success" data-target="#modal-timer" data-toggle="modal"><i class="cpa-icon cpa-icon-time"></i><span>Start Timer</span></button>
+								</li>
+								<li>
+									<button type="button" data-target="#modal-addTime" data-toggle="modal" class="btn btn-default btn-toggle-filter"><i class="cpa-icon cpa-icon-add"></i><span>Add time</span></button>
+								</li>
+							</ul>  
+						</form>
+
+						<form>
+							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="cpa-icon cpa-icon-columns"></i><span> <span class="caret"></span></button>
+									<ul class="dropdown-menu dropdown-padding">
+										<li><input type="checkbox"><label> Column Name</label></li>
+										<li><input type="checkbox"><label> Column Name</label></li>
+										<li><input type="checkbox"><label> Column Name</label></li>
+										<li><input type="checkbox"><label> Column Name</label></li>
+										<li><button type="button" class="btn btn-default">Apply</button></li>
+									</ul>
+								</li>
+							</ul>	
+						</form>						
+					</div><!-- end btn-row -->
+
+					<!-- begin page-list-table Ungrouped-->                    
+					<div class="pagelist-content table-responsive">
+                        <table class="table table-pagelist">
+                            <thead>
+                                <tr>									
+                                    <th>
+                                        <div class="">
+                                            <a href="#" class="pagelist-header-link sorted">Date <i class="cpa-icon cpa-icon-downtriangle"></i></a>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="">
+                                            <a href="#" class="pagelist-header-link">Time Alloc <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+                                        </div>
+                                    </th>
+
+                                    <th>
+                                        <div class="">
+                                            <a href="#" class="pagelist-header-link">Notes <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+                                        </div>
+                                    </th>
+                                    
+                                    <th>
+                                        <div class="">
+                                            <a href="#" class="pagelist-header-link">User <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+                                        </div>
+                                    </th>
+                                    
+                                    <th>
+                                        <div class="">
+                                            <a href="#" class="pagelist-header-link">&nbsp;</a>                                            
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <!-- Table Section -->
+                            <tbody class="tsection-spacer">
+                                <tr>                                        
+                                    <td colspan="10"></td>
+                                </tr>
+                            </tbody>
+                            
+                            <thead class="tsection-header">
+                                <tr>                                        
+                                    <th colspan="10">
+                                        <div class="tsection-header-panel clearfix">
+                                            <div class="tsection-header-title pull-left">
+                                                <span>Job</span>
+                                            </div>                                                    
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="tsection-body">
+                                <tr>
+                                    <td>11 Oct 2017</td>
+                                    <td>3 hrs 15 min</td>
+                                    <td>Called documents from client</td>
+                                    <td>Billy Johnon</td>
+                                    <td class="tr-actions">
+                                        <div class="btn-group">											
+                                            <button type="button" class="btn btn-icon" data-target="#modal-editTime" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-edit"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-delete-timeRecord" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-bin"></i>
+                                            </button>										
+                                        </div>
+                                    </td>
+                                </tr>	
+                                <tr>
+                                    <td>11 Oct 2017</td>
+                                    <td>3 hrs 15 min</td>
+                                    <td>Called documents from client</td>
+                                    <td>Billy Johnon</td>
+                                    <td class="tr-actions">
+                                        <div class="btn-group">											
+                                            <button type="button" class="btn btn-icon" data-target="#modal-editTime" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-edit"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-delete-timeRecord" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-bin"></i>
+                                            </button>									
+                                        </div>
+                                    </td>
+                                </tr>													
+                            </tbody>
+
+                            <tbody class="tsection-footer">
+                                <tr>
+                                    <td colspan="10">
+                                        <div class="tsection-footer-panel clearfix">
+                                            <div class="col-01">
+                                                <strong>TOTAL:</strong> 3 hrs 15 min
+                                            </div>
+                                        </div>
+                                    </td>                                    
+                                </tr>	
+                            </tbody>   
+
+                            <!-- Table Section -->
+                            <tbody class="tsection-spacer">
+                                <tr>                                        
+                                    <td colspan="10"></td>
+                                </tr>
+                            </tbody>
+                            
+                            <thead class="tsection-header">
+                                <tr>                                        
+                                    <th colspan="10">
+                                        <div class="tsection-header-panel clearfix">
+                                            <div class="tsection-header-title pull-left">
+                                                <span>Task 1 Name</span>
+                                            </div>                                                    
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="tsection-body">
+                                <tr>
+                                    <td>11 Oct 2017</td>
+                                    <td>3 hrs 15 min</td>
+                                    <td>Called documents from client</td>
+                                    <td>Billy Johnon</td>
+                                    <td class="tr-actions">
+                                        <div class="btn-group">											
+                                            <button type="button" class="btn btn-icon" data-target="#modal-editTime" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-edit"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-delete-timeRecord" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-bin"></i>
+                                            </button>										
+                                        </div>
+                                    </td>
+                                </tr>	
+                                <tr>
+                                    <td>11 Oct 2017</td>
+                                    <td>3 hrs 15 min</td>
+                                    <td>Called documents from client</td>
+                                    <td>Billy Johnon</td>
+                                    <td class="tr-actions">
+                                        <div class="btn-group">											
+                                            <button type="button" class="btn btn-icon" data-target="#modal-editTime" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-edit"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-delete-timeRecord" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-bin"></i>
+                                            </button>									
+                                        </div>
+                                    </td>
+                                </tr>													
+                            </tbody>
+
+                            <tbody class="tsection-footer">
+                                <tr>
+                                    <td colspan="10">
+                                        <div class="tsection-footer-panel clearfix">
+                                            <div class="col-01">
+                                                <strong>TOTAL:</strong> 3 hrs 15 min
+                                            </div>
+                                        </div>
+                                    </td>                                    
+                                </tr>	
+                            </tbody> 
+                            
+                            <!-- Table Section -->
+                            <tbody class="tsection-spacer">
+                                <tr>                                        
+                                    <td colspan="10"></td>
+                                </tr>
+                            </tbody>
+                            
+                            <thead class="tsection-header">
+                                <tr>                                        
+                                    <th colspan="10">
+                                        <div class="tsection-header-panel clearfix">
+                                            <div class="tsection-header-title col-01">
+                                                <span>GRAND TOTAL: 3 hrs 15 min</span>
+                                            </div>                                                    
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody class="tsection-spacer">
+                                <tr>                                        
+                                    <td colspan="10"></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+						
+					</div><!-- end page-list-table Ungrouped -->
+			    </div>
+
+			</div><!-- end row -->
+			</div>
+		</div><!-- end #content -->
+
+		<div class="modal modal-addTime modal-primary fade in" id="modal-addTime">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Add Time Record</h4>
+					</div>
+					<div class="modal-body p0 clearfix">						
+						<form action="/" method="" class="form-horizontal">		
+							<section id="billing" class="panel-group">
+								<div class="panel">
+								<fieldset>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Started: </label>
+										<div class="col-sm-9">
+											
+											<div class="col-sm-4 form-inline">
+												<div class="input-group date" id="timerecord-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
+													<input type="text" class="form-control" placeholder="">
+													<span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
+												</div>
+											</div>
+											<div class="col-sm-3 form-inline">
+												<input type="text" class="form-control" size="1"><span> : </span><input type="text" class="form-control" size="1">
+											</div>
+											<div class="col-sm-4 form-inline">
+												<label class="radio"><input type="radio" class="form-control" name="ampm">a.m.</label>
+												<label class="radio"><input type="radio" class="form-control" name="ampm" >p.m</label>
+											</div>													
+																						
+										</div>	
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Time Worked: </label>
+										<div class="col-sm-2 input-block">												
+											<input type="text" class="form-control">												
+										</div>
+										<div class="col-sm-1 help-block">hrs</div>	
+										<div class="col-sm-2 input-block">												
+											<input type="text" class="form-control" >											
+										</div>
+										<div class="col-sm-1 help-block">min</div>	
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Notes: </label>
+										<div class="col-sm-9 input-block">
+											<textarea class="form-control" rows="4" placeholder=""></textarea>
+										</div>	
+									</div>
+								</fieldset>							
+
+								<fieldset class="action-bar">												
+									<button type="submit" class="btn btn-success">Save</button>
+									<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
+								</fieldset>	
+								</div>
+
+							</section>						
+						</form>					
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="modal modal-editTime modal-primary fade in" id="modal-editTime">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Edit Time Record</h4>
+					</div>
+					<div class="modal-body p0 clearfix">						
+						<form action="/" method="" class="form-horizontal">		
+							<section id="billing" class="panel-group">
+								<div class="panel">
+								<fieldset>
+									<div class="form-group disabled">
+										<label class="col-sm-3 control-label">Person: </label>
+										<div class="col-sm-6 input-block">
+											<input type="text" class="form-control" disabled placeholder="Jeremy Johnes">												
+										</div>											
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Started: </label>
+										<div class="col-sm-9">
+											
+											<div class="col-sm-4 form-inline">
+												<div class="input-group date" id="timerecord-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
+													<input type="text" class="form-control" placeholder="">
+													<span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
+												</div>
+											</div>
+											<div class="col-sm-3 form-inline">
+												<input type="text" class="form-control" size="1"><span> : </span><input type="text" class="form-control" size="1">
+											</div>
+											<div class="col-sm-4 form-inline">
+												<label class="radio"><input type="radio" class="form-control" name="ampm">a.m.</label>
+												<label class="radio"><input type="radio" class="form-control" name="ampm" >p.m</label>
+											</div>													
+																					
+										</div>	
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Time Worked: </label>
+										<div class="col-sm-2 input-block">												
+											<input type="text" class="form-control">												
+										</div>
+										<div class="col-sm-1 help-block">hrs</div>	
+										<div class="col-sm-2 input-block">												
+											<input type="text" class="form-control" >											
+										</div>
+										<div class="col-sm-1 help-block">min</div>	
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Notes: </label>
+										<div class="col-sm-9 input-block">
+											<textarea class="form-control" rows="4" placeholder=""></textarea>
+										</div>	
+									</div>
+								</fieldset>
+								
+								
+
+								<fieldset class="action-bar">												
+									<button type="submit" class="btn btn-success">Save</button>
+									<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
+								</fieldset>	
+								</div>
+
+							</section>						
+						</form>					
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="modal modal-delete fade in" id="modal-delete-timeRecord">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Delete Time Record</h4>
+					</div>
+					
+					<div class="modal-body clearfix">
+						<section>
+							<i class="cpa-icon cpa-icon-attention pull-left icon-thumb"></i>
+							<p>Are you sure you want to delete this time record?</p>	
+						</section>					
+					</div>
+					
+					<div class="modal-footer">
+						<form>
+							<fieldset>													
+								<button type="submit" class="btn btn-danger">Delete</button>
+								<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>			
+							</fieldset>
+						</form>						
+					</div>
+				</div>
+			</div>
+        </div>
+
+        <div class="modal modal-timer modal-primary fade in" id="modal-timer">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Add Timer</h4>
+                    </div>
+                    <div class="modal-body timer-dial">
+                        00:00:00
+                    </div>
+                    <div class="modal-body p0 clearfix">                        
+                        <form class="form-horizontal" action="/" method="">
+                            <section>
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Job: </label>
+                                        <div class="col-sm-9 input-block">
+                                            <select class="form-control" id="">
+                                                <option value="" selected="">Please Select</option>
+                                                <option value="1">File Tax Return</option>
+                                                <option value="2">File 941 Return</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Task: </label>
+                                        <div class="col-sm-9 input-block">
+                                            <select class="form-control" id="">
+                                                <option value="" selected="">Please Select</option>
+                                                <option value="1">File Tax Return</option>
+                                                <option value="2">File 941 Return</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Is it billable? </label>
+                                        <div class="col-sm-9 input-block">                                        
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optradio">Yes
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optradio">No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Comments: </label>
+                                        <div class="col-sm-9 input-block">
+                                            <textarea class="form-control" rows="4" placeholder="Comments"></textarea>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="action-bar">												
+                                    <button type="submit" class="btn btn-success">Start</button>
+                                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>									
+                                </fieldset>	
+                            </section>
+                        </form> 
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+		
+	</div>
+	
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>	
+	<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    
+	<!-- Include Date Picker -->
+	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script src="assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+    <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+	<script src="assets/js/scripts.js"></script>
+    
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+	<script src="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+	
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+</body>
+</html>
