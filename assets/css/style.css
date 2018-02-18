@@ -1730,6 +1730,11 @@ tr:hover > .tr-actions .btn-group {visibility: visible;}
 
 .panel-comments .accordion {margin-bottom: 0px;}
 
+.panel-collapse section.panel-group {padding: 15px; margin-bottom: 0px;}
+.panel-collapse .panel {box-shadow: none;}
+.panel-collapse .table-pagelist {margin-bottom: 8px;}
+.panel-heading .header-details span {font-weight: 400; color: #4c616b; opacity: 0.54;}
+
  
 
 .vertical-box {
