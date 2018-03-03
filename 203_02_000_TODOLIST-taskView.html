@@ -14,7 +14,8 @@
 	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 	<link href="assets/plugins/font-cpapm/css/fontello.css" rel="stylesheet" />
-	<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+    <link href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+    <link href="assets/plugins/bootstrap-eonasdan-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 	<link href="assets/css/animate.css" rel="stylesheet" />
 	<link href="assets/css/style.css" rel="stylesheet" />
 	<link href="assets/css/style-responsive.css" rel="stylesheet" />
@@ -222,12 +223,12 @@
 						<form>
 						<ul class="nav navbar-nav navbar-left">
 							<li>
-								<button type="button" class="btn btn-default">
+								<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-changeStatus">
                                     <i class="cpa-icon cpa-icon-change"></i><span>Change Status</span>
                                 </button>
 							</li>
 							<li>
-								<button type="button" class="btn btn-default">
+								<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-addTime">
                                     <i class="cpa-icon cpa-icon-timetwo"></i><span>Add Time</span>
                                 </button>
                             </li>
@@ -258,7 +259,6 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="pagelist-content">
-
                                 <div class="row panel-pagelist">
                                     <div class="col-xs-12">
                                         <div class="panel-group">
@@ -848,13 +848,14 @@
                                                     <span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-3 form-inline">
-                                                <input type="text" class="form-control" size="1"><span> : </span><input type="text" class="form-control" size="1">
-                                            </div>
                                             <div class="col-sm-4 form-inline">
-                                                <label class="radio"><input type="radio" class="form-control" name="ampm">a.m.</label>
-                                                <label class="radio"><input type="radio" class="form-control" name="ampm">p.m</label>
-                                            </div>													
+                                            <div class="input-group date" id="timerecord-time">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-addon">
+                                                    <span class="cpa-icon cpa-icon-timetwo"></span>
+                                                </span>
+                                            </div>
+                                            </div>												
                                                                                         
                                         </div>	
                                     </div>
@@ -1116,6 +1117,57 @@
             </div>
         </div>
 
+        <div class="modal modal-changeStatus modal-primary fade" id="modal-changeStatus">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Change Status</h4>
+                    </div>
+                    <div class="modal-body p0 clearfix">						
+                        <form action="/" method="" class="form-horizontal">		
+                            <section id="billing" class="panel-group">
+                                <div class="panel">
+                                <fieldset>
+                                    <div class="form-group disabled">
+                                        <label class="col-sm-3 control-label">Task Name: </label>
+                                        <div class="col-sm-9 help-block">Some task Name</div>
+                                    </div>                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Current Status: </label>
+                                        <div class="col-sm-9 help-block">In Progress</div>	
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">New Status: </label>
+                                        <div class="col-sm-6 input-block">
+                                            <select class="form-control " id="">
+                                                <option value="" selected="">--Select Status --</option>
+                                                <option value="1">Status Name</option>
+                                                <option value="2">Status Name</option>
+                                                <option value="3">Status Name</option>
+                                                <option value="4">Status Name</option>
+                                                <option value="5">Status Name</option>
+                                            </select>
+                                        </div>	
+                                    </div>
+                                </fieldset>
+                                
+                                
+
+                                <fieldset class="action-bar">												
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
+                                </fieldset>	
+                                </div>
+
+                            </section>						
+                        </form>					
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
 
 	</div>
 	
@@ -1131,6 +1183,9 @@
     <!-- Include Date Range Picker -->
     <script src="assets/plugins/bootstrap-daterangepicker/moment.js"></script>
     <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    
+    <!-- Include Date Time Picker -->
+    <script src="assets/plugins/bootstrap-eonasdan-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 
 	<script src="assets/js/scripts.js"></script>
     

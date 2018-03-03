@@ -136,3 +136,9 @@
 .cpa-icon-change:before { content: '\e839'; } /* '' */
 .cpa-icon-downloadalt:before { content: '\e83a'; } /* '' */
 .cpa-icon-clipboard:before { content: '\e83b'; } /* '' */
+.cpa-icon-note:before { content: '\e83c'; } /* '' */
+.cpa-icon-boxsome:before { content: '\e83d'; } /* '' */
+.cpa-icon-boxall:before { content: '\e83e'; } /* '' */
+.cpa-icon-taskalt:before { content: '\e83f'; } /* '' */
+.cpa-icon-boxlist:before { content: '\e840'; } /* '' */
+.cpa-icon-revert:before { content: '\e841'; } /* '' */

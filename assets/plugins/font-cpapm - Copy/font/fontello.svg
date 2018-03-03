@@ -123,6 +123,8 @@
 <glyph glyph-name="change" unicode="&#xe839;" d="M286 64h499v143h-499v214l-286-285 286-286z m998 500l-285 286v-214h-500v-143h500v-214z m0 0" horiz-adv-x="1285" />
 
 <glyph glyph-name="downloadalt" unicode="&#xe83a;" d="M111 405v-444h889v445l111 0v-445a111 111 0 0 0-111-111h-889a111 111 0 0 0-111 111v444z m778-16h-167v461h-333v-461h-167l334-317z m0 0" horiz-adv-x="1111" />
+
+<glyph glyph-name="clipboard" unicode="&#xe83b;" d="M667 766h-167c-17 55-71 84-125 84s-109-29-126-84h-166c-46 0-83-48-83-98v-727c0-50 37-91 83-91h584c46 0 83 41 83 91v727c0 50-38 98-83 98z m-292-7c25 0 42-18 42-45s-17-46-42-46-42 18-42 46 17 45 42 45z m292-826h-584v730l83 20v-145h417v145l84 1z m0 8" horiz-adv-x="750" />
 </font>
 </defs>
 </svg>

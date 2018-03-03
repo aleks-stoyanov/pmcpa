@@ -177,6 +177,12 @@ label {
     margin: 10px 5px 0px;
 }
 
+.navbar-nav > li.btn-group .btn {
+    margin: 0px;
+} 
+.navbar-nav > li.btn-group.selector-list>.btn:first-child:not(:last-child):not(.dropdown-toggle) {border-right: none;padding-left: 4px; padding-right: 0px;} 
+.navbar-nav > li.btn-group.selector-list>.dropdown-toggle:not(:first-child){border-left: none;} 
+
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
     color: #fff;
 }
@@ -2028,7 +2034,7 @@ a.text-white:focus {
 .modal-body .form-horizontal .checklist .form-group {background: #f3f6f8;}
 
 .modal-body .form-control {font-size: 14px;}
-.modal-body .form-horizontal .control-label {font-size: 16px; font-weight: bold;}
+.modal-body form .control-label {font-size: 16px; font-weight: bold;}
 
 .form-panel {margin: 0px 20px;}
 .form-panel-header h3 {margin: 16px 16px;padding-bottom: 4px; border-bottom: 1px solid #ededed;}

@@ -131,11 +131,12 @@ $('[data-click=sidebar-minify]').click(function(e) {
             $('#weekly-job-end-date').datepicker({todayHighlight: true});
             $('#monthly-job-end-date').datepicker({todayHighlight: true});
             $('#yearly-job-end-date').datepicker({todayHighlight: true});
-            
-            
-
-
-            
+           
+        });
+        $(function() {
+            $('#timerecord-time').datetimepicker({
+                format: 'LT'
+            });           
         });
 
         $(function() {
@@ -261,6 +262,25 @@ $('[data-click=sidebar-minify]').click(function(e) {
         $(".dz-message.needsclick").html('Drop files here or click to upload');
         });
 
+        $(".selector-list-item").on("change", function(){
+
+            var selection = "none";
+            if ($('.selector-list-item:checked').length == $('.selector-list-item').length) {
+                console.log("all are checked");
+                selection = "all";
+             } else if ($('.selector-list-item:checked').length === 0) {
+                console.log("none are checked");
+                selection = "";
+             } else {
+                console.log("some are checked");
+                selection = "some";
+             }
+
+             $('.selector-list .cpa-icon').removeClass("cpa-icon-boxall").removeClass("cpa-icon-box").removeClass("cpa-icon-boxsome").addClass('cpa-icon-box'+selection);
+
+
+
+        });
     
    
     
