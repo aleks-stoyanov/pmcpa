@@ -170,7 +170,7 @@
 			<!-- begin page-header -->
 			<div class="page-header">
 				<div class="content">
-					<h1>Jobs</h1><!-- end page-header -->	
+					<h1>My To Do List</h1><!-- end page-header -->	
 				</div>           				
 			</div><!-- end page-header -->
 
@@ -178,9 +178,11 @@
 				<div class="content">
 					<form>
 						<ul class="nav nav-tabs">
-							<li><button>Single</button></li>
-							<li class="active"><button>Recurring</button></li>
-							<li><button>Archived</button></li>
+							<li class="active"><button>All Tasks</button></li>
+							<li><button>Due This Week</button></li>
+							<li><button>Due Next Week</button></li>
+							<li><button>Due Later</button></li>
+							<li><button>No Due Date</button></li>
 						</ul>	
 					</form>
 				</div>           				
@@ -196,28 +198,10 @@
 						<form>
 							<ul class="nav navbar-nav navbar-left">
 								<li>
-									<button type="button" class="btn btn-success" data-target="#modal-addRecurringJob" data-toggle="modal"><i class="cpa-icon cpa-icon-add"></i><span>Add Recurring Job</span></button>
-								</li>
-								<li>
 									<button type="button" data-toggle="collapse" data-target="#page-filter" class="btn btn-default btn-toggle-filter"><i class="cpa-icon cpa-icon-filtershow"></i><span>Show Filter</span></button>
 								</li>
 							</ul>  
-						</form>
-
-						<form>
-							<ul class="nav navbar-nav navbar-right">
-								<li>
-									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="cpa-icon cpa-icon-columns"></i><span> <span class="caret"></span></button>
-									<ul class="dropdown-menu dropdown-padding">
-										<li><input type="checkbox"><label> Column Name</label></li>
-										<li><input type="checkbox"><label> Column Name</label></li>
-										<li><input type="checkbox"><label> Column Name</label></li>
-										<li><input type="checkbox"><label> Column Name</label></li>
-										<li><button type="button" class="btn btn-default">Apply</button></li>
-									</ul>
-								</li>
-							</ul>	
-						</form>						
+						</form>					
 					</div><!-- end btn-row -->
 
 					<!-- begin #page-filter -->
@@ -284,39 +268,44 @@
 								<tr>									
 									<th>
 										<div class="">
-											<a href="#" class="pagelist-header-link sorted">Job<i class="cpa-icon cpa-icon-downtriangle"></i></a>
+											<a href="#" class="pagelist-header-link sorted">Type<i class="cpa-icon cpa-icon-downtriangle"></i></a>
 										</div>
 									</th>
 									<th>
 										<div class="">
-											<a href="#" class="pagelist-header-link">Client <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+											<a href="#" class="pagelist-header-link">Name/Subject <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
 										</div>
                                     </th>
                                     
                                     <th>
                                         <div class="">
-                                            <a href="#" class="pagelist-header-link">Repeat <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+                                            <a href="#" class="pagelist-header-link">Client <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
                                         </div>
                                     </th>
 
 									<th>
 										<div class="">
-											<a href="#" class="pagelist-header-link">Repeat Until <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+											<a href="#" class="pagelist-header-link">Priority <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
 										</div>
                                     </th>                                    
                                     <th>
                                         <div class="">
-                                            <a href="#" class="pagelist-header-link">Next Creat Date <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+                                            <a href="#" class="pagelist-header-link">Due Date <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
                                         </div>
                                     </th>									
 									<th>
 										<div class="">
-											<a href="#" class="pagelist-header-link">Next Due Date <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+											<a href="#" class="pagelist-header-link">Status <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
 										</div>
                                     </th>									
 									<th>
 										<div class="">
-											<a href="#" class="pagelist-header-link">Job Manager<i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+											<a href="#" class="pagelist-header-link">Time Alloc <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+									</th>	
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Time Worked <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
 										</div>
 									</th>	
 									<th>
@@ -333,68 +322,110 @@
 									<td colspan="10"></td>
 								</tr>
 							</tbody>
-
 							
                             <thead class="tsection-header">
 								<tr>                                        
 									<th colspan="10">
 										<div class="tsection-header-panel clearfix">
                                             <div class="tsection-header-title pull-left">
-                                                <span>Active Jobs</span>
+                                                <span>Due This Week</span>
                                             </div>
                                             <div class="tsection-header-details pull-right">
-                                                <span>15 Jobs</span>
+                                                <span></span>
                                             </div>
 										</div>
 									</th>
 								</tr>
-							</thead>
+                            </thead>
+                            
 							<tbody class="tsection-body">
 								<tr>
-									<td><a href="#">Job 1 Name</a></td>
+									<td><div class="cell-icon"><i class="cpa-icon cpa-icon-taskalt"></i></div></td>
+									<td><a href="#">Task 1 Name</a></td>
 									<td><a href="#">Client 01</a></td>
-									<td>Monthly</td>
-									<td>Unlimited</td>
+									<td>Medium</td>
 									<td>29 Oct 2017</td>
-									<td>29 Oct 2017</td>
-									<td>Billy Johnon</td>
+									<td>Todo</td>
+									<td>02:15</td>
+									<td>00:30</td>
 									<td class="tr-actions">
-										<div class="btn-group">
-											<button type="button" class="btn btn-icon" data-target="#modal-complete" data-toggle="modal">
-												<i class="cpa-icon cpa-icon-tick"></i>
-											</button>
-											<button type="button" class="btn btn-icon">
-													<i class="cpa-icon cpa-icon-edit"></i>
-											</button>
-											<button type="button" class="btn btn-icon" data-target="#modal-delete" data-toggle="modal">
-													<i class="cpa-icon cpa-icon-bin"></i>
-											</button>										
-										</div>
-									</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">Job 1 Name</a></td>
-                                    <td><a href="#">Client 01</a></td>
-                                    <td>Weekly</td>
-                                    <td>30 Oct 2017</td>
-                                    <td>30 Oct 2017</td>
-                                    <td>30 Oct 2017</td>
-                                    <td>Billy Johnon</td>
-                                    <td class="tr-actions">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-icon" data-target="#modal-complete" data-toggle="modal">
-                                                <i class="cpa-icon cpa-icon-tick"></i>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-addTime" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-timetwo"></i>
                                             </button>
                                             <button type="button" class="btn btn-icon">
-                                                    <i class="cpa-icon cpa-icon-edit"></i>
+                                                <i class="cpa-icon"></i>
+                                            </button>									
+                                            <button type="button" class="btn btn-icon" data-target="#modal-completeTask" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-task"></i>
                                             </button>
-                                            <button type="button" class="btn btn-icon" data-target="#modal-delete" data-toggle="modal">
-                                                    <i class="cpa-icon cpa-icon-bin"></i>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-reopenTask" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-revert"></i>
                                             </button>										
+                                            <span>
+                                                <i class="cpa-icon cpa-icon-movehandle"></i>
+                                            </span>										
                                         </div>
                                     </td>
                                 </tr>
-																								
+								<tr>
+                                    <td><div class="cell-icon"><i class="cpa-icon cpa-icon-envelope"></i></div></td>
+                                    <td><a href="#">Email subject line goes here</a></td>
+                                    <td><a href="#">Client 02</a></td>
+                                    <td>High</td>
+                                    <td>30 Oct 2017</td>
+                                    <td>In Progress</td>
+                                    <td>03:30</td>
+                                    <td>01:35</td>
+                                    <td class="tr-actions">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-icon" data-target="#modal-addTime" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-timetwo"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon">
+                                                <i class="cpa-icon"></i>
+                                            </button>									
+                                            <button type="button" class="btn btn-icon" data-target="#modal-completeTask" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-task"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-reopenTask" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-revert"></i>
+                                            </button>										
+                                            <span>
+                                                <i class="cpa-icon cpa-icon-movehandle"></i>
+                                            </span>										
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><div class="cell-icon"><i class="cpa-icon cpa-icon-note"></i></div></td>
+                                    <td><a href="#">Note Name</a></td>
+                                    <td><a href="#">Client 02</a></td>
+                                    <td>High</td>
+                                    <td>30 Oct 2017</td>
+                                    <td>In Progress</td>
+                                    <td>03:30</td>
+                                    <td>01:35</td>
+                                    <td class="tr-actions">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-icon" data-target="#modal-addTime" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-timetwo"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon">
+                                                <i class="cpa-icon"></i>
+                                            </button>									
+                                            <button type="button" class="btn btn-icon" data-target="#modal-completeTask" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-task"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-reopenTask" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-revert"></i>
+                                            </button>										
+                                            <span>
+                                                <i class="cpa-icon cpa-icon-movehandle"></i>
+                                            </span>										
+                                        </div>
+                                    </td>
+                                </tr> 														
                             </tbody>
                             <tbody class="tsection-footer">
                                 <tr>
@@ -437,67 +468,109 @@
                                 </tr>
                             </tbody>
 
-                            
                             <thead class="tsection-header">
                                 <tr>                                        
                                     <th colspan="10">
                                         <div class="tsection-header-panel clearfix">
                                             <div class="tsection-header-title pull-left">
-                                                <span>Pending Approval Jobs</span>
+                                                <span>Due Next Week</span>
                                             </div>
                                             <div class="tsection-header-details pull-right">
-                                                <span>11 Jobs</span>
+                                                <span></span>
                                             </div>
                                         </div>
                                     </th>
                                 </tr>
                             </thead>
+                            
                             <tbody class="tsection-body">
                                 <tr>
-                                    <td><a href="#">Job 1 Name</a></td>
+                                    <td><div class="cell-icon"><i class="cpa-icon cpa-icon-taskalt"></i></div></td>
+                                    <td><a href="#">Task 1 Name</a></td>
                                     <td><a href="#">Client 01</a></td>
-                                    <td>Weekly</td>
+                                    <td>Medium</td>
                                     <td>29 Oct 2017</td>
-                                    <td>29 Oct 2017</td>
-                                    <td>29 Oct 2017</td>
-                                    <td>Billy Johnon</td>
+                                    <td>Todo</td>
+                                    <td>02:15</td>
+                                    <td>00:30</td>
                                     <td class="tr-actions">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-icon" data-target="#modal-complete" data-toggle="modal">
-                                                <i class="cpa-icon cpa-icon-tick"></i>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-addTime" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-timetwo"></i>
                                             </button>
                                             <button type="button" class="btn btn-icon">
-                                                    <i class="cpa-icon cpa-icon-edit"></i>
+                                                <i class="cpa-icon"></i>
+                                            </button>									
+                                            <button type="button" class="btn btn-icon" data-target="#modal-completeTask" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-task"></i>
                                             </button>
-                                            <button type="button" class="btn btn-icon" data-target="#modal-delete" data-toggle="modal">
-                                                    <i class="cpa-icon cpa-icon-bin"></i>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-reopenTask" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-revert"></i>
                                             </button>										
+                                            <span>
+                                                <i class="cpa-icon cpa-icon-movehandle"></i>
+                                            </span>										
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><a href="#">Job 1 Name</a></td>
-                                    <td><a href="#">Client 01</a></td>
-                                    <td>Weekly</td>
+                                    <td><div class="cell-icon"><i class="cpa-icon cpa-icon-envelope"></i></div></td>
+                                    <td><a href="#">Email subject line goes here</a></td>
+                                    <td><a href="#">Client 02</a></td>
+                                    <td>High</td>
                                     <td>30 Oct 2017</td>
-                                    <td>30 Oct 2017</td>
-                                    <td>30 Oct 2017</td>
-                                    <td>Billy Johnon</td>
+                                    <td>In Progress</td>
+                                    <td>03:30</td>
+                                    <td>01:35</td>
                                     <td class="tr-actions">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-icon" data-target="#modal-complete" data-toggle="modal">
-                                                <i class="cpa-icon cpa-icon-tick"></i>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-addTime" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-timetwo"></i>
                                             </button>
                                             <button type="button" class="btn btn-icon">
-                                                    <i class="cpa-icon cpa-icon-edit"></i>
+                                                <i class="cpa-icon"></i>
+                                            </button>									
+                                            <button type="button" class="btn btn-icon" data-target="#modal-completeTask" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-task"></i>
                                             </button>
-                                            <button type="button" class="btn btn-icon" data-target="#modal-delete" data-toggle="modal">
-                                                    <i class="cpa-icon cpa-icon-bin"></i>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-reopenTask" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-revert"></i>
                                             </button>										
+                                            <span>
+                                                <i class="cpa-icon cpa-icon-movehandle"></i>
+                                            </span>										
                                         </div>
                                     </td>
-                                </tr>
-                                                                                                
+                                </tr> 
+                                <tr>
+                                    <td><div class="cell-icon"><i class="cpa-icon cpa-icon-note"></i></div></td>
+                                    <td><a href="#">Note Name</a></td>
+                                    <td><a href="#">Client 02</a></td>
+                                    <td>High</td>
+                                    <td>30 Oct 2017</td>
+                                    <td>In Progress</td>
+                                    <td>03:30</td>
+                                    <td>01:35</td>
+                                    <td class="tr-actions">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-icon" data-target="#modal-addTime" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-timetwo"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon">
+                                                <i class="cpa-icon"></i>
+                                            </button>									
+                                            <button type="button" class="btn btn-icon" data-target="#modal-completeTask" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-task"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-reopenTask" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-revert"></i>
+                                            </button>										
+                                            <span>
+                                                <i class="cpa-icon cpa-icon-movehandle"></i>
+                                            </span>										
+                                        </div>
+                                    </td>
+                                </tr> 														
                             </tbody>
                             <tbody class="tsection-footer">
                                 <tr>
@@ -544,931 +617,346 @@
 		</div><!-- end #content -->
 
 
-		<div class="modal modal-complete fade in" id="modal-complete">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h4 class="modal-title">Complete Job</h4>
-					</div>
-					
-					<div class="modal-body clearfix">
-						<section>
-							<p>Are you sure you want to complete this job?</p>	
-						</section> 							
-					</div>
-					<div class="modal-footer">
-						<form>
-							<fieldset>																	
-								<button type="submit" class="btn btn-success">Complete</button>
-								<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
-							</fieldset>
-						</form>						
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="modal modal-complete fade in" id="modal-completeTask">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Complete Task</h4>
+                    </div>
+                    
+                    <div class="modal-body clearfix">
+                        <section>
+                            <p>Are you sure you want to complete this task?</p>	
+                        </section> 							
+                    </div>
+                    <div class="modal-footer">
+                        <form>
+                            <fieldset>																	
+                                <button type="submit" class="btn btn-success">Complete</button>
+                                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
+                            </fieldset>
+                        </form>						
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<div class="modal modal-delete fade in" id="modal-delete">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h4 class="modal-title">Delete Job</h4>
-					</div>
-					
-					<div class="modal-body clearfix">
-						<section>
-							<i class="cpa-icon cpa-icon-attention pull-left icon-thumb"></i>
-							<p>Are you sure you want to delete this job?</p>	
-						</section>					
-					</div>
-					
-					<div class="modal-footer">
-						<form>
-							<fieldset>													
-								<button type="submit" class="btn btn-danger">Delete</button>
-								<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>			
-							</fieldset>
-						</form>						
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="modal modal-complete fade in" id="modal-reopenTask">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Reopen Task</h4>
+                    </div>
+                    
+                    <div class="modal-body clearfix">
+                        <section>
+                            <p>Are you sure you want to reopen this task?</p>	
+                        </section> 							
+                    </div>
+                    <div class="modal-footer">
+                        <form>
+                            <fieldset>																	
+                                <button type="submit" class="btn btn-success">Reopen</button>
+                                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
+                            </fieldset>
+                        </form>						
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<div class="modal modal-addRecurringJob modal-primary fade in" id="modal-addRecurringJob">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h4 class="modal-title">Add Recurring Job</h4>
-					</div>
-					<div class="modal-body p0 clearfix">
-						<ul class="nav nav-tabs nav-justified navbar-inverse">
-							<li class="active"><a data-toggle="tab" href="#details">Details</a></li>
-							<li><a data-toggle="tab" href="#scheduling">Scheduling</a></li>
-							<li><a data-toggle="tab" href="#billing">Billing</a></li>
-							<li><a data-toggle="tab" href="#people">People</a></li>
-						</ul>
-						<form action="/" method="" class="form-horizontal">
-							<div class="tab-content">
+        <div class="modal modal-delete fade in" id="modal-deleteTask">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Delete Task</h4>
+                    </div>
+                    
+                    <div class="modal-body clearfix">
+                        <section>
+                            <i class="cpa-icon cpa-icon-attention pull-left icon-thumb"></i>
+                            <p>Are you sure you want to delete this task?</p>	
+                        </section>					
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <form>
+                            <fieldset>													
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>			
+                            </fieldset>
+                        </form>						
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal modal-addTime modal-primary fade" id="modal-addTime">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Add Time Record</h4>
+                    </div>
+                    <div class="modal-body p0 clearfix">						
+                        <form action="/" method="" class="form-horizontal">		
+                            <section id="billing" class="panel-group">
+                                <div class="panel">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Started: </label>
+                                        <div class="col-sm-9">
+                                            
+                                            <div class="col-sm-4 form-inline">
+                                                <div class="input-group date" id="timerecord-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
+                                                    <input type="text" class="form-control" placeholder="">
+                                                    <span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 form-inline">
+                                            <div class="input-group date" id="timerecord-time">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-addon">
+                                                    <span class="cpa-icon cpa-icon-timetwo"></span>
+                                                </span>
+                                            </div>
+                                            </div>												
+                                                                                        
+                                        </div>	
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Time Worked: </label>
+                                        <div class="col-sm-2 input-block">												
+                                            <input type="text" class="form-control">												
+                                        </div>
+                                        <div class="col-sm-1 help-block">hrs</div>	
+                                        <div class="col-sm-2 input-block">												
+                                            <input type="text" class="form-control">											
+                                        </div>
+                                        <div class="col-sm-1 help-block">min</div>	
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Notes: </label>
+                                        <div class="col-sm-9 input-block">
+                                            <textarea class="form-control" rows="4" placeholder=""></textarea>
+                                        </div>	
+                                    </div>
+                                </fieldset>
+                                
+                                
 
-								<section id="details" class="panel-group tab-pane fade in active">
-									<div class="panel">										
-										<div id="job-details" class="panel-collapse form-panel job-details collapse in">
-											<div class="row has-error">
-												<div class="form-feedback col-sm-9 col-sm-offset-3">
-													<span>Please enter Values in the Highlighted Fields</span>	
-												</div>	
-											</div>	
-			
-											<fieldset>
-												<div class="form-group has-error">
-													<label class="col-sm-3 control-label">Client: </label>
-													<div class="col-sm-6 input-block">
-														<select class="form-control" id="">
-															<option value="" selected >--Select Client--</option>
-															<option value="1">Client 01</option>
-															<option value="2">Client 02</option>
-														</select>
-													</div>
-													<div class="col-sm-3 help-block">
-														or <a data-toggle="collapse" data-parent="#details" href="#add-client">Add New Client</a>
-													</div>	
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">Job Name: </label>
-													<div class="col-sm-6 input-block">
-														<input type="text" class="form-control">
-													</div>	
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">Job Description: </label>
-													<div class="col-sm-9 input-block">
-														<textarea class="form-control" rows="4" placeholder=""></textarea>
-													</div>	
-												</div>	
-												<div class="form-group">
-													<label class="col-sm-3 control-label">Job Manager: </label>
-													<div class="col-sm-6 input-block">
-														<select class="form-control " id="">
-															<option value="" selected>--Select Job Manager--</option>
-															<option value="1">Manager Name</option>
-															<option value="2">Manager Name</option>
-															<option value="3">Manager Name</option>
-															<option value="4">Manager Name</option>
-															<option value="5">Manager Name</option>
-														</select>
-													</div>	
-												</div>										
-											</fieldset>
-											<fieldset class="action-bar">												
-												<div class="pull-right">
-													<button type="button" class="btn btn-success">Next</button> 
-													<span><a href="#"> Finish Now</a></span>	
-												</div>								
-											</fieldset>
-										</div>
-									</div>
+                                <fieldset class="action-bar">												
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
+                                </fieldset>	
+                                </div>
 
-									<div class="panel">
-										
-										
-										<div id="add-client" class="panel-collapse form-panel add-client collapse">
-											
-											<div class="form-panel-header row">
-												<div class="col-xs-12">
-													<h3>New Client Details</h3>
-												</div>
+                            </section>						
+                        </form>					
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
 
-												<div class="form-feedback col-sm-9 col-sm-offset-3">
-													<span>Please enter Values in the Highlighted Fields</span>	
-												</div>	
-											</div>	
-											
-											<fieldset> 
-												<div class="form-group">
-													<label class="col-sm-3 control-label">Name: </label>
-													<div class="col-sm-6 input-block">
-														<input type="text" class="form-control">
-													</div>
-													<div class="col-sm-3 help-block fixed-right">
-														Enter new client details then click “Done” when finished to return to the Add Job form.														
-													</div>	
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">Client Type: </label>
-													<div class="col-sm-6 input-block">
-														<select class="form-control" id="">
-															<option value="" selected >--Select Client Type --</option>
-															<option value="1">Client Type 01</option>
-															<option value="2">Client Type 02</option>
-														</select>
-													</div>	
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">Email: </label>
-													<div class="col-sm-6 input-block">
-														<input type="email" class="form-control">
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">Phone: </label>
-													<div class="col-sm-6 input-block">
-														<input type="text" class="form-control">
-													</div>
-												</div>
-												<div class="form-group clearfix">
-													<div class="col-sm-9 col-sm-offset-3">														
-														<button type="button" data-toggle="collapse" data-target="#address-details" class="btn btn-link btn-toggle-address-details"><span>+ Add Address</span></button>
-													</div>	
-												</div>
-											</fieldset>
-	
-											<fieldset id="address-details" class="collapse">	
-												<div class="form-group">
-													<label class="col-sm-3 control-label">Address: </label>
-													<div class="col-sm-6 input-block">
-														<input type="text" class="form-control">
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">City: </label>
-													<div class="col-sm-6 input-block">
-														<input class="form-control">
-													</div>	
-												</div>											
-											</fieldset>
-											<fieldset class="action-bar">												
-												<div class="pull-right">
-													<button type="button" data-toggle="collapse" data-parent="#details" data-target="#job-details" class="btn btn-success">Done</button>
-													<span> or <a href="#">Cancel</a></span>	
-												</div>							
-											</fieldset>	
-											
-										</div>
-									</div>
+        <div class="modal modal-editTime modal-primary fade in" id="modal-editTime">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Edit Time Record</h4>
+                    </div>
+                    <div class="modal-body p0 clearfix">						
+                        <form action="/" method="" class="form-horizontal">		
+                            <section id="billing" class="panel-group">
+                                <div class="panel">
+                                <fieldset>
+                                    <div class="form-group disabled">
+                                        <label class="col-sm-3 control-label">Person: </label>
+                                        <div class="col-sm-6 input-block">
+                                            <input type="text" class="form-control" disabled placeholder="Jeremy Johnes">												
+                                        </div>											
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Started: </label>
+                                        <div class="col-sm-9">
+                                            
+                                            <div class="col-sm-4 form-inline">
+                                                <div class="input-group date" id="timerecord-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
+                                                    <input type="text" class="form-control" placeholder="">
+                                                    <span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 form-inline">
+                                                <input type="text" class="form-control" size="1"><span> : </span><input type="text" class="form-control" size="1">
+                                            </div>
+                                            <div class="col-sm-4 form-inline">
+                                                <label class="radio"><input type="radio" class="form-control" name="ampm">a.m.</label>
+                                                <label class="radio"><input type="radio" class="form-control" name="ampm" >p.m</label>
+                                            </div>													
+                                                                                    
+                                        </div>	
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Time Worked: </label>
+                                        <div class="col-sm-2 input-block">												
+                                            <input type="text" class="form-control">												
+                                        </div>
+                                        <div class="col-sm-1 help-block">hrs</div>	
+                                        <div class="col-sm-2 input-block">												
+                                            <input type="text" class="form-control" >											
+                                        </div>
+                                        <div class="col-sm-1 help-block">min</div>	
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Notes: </label>
+                                        <div class="col-sm-9 input-block">
+                                            <textarea class="form-control" rows="4" placeholder=""></textarea>
+                                        </div>	
+                                    </div>
+                                </fieldset>
+                                
+                                
 
-									
-									
-								</section>
+                                <fieldset class="action-bar">												
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
+                                </fieldset>	
+                                </div>
 
-								<section id="scheduling" class="panel-group tab-pane fade">
-									<div class="panel">
-									<div class="row">
-										<div class="form-feedback col-sm-9 col-sm-offset-3">
-											<span>Please enter Values in the Highlighted Fields</span>	
-										</div>	
-									</div>
-									
-									<fieldset>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Repeat: </label>
-											<div class="col-sm-6 input-block">
-												<select class="form-control" id="select-repeat-schedule">
-													<option value="nothing" selected >--Please Select--</option>
-													<option value="daily">Daily</option>
-													<option value="weekly">Weekly</option>
-													<option value="monthly">Monthly</option>
-													<option value="yearly">Yearly</option>
-												</select>													
-											</div>	
-										</div>
-									</fieldset>
+                            </section>						
+                        </form>					
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
 
-									<fieldset id="daily" class="form-panel">
-										<div class="form-group" >
-											<label class="col-sm-3 control-label">Repeat Every: </label>
-											<div class="col-sm-3 input-block">												
-												<select class="form-control" id="">
-													<option value="1" selected >1</option>
-													<option value="2">2</option>
-													<option value="3">3</option>
-												</select>												
-											</div>
-											<div class="col-sm-1 help-block">
-												Day(s)
-											</div>		
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Next Job Due Date: </label>
-											<div class="col-sm-6 input-block">
-												<div class="input-group date" id="next-job-due-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
-													<input type="text" class="form-control" placeholder="">
-													<span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
-												</div>
-											</div>		
-										</div>
-										<div class="form-group" id="">
-											<label class="col-sm-3 control-label">Next Job Start:  </label>
-											<div class="col-sm-3 input-block">												
-												<input type="text" class="form-control" >												
-											</div>
-											<div class="col-sm-6 help-block">
-												Day(s) before due date
-											</div>		
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Ends: </label>
-											<div class="col-sm-6 input-block">												
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">No end date</label>
-												</div>												
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">After</label>
-													<div class="input-block"><input type="text" class="form-control" maxlength="3"></div>
-													<div class="help-block"> occurences</div>
-												</div>	
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">On</label>
-													<div class="input-block">
-														<div class="input-group date" id="daily-job-end-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
-															<input type="text" class="form-control" placeholder="">
-															<span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
-														</div>
-													</div>
-												</div>										
-											</div>	
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Schedule Summary: </label>
-											<div class="col-sm-9 help-block">											
-												<p>Repeat job every 15 days(s) untill 17 Oct 2017</p>	
-											</div>	
-										</div>
-									</fieldset>
+        <div class="modal modal-delete fade in" id="modal-delete-timeRecord">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Delete Time Record</h4>
+                    </div>
+                    
+                    <div class="modal-body clearfix">
+                        <section>
+                            <i class="cpa-icon cpa-icon-attention pull-left icon-thumb"></i>
+                            <p>Are you sure you want to delete this time record?</p>	
+                        </section>					
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <form>
+                            <fieldset>													
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>			
+                            </fieldset>
+                        </form>						
+                    </div>
+                </div>
+            </div>
+        </div>
 
-									<fieldset id="weekly" class="form-panel">
-										<div class="form-group" >
-											<label class="col-sm-3 control-label">Repeat Every: </label>
-											<div class="col-sm-3 input-block">												
-												<select class="form-control" id="">
-													<option value="1" selected >1</option>
-													<option value="2">2</option>
-													<option value="3">3</option>
-												</select>												
-											</div>
-											<div class="col-sm-1 help-block">
-												Week(s)
-											</div>		
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Repeat On: </label>
-											<div class="col-sm-9 input-block">
-												<div class="inline-group">
-													<label class="checkbox"><input type="checkbox" name="repeatOn">Mon</label>														
-													<label class="checkbox"><input type="checkbox" name="repeatOn">Tue</label>														
-													<label class="checkbox"><input type="checkbox" name="repeatOn">Wed</label>														
-													<label class="checkbox"><input type="checkbox" name="repeatOn">Thu</label>														
-													<label class="checkbox"><input type="checkbox" name="repeatOn">Fri</label>														
-													<label class="checkbox"><input type="checkbox" name="repeatOn">Sat</label>														
-													<label class="checkbox"><input type="checkbox" name="repeatOn">Sun</label>														
-												</div>
-											</div>		
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Next Job Due Date: </label>
-											<div class="col-sm-6 input-block">
-												<div class="input-group date disabled" id="next-job-due-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
-													<input type="text" class="form-control" placeholder="" disabled>
-													<span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
-												</div>
-											</div>		
-										</div>
-										<div class="form-group" id="">
-											<label class="col-sm-3 control-label">Next Job Start:  </label>
-											<div class="col-sm-3 input-block">												
-												<input type="text" class="form-control" >												
-											</div>
-											<div class="col-sm-6 help-block">
-												Day(s) before due date
-											</div>		
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Ends: </label>
-											<div class="col-sm-6 input-block">												
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">No end date</label>
-												</div>												
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">After</label>
-													<div class="input-block"><input type="text" class="form-control" maxlength="3"></div>
-													<div class="help-block"> occurences</div>
-												</div>	
-												<div class="inline-group">
-													<label class="radio"><input type="radio" name="ends">On</label>
-													<div class="input-block">
-														<div class="input-group date" id="weekly-job-end-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
-															<input type="text" class="form-control" placeholder="">
-															<span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
-														</div>
-													</div>
-												</div>										
-											</div>	
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Schedule Summary: </label>
-											<div class="col-sm-9 help-block">											
-												<p>Repeat job weekly on Monday, untill 17 Oct 2017</p>	
-											</div>	
-										</div>
-									</fieldset>
+        <div class="modal modal-editFile modal-primary fade in" id="modal-editFile">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Edit File</h4>
+                    </div>
+                    <div class="modal-body p0 clearfix">						
+                        <form action="/" method="" class="form-horizontal">		
+                            <section id="billing" class="panel-group">
+                                <div class="panel">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">File Name: </label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group" id="">
+                                                <input type="text" class="form-control" placeholder="">
+                                                <span class="input-group-addon">.txt</span>
+                                            </div>																				
+                                        </div>	
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    
+                                    <div class="form-group">
+                                        <legend>Assign To</legend>
+                                        <label class="col-sm-3 control-label">Job: </label>
+                                        <div class="col-sm-6 input-block">
+                                            <select class="form-control " id="">
+                                                <option value="" selected="">--Select Job --</option>
+                                                <option value="1">Job Name</option>
+                                                <option value="2">Job Name</option>
+                                                <option value="3">Job Name</option>
+                                                <option value="4">Job Name</option>
+                                                <option value="5">Job Name</option>
+                                            </select>
+                                        </div>	
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Task: </label>
+                                        <div class="col-sm-6 input-block">
+                                            <select class="form-control " id="">
+                                                <option value="" selected="">--Select Task --</option>
+                                                <option value="1">Task Name</option>
+                                                <option value="2">Task Name</option>
+                                                <option value="3">Task Name</option>
+                                                <option value="4">Task Name</option>
+                                                <option value="5">Task Name</option>
+                                            </select>
+                                        </div>	
+                                    </div>
+                                </fieldset>
+                                
+                                
 
-									<fieldset id="monthly" class="form-panel">
-										
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Repeat On: </label>
-											<div class="col-sm-9 input-block">												
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">Day </label>
-													<div class="input-block"><input type="text" class="form-control" maxlength="1"></div>
-													<div class="help-block"> of every</div>
-													<div class="input-block"><input type="text" class="form-control" maxlength="1"></div>
-													<div class="help-block"> month(s)</div>
-												</div>	
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">The </label>
-													<div class="input-block">
-														<select class="form-control" id="">
-															<option value="1" selected >first</option>
-															<option value="2">second</option>
-															<option value="3">third</option>
-															<option value="3">fourth</option>
-														</select>
-													</div>
-													<div class="input-block">
-														<select class="form-control" id="">
-															<option value="1" selected >Monday</option>
-															<option value="2">Tuesday</option>
-															<option value="3">Wednesday</option>
-															<option value="3">Thursday</option>
-															<option value="3">Friday</option>
-															<option value="3">Saturday</option>
-															<option value="3">Sunday</option>
-														</select>
-													</div>
-													<div class="help-block"> of every</div>
-													<div class="input-block"><input type="text" class="form-control" maxlength="1"></div>
-													<div class="help-block"> month(s)</div>
-												</div>											
-											</div>	
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Next Job Due Date: </label>
-											<div class="col-sm-6 input-block">
-												<div class="input-group date disabled" id="next-job-due-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
-													<input type="text" class="form-control" placeholder="" disabled>
-													<span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
-												</div>
-											</div>		
-										</div>
-										<div class="form-group" id="">
-											<label class="col-sm-3 control-label">Create Job:  </label>
-											<div class="col-sm-3 input-block">												
-												<input type="text" class="form-control" >												
-											</div>
-											<div class="col-sm-6 help-block">
-												Day(s) before due date
-											</div>		
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Ends: </label>
-											<div class="col-sm-6 input-block">												
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">No end date</label>
-												</div>												
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">After</label>
-													<div class="input-block"><input type="text" class="form-control" maxlength="3"></div>
-													<div class="help-block"> occurences</div>
-												</div>	
-												<div class="inline-group">
-													<label class="radio"><input type="radio" name="ends">On</label>
-													<div class="input-block">
-														<div class="input-group date" id="weekly-job-end-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
-															<input type="text" class="form-control" placeholder="">
-															<span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
-														</div>
-													</div>
-												</div>										
-											</div>	
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Schedule Summary: </label>
-											<div class="col-sm-9 help-block">											
-												<p>Repeat job monthly on day 5, untill 17 Oct 2017</p>	
-											</div>	
-										</div>
-									</fieldset>
+                                <fieldset class="action-bar">												
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
+                                </fieldset>	
+                                </div>
 
-									<fieldset id="yearly" class="form-panel">
-										
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Repeat On: </label>
-											<div class="col-sm-9 input-block">												
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">Every </label>
-													<div class="input-block">
-														<select class="form-control" id="">
-															<option value="1" selected >January</option>
-															<option value="2">February</option>
-															<option value="3">March</option>
-															<option value="3">April</option>
-															<option value="2">May</option>
-															<option value="3">June</option>
-															<option value="3">July</option>
-															<option value="2">August</option>
-															<option value="3">September</option>
-															<option value="3">October</option>
-															<option value="2">November</option>
-															<option value="3">Decenmber</option>
-														</select>
-													</div>
-													<div class="input-block"><input type="text" class="form-control" maxlength="1"></div>
-												</div>	
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">The </label>
-													<div class="input-block">
-														<select class="form-control" id="">
-															<option value="1" selected >first</option>
-															<option value="2">second</option>
-															<option value="3">third</option>
-															<option value="3">fourth</option>
-														</select>
-													</div>
-													<div class="input-block">
-														<select class="form-control" id="">
-															<option value="1" selected >Monday</option>
-															<option value="2">Tuesday</option>
-															<option value="3">Wednesday</option>
-															<option value="3">Thursday</option>
-															<option value="3">Friday</option>
-															<option value="3">Saturday</option>
-															<option value="3">Sunday</option>
-														</select>
-													</div>
-													<div class="help-block"> of </div>
-													<div class="input-block">
-														<select class="form-control" id="">
-															<option value="1" selected >January</option>
-															<option value="2">February</option>
-															<option value="3">March</option>
-															<option value="3">April</option>
-															<option value="2">May</option>
-															<option value="3">June</option>
-															<option value="3">July</option>
-															<option value="2">August</option>
-															<option value="3">September</option>
-															<option value="3">October</option>
-															<option value="2">November</option>
-															<option value="3">Decenmber</option>
-														</select>
-													</div>
-												</div>											
-											</div>	
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Next Job Due Date: </label>
-											<div class="col-sm-6 input-block">
-												<div class="input-group date disabled" id="next-job-due-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
-													<input type="text" class="form-control" placeholder="" disabled>
-													<span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
-												</div>
-											</div>		
-										</div>
-										<div class="form-group" id="">
-											<label class="col-sm-3 control-label">Create Job:  </label>
-											<div class="col-sm-3 input-block">												
-												<input type="text" class="form-control" >												
-											</div>
-											<div class="col-sm-6 help-block">
-												Day(s) before due date
-											</div>		
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Ends: </label>
-											<div class="col-sm-6 input-block">												
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">No end date</label>
-												</div>												
-												<div class="radio-group">
-													<label class="radio"><input type="radio" name="ends">After</label>
-													<div class="input-block"><input type="text" class="form-control" maxlength="3"></div>
-													<div class="help-block"> occurences</div>
-												</div>	
-												<div class="inline-group">
-													<label class="radio"><input type="radio" name="ends">On</label>
-													<div class="input-block">
-														<div class="input-group date" id="weekly-job-end-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
-															<input type="text" class="form-control" placeholder="">
-															<span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
-														</div>
-													</div>
-												</div>										
-											</div>	
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Schedule Summary: </label>
-											<div class="col-sm-9 help-block">											
-												<p>Repeat job Annually on first First Monday of January, untill 17 Oct 2017</p>	
-											</div>	
-										</div>
-									</fieldset>									
-	
-									<fieldset class="action-bar">												
-										<button type="submit" class="btn btn-success">Next</button>
-										<span> or <a href="#">Finish Now</a></span>
-										<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>									
-									</fieldset>	
+                            </section>						
+                        </form>					
+                    </div>
+                    
+                </div>
+            </div>
+        </div>	
 
-									</div>
-								</section>
-
-								<section id="billing" class="panel-group tab-pane fade">
-									<div class="panel">
-									<div class="row">
-										<div class="form-feedback col-sm-9 col-sm-offset-3">
-											<span>Please enter Values in the Highlighted Fields</span>	
-										</div>	
-									</div>	
-
-									<fieldset>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Billing Model: </label>
-											<div class="col-sm-6 input-block">
-												<select class="form-control" id="select-billing-model">
-													<option value="nothing" selected >--Select Billing Model --</option>
-													<option value="hourly-rate">Hourly Rate</option>
-													<option value="flat-rate">Flat Rate</option>
-													<option value="complimentary">Complimentary</option>
-												</select>													
-											</div>	
-										</div>
-									</fieldset>
-									
-									<fieldset id="hourly-rate" class="form-panel">
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Hourly Rate: </label>
-											<div class="col-sm-6 input-block">
-												<select class="form-control" id="select-hourly-rate">
-													<option value="nothing" selected >--Select Hourly Rate --</option>
-													<option value="staff-hourly-rate">Staff Hourly Rate</option>
-													<option value="job-hourly-rate">Job Hourly Rate</option>
-												</select>
-											</div>		
-										</div>
-										<div class="form-group" id="job-hourly-rate">
-											<label class="col-sm-3 control-label">Job Hourly Rate: </label>
-											<div class="col-sm-2 input-block">												
-												<input type="text" class="form-control" >												
-											</div>
-											<div class="col-sm-1 help-block">
-												USD
-											</div>		
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Est. Time: </label>
-											<div class="col-sm-2 input-block">												
-												<input type="text" class="form-control" >												
-											</div>
-											<div class="col-sm-1 help-block">
-												hrs
-											</div>	
-											<div class="col-sm-2 input-block">												
-												<input type="text" class="form-control" >												
-											</div>
-											<div class="col-sm-1 help-block">
-												min
-											</div>	
-										</div>
-									
-									</fieldset>
-
-									<fieldset id="flat-rate" class="form-panel">
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Flat Rate: </label>
-											<div class="col-sm-2 input-block">												
-												<input type="text" class="form-control" >												
-											</div>
-											<div class="col-sm-1 help-block">
-												USD
-											</div>		
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Est. Time: </label>
-											<div class="col-sm-2 input-block">												
-												<input type="text" class="form-control" >												
-											</div>
-											<div class="col-sm-1 help-block">
-												hrs
-											</div>	
-											<div class="col-sm-2 input-block">												
-												<input type="text" class="form-control" >												
-											</div>
-											<div class="col-sm-1 help-block">
-												min
-											</div>	
-										</div>
-									
-									</fieldset>
-
-									<fieldset id="complimentary" class="form-panel">
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Est. Time: </label>
-											<div class="col-sm-2 input-block">												
-												<input type="text" class="form-control" >												
-											</div>
-											<div class="col-sm-1 help-block">
-												hrs
-											</div>	
-											<div class="col-sm-2 input-block">												
-												<input type="text" class="form-control" >												
-											</div>
-											<div class="col-sm-1 help-block">
-												min
-											</div>	
-										</div>
-									
-									</fieldset>
-	
-									<fieldset class="action-bar">												
-										<button type="submit" class="btn btn-success">Next</button>
-										<span> or <a href="#">Finish Now</a></span>
-										<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>									
-									</fieldset>	
-									</div>
-
-								</section>
-
-								<section id="people" class="panel-group tab-pane fade">
-									<div class="panel">
-										<div class="row">
-											<div class="form-feedback col-sm-9 col-sm-offset-3">
-												<span>Please enter Values in the Highlighted Fields</span>	
-											</div>	
-										</div>	
-										
-
-									<fieldset class="checklist">
-										<div class="row">
-										
-											<div class="col-xs-12 clearfix">
-												<p>Select all team members that need to view this job or be assigned to tasks:</p>						
-												<p>Select <a class="select-all" href="#">All</a>  |  <a href="#" class="deselect-all">None</a></p>	
-											</div>
-
-										</div>	
-
-										<div class="form-group clearfix">
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Jenny Pecking
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Burt Reynolds
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Helen Hunt
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox disabled">
-													<label class="">
-														<input type="checkbox" disabled> Jim Beam															
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> James Dogan															
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Jenny Pecking
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Burt Reynolds
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Helen Hunt
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Jim Beam															
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> James Dogan															
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Jenny Pecking
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Burt Reynolds
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Helen Hunt
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Jim Beam															
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> James Dogan															
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Jenny Pecking
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Burt Reynolds
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Helen Hunt
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> Jim Beam															
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6 col-sm-3">
-												<div class="checkbox">
-													<label class="">
-														<input type="checkbox"> James Dogan															
-													</label>
-												</div>
-											</div>
-										</div>										
-									</fieldset>
-	
-									<fieldset class="action-bar">												
-										<button type="submit" class="btn btn-success">Next</button>
-										<span> or <a href="#">Finish Now</a></span>
-										<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>									
-									</fieldset>	
-									</div>
-								</section>
-							</div>
-						</form>					
-					</div>
-					
-				</div>
-			</div>
-		</div>
-
-		<div class="modal modal-complete fade in" id="modal-complete">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h4 class="modal-title">Complete Job</h4>
-					</div>
-					
-					<div class="modal-body clearfix">
-						<section>
-							<p>Are you sure you want to complete this job?</p>	
-						</section> 							
-					</div>
-					<div class="modal-footer">
-						<form>
-							<fieldset>																	
-								<button type="submit" class="btn btn-success">Complete</button>
-								<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
-							</fieldset>
-						</form>						
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="modal modal-delete fade in" id="modal-delete">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h4 class="modal-title">Delete Job</h4>
-					</div>
-					
-					<div class="modal-body clearfix">
-						<section>
-							<i class="cpa-icon cpa-icon-attention pull-left icon-thumb"></i>
-							<p>Are you sure you want to delete this job?</p>	
-						</section>					
-					</div>
-					
-					<div class="modal-footer">
-						<form>
-							<fieldset>													
-								<button type="submit" class="btn btn-danger">Delete</button>
-								<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>			
-							</fieldset>
-						</form>						
-					</div>
-				</div>
-			</div>
-		</div>
+        <div class="modal modal-delete fade in" id="modal-deletefile">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Delete File</h4>
+                    </div>
+                    
+                    <div class="modal-body clearfix">
+                        <section>
+                            <i class="cpa-icon cpa-icon-attention pull-left icon-thumb"></i>
+                            <p>Are you sure you want to delete this file?</p>	
+                        </section>					
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <form>
+                            <fieldset>													
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>			
+                            </fieldset>
+                        </form>						
+                    </div>
+                </div>
+            </div>
+        </div>
 		
 	</div>
 	

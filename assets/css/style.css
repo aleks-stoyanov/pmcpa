@@ -2071,13 +2071,15 @@ a.text-white:focus {
 .modal .form-horizontal .inline-group .input-block,
 .modal .form-horizontal .inline-group .help-block {display: table-cell; padding-right: 5px; vertical-align: middle;}
 
-.modal .form-horizontal .inline-group .checkbox {padding-left: 25px;}
+.modal .form-horizontal .inline-group .checkbox {padding-left: 25px; }
 
 
 
 
 .table tr .cell-composite .row-primary {display: inline-block;}
 .table tr .cell-composite .row-primary .row-handle {cursor: move;}       
+.table tr .cell-icon {padding: 0px 16px;}       
+.table tr .cell-icon .cpa-icon-note {font-size: 1.3em;}       
       
 .table tr .cell-composite .row-primary .input-block {display: inline-block; width: 70%}       
 .table tr .cell-composite .btn-group,
