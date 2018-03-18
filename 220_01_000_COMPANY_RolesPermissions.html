@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CPA TodoBox | Page Name</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Mater,ial+Icons" rel="stylesheet">
+	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-cpapm/css/fontello.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
+	<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />	
+	<link href="assets/css/animate.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css" rel="stylesheet">
+   
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+</head>
+<body>
+	
+	<div id="page-container" class="page-sidebar-fixed page-header-fixed">
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+            <div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt="logo"> <span>CPA TodoBox</span> </a>
+					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div><!-- sandwich end -->
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+                        <form class="navbar-form full-width">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter keyword">
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+					</li>
+					<li class="">
+						<a href="#modal-timer" class="timer-toggle animated infinite timer" data-toggle="modal">
+							<i class="cpa-icon cpa-icon-time"></i>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+							<i class="fa fa-plus"></i> 
+							<span class="hidden-xs">New Item</span>
+						</a>
+						
+						<ul class="dropdown-menu media-list pull-right animated fadeInDown">
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-star"></i> New Campaign</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-file-o"></i> New Page</a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;"><i class="fa fa-compass"></i> New A/B Test</a>
+                            </li>
+                            
+                            
+						</ul>
+					</li>
+					<li class="dropdown navbar-user">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="assets/img/user-13.jpg" alt=""> 
+							<span class="hidden-xs">John Smith</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu animated fadeInLeft">
+							<li class="arrow"></li>
+							<li><a href="javascript:;">Edit Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:;">Log Out</a></li>
+						</ul>
+					</li>
+				</ul><!-- end header navigation right -->
+			</div>
+            <!-- end container-fluid -->
+		</div><!-- end #header -->
+		
+		<div id="sidebar" class="sidebar">			
+				
+			<ul class="nav">
+				
+				<li class="">
+					<a href="javascript:;">						
+						<i class="cpa-icon cpa-icon-meter"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-task"></i>
+						<span>Jobs</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-progress"></i>
+						<span>Tasks</span>
+					</a>
+                </li>
+                <li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-calendar"></i>
+						<span>Calendar</span>
+					</a>
+				</li>
+				
+				<li class="has-sub">
+					<a href="javascript:;">
+						<b class="caret pull-right"></b>
+						<i class="cpa-icon cpa-icon-chartbar"></i>
+						<span>Reports</span>
+					</a>
+
+					<ul class="sub-menu">
+						<li><a href="#">Report 1</a></li>
+						<li><a href="#">Report 2</a></li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-template"></i>
+						<span>Templates</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-briefcase"></i> 
+						<span>Clients</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="cpa-icon cpa-icon-users"></i> 
+						<span>Users</span>
+					</a>
+				</li>
+				
+				
+				
+				<!-- begin sidebar minify button -->
+				<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+				<!-- end sidebar minify button -->
+			</ul><!-- end sidebar nav -->
+			
+		</div>
+		<div class="sidebar-bg"></div><!-- end #sidebar -->
+		
+		<!-- begin #content -->
+
+		<div id="" class="">
+			<!-- begin page-header -->
+			<div class="page-header">
+				<div class="content">
+					<h1>Company Settings</h1><!-- end page-header -->	
+				</div>           				
+			</div><!-- end page-header -->
+
+			<div class="tab-row">
+				<div class="content">
+					<form>
+						<ul class="nav nav-tabs">
+							<li><button>General</button></li>
+							<li class="active"><button>Roles &amp; Permissions</button></li>
+							<li><button>Custom Fields</button></li>
+							<li><button>Integrations</button></li>
+						</ul>	
+					</form>
+				</div>           				
+			</div><!-- end tab-row -->
+
+			<div class="content">
+            		
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- begin btn-row -->
+					<div class="pagelist-btn-row clearfix">
+						<form>
+							<ul class="nav navbar-nav navbar-left">
+								<li>
+									<button type="button" class="btn btn-success" data-target="#modal-addRole" data-toggle="modal"><i class="cpa-icon cpa-icon-add"></i><span>Add Role</span></button>
+								</li>
+							</ul>  
+						</form>
+
+						<form>
+							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="cpa-icon cpa-icon-columns"></i><span> <span class="caret"></span></button>
+									<ul class="dropdown-menu dropdown-padding">
+										<li class="dropdown-header">Show</li>
+										<li><input type="checkbox"><label> Column Name</label></li>
+										<li><input type="checkbox"><label> Column Name</label></li>
+										<li><input type="checkbox"><label> Column Name</label></li>
+									</ul>
+								</li>
+							</ul>	
+						</form>						
+					</div><!-- end btn-row -->
+					
+					<!-- begin page-list-table Ungrouped-->                    
+					<div class="pagelist-content table-responsive">
+						<table class="table table-pagelist">
+							<thead>
+								<tr>									
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link sorted">Role <i class="cpa-icon cpa-icon-downtriangle"></i></a>
+										</div>
+									</th>
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Description <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+									</th>
+
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Date Created <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+									</th>
+									
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Date Modified <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+									</th>
+									
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">Created by <i class="cpa-icon cpa-icon-downtriangle"></i></a>                                            
+										</div>
+									</th>	
+									<th>
+										<div class="">
+											<a href="#" class="pagelist-header-link">&nbsp;</a>                                            
+										</div>
+									</th>
+								</tr>
+							</thead>
+
+							<!-- Table Section -->
+							<tbody class="tsection-spacer">
+								<tr>                                        
+									<td colspan="10"></td>
+								</tr>
+                            </tbody>
+                            							
+                            <thead class="tsection-header">
+								<tr>                                        
+                                    <th colspan="10">
+                                        <div class="tsection-header-panel clearfix">
+                                            <div class="tsection-header-title pull-left">
+                                                <span>Default Roles</span>
+                                            </div>
+                                            <div class="tsection-header-details pull-right">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </th>
+								</tr>
+							</thead>
+							<tbody class="tsection-body">
+								<tr>											
+									<td>Administrator</td>
+									<td>User role with full set of permissions.</td>
+									<td>11 Oct 2017</td>
+									<td>29 Oct 2017</td>
+									<td>System</td>
+									<td class="tr-actions">
+										<div class="btn-group">								
+											<button type="button" class="btn btn-icon" data-target="#modal-editRole" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-edit"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-deleteRole" data-toggle="modal">
+													<i class="cpa-icon cpa-icon-bin"></i>
+											</button>										
+											<button type="button" class="btn btn-icon" data-target="#defRole01-review" data-toggle="collapse">
+													<span class="caret"></span>
+											</button>										
+										</div>
+									</td>
+								</tr>
+								<tr class="tr-task-review collapse" id="defRole01-review">							
+									<td colspan="10">
+										<ul class="nav nav-tabs">
+											<li class="active"><a data-toggle="tab" href="#defRole01-details">Details</a></li>
+											<li><a data-toggle="tab" href="#defRole01-description">Description</a></li>
+											<li><a data-toggle="tab" href="#defRole01-userPermissions">User Permissions</a></li>
+											<li><a data-toggle="tab" href="#defRole01-clientPermissions">Client Permissions</a></li>
+											<li><a data-toggle="tab" href="#defRole01-otherPermissions">Other Permissions</a></li>
+										</ul>
+													
+										<div class="tab-content">
+											<section id="defRole01-details" class="panel-group clearfix tab-pane fade in active clearfix">
+												<div class="panel">										
+													<ul class="list-group hanging-titles col-md-6">
+														<li class="list-group-item">
+															<h5>Date Created:</h5>
+															<p>1 Oct 2017</p>
+														</li>
+														<li class="list-group-item">
+															<h5>Date Modified</h5>
+															<p>30 Oct 2017</p>
+														</li>
+													</ul>
+													<ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Created by: </h5>
+                                                            <p>Bill Johnson</a></p>
+                                                        </li>
+														<li class="list-group-item">
+															<h5>Super User:</h5>
+															<p><input type="checkbox" /></p>
+														</li>
+													</ul>
+												</div>										
+											</section>
+			
+											<section id="defRole01-description" class="panel-group tab-pane fade clearfix">
+												<div class="panel">
+													<p>Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.</p>	
+												</div>
+											</section>
+			
+											<section id="defRole01-userPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>			
+											</section>
+			
+											<section id="defRole01-clientPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+											</section>
+			
+											<section id="defRole01-otherPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+											</section>
+										</div>
+											
+									</td>
+                                </tr>
+                                
+								<tr>											
+									<td>Owner</td>
+									<td>User role with most permissions. Users can ...</td>
+									<td>11 Oct 2017</td>
+									<td>29 Oct 2017</td>
+									<td>System</td>
+									<td class="tr-actions">
+										<div class="btn-group">								
+											<button type="button" class="btn btn-icon" data-target="#modal-editRole" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-edit"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-deleteRole" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-bin"></i>
+											</button>										
+											<button type="button" class="btn btn-icon" data-target="#defRole02-review" data-toggle="collapse">
+                                                <span class="caret"></span>
+											</button>										
+										</div>
+									</td>
+								</tr>
+								<tr class="tr-task-review collapse" id="defRole02-review">							
+									<td colspan="10">
+										<ul class="nav nav-tabs">
+											<li class="active"><a data-toggle="tab" href="#defRole02-details">Details</a></li>
+											<li><a data-toggle="tab" href="#defRole02-description">Description</a></li>
+											<li><a data-toggle="tab" href="#defRole02-userPermissions">User Permissions</a></li>
+											<li><a data-toggle="tab" href="#defRole02-clientPermissions">Client Permissions</a></li>
+											<li><a data-toggle="tab" href="#defRole02-otherPermissions">Other Permissions</a></li>
+										</ul>
+													
+										<div class="tab-content">
+											<section id="defRole02-details" class="panel-group clearfix tab-pane fade in active clearfix">
+												<div class="panel">										
+													<ul class="list-group hanging-titles col-md-6">
+														<li class="list-group-item">
+															<h5>Date Created:</h5>
+															<p>1 Oct 2017</p>
+														</li>
+														<li class="list-group-item">
+															<h5>Date Modified</h5>
+															<p>30 Oct 2017</p>
+														</li>
+													</ul>
+													<ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Created by: </h5>
+                                                            <p>Bill Johnson</a></p>
+                                                        </li>
+														<li class="list-group-item">
+															<h5>Super User:</h5>
+															<p><input type="checkbox" /></p>
+														</li>
+													</ul>
+												</div>										
+											</section>
+			
+											<section id="defRole02-description" class="panel-group tab-pane fade clearfix">
+												<div class="panel">
+													<p>Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.</p>	
+												</div>
+											</section>
+			
+											<section id="defRole02-userPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>			
+											</section>
+			
+											<section id="defRole02-clientPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+											</section>
+			
+											<section id="defRole02-otherPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+											</section>
+										</div>
+											
+									</td>
+                                </tr>
+                                
+								<tr>											
+									<td>Partner</td>
+									<td>User role with restricted permissions. Users can ... </td>
+									<td>11 Oct 2017</td>
+									<td>29 Oct 2017</td>
+									<td>System</td>
+									<td class="tr-actions">
+										<div class="btn-group">								
+											<button type="button" class="btn btn-icon" data-target="#modal-editRole" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-edit"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-deleteRole" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-bin"></i>
+											</button>										
+											<button type="button" class="btn btn-icon" data-target="#defRole03-review" data-toggle="collapse">
+                                                <span class="caret"></span>
+											</button>										
+										</div>
+									</td>
+								</tr>
+								<tr class="tr-task-review collapse" id="defRole03-review">							
+									<td colspan="10">
+										<ul class="nav nav-tabs">
+											<li class="active"><a data-toggle="tab" href="#defRole03-details">Details</a></li>
+											<li><a data-toggle="tab" href="#defRole03-description">Description</a></li>
+											<li><a data-toggle="tab" href="#defRole03-userPermissions">User Permissions</a></li>
+											<li><a data-toggle="tab" href="#defRole03-clientPermissions">Client Permissions</a></li>
+											<li><a data-toggle="tab" href="#defRole03-otherPermissions">Other Permissions</a></li>
+										</ul>
+													
+										<div class="tab-content">
+											<section id="defRole03-details" class="panel-group clearfix tab-pane fade in active clearfix">
+												<div class="panel">										
+													<ul class="list-group hanging-titles col-md-6">
+														<li class="list-group-item">
+															<h5>Date Created:</h5>
+															<p>1 Oct 2017</p>
+														</li>
+														<li class="list-group-item">
+															<h5>Date Modified</h5>
+															<p>30 Oct 2017</p>
+														</li>
+													</ul>
+													<ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Created by: </h5>
+                                                            <p>Bill Johnson</a></p>
+                                                        </li>
+														<li class="list-group-item">
+															<h5>Super User:</h5>
+															<p><input type="checkbox" /></p>
+														</li>
+													</ul>
+												</div>										
+											</section>
+			
+											<section id="defRole03-description" class="panel-group tab-pane fade clearfix">
+												<div class="panel">
+													<p>Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.</p>	
+												</div>
+											</section>
+			
+											<section id="defRole03-userPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>			
+											</section>
+			
+											<section id="defRole03-clientPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+											</section>
+			
+											<section id="defRole03-otherPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+											</section>
+										</div>
+											
+									</td>
+                                </tr>
+                                
+								<tr>											
+									<td>Job Manager</td>
+									<td>User role with limited system permissions. Users can ...</td>
+									<td>11 Oct 2017</td>
+									<td>29 Oct 2017</td>
+									<td>System</td>
+									<td class="tr-actions">
+										<div class="btn-group">								
+											<button type="button" class="btn btn-icon" data-target="#modal-editRole" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-edit"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-deleteRole" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-bin"></i>
+											</button>										
+											<button type="button" class="btn btn-icon" data-target="#defRole04-review" data-toggle="collapse">
+                                                <span class="caret"></span>
+											</button>										
+										</div>
+									</td>
+								</tr>
+								<tr class="tr-task-review collapse" id="defRole04-review">							
+									<td colspan="10">
+										<ul class="nav nav-tabs">
+											<li class="active"><a data-toggle="tab" href="#defRole04-details">Details</a></li>
+											<li><a data-toggle="tab" href="#defRole04-description">Description</a></li>
+											<li><a data-toggle="tab" href="#defRole04-userPermissions">User Permissions</a></li>
+											<li><a data-toggle="tab" href="#defRole04-clientPermissions">Client Permissions</a></li>
+											<li><a data-toggle="tab" href="#defRole04-otherPermissions">Other Permissions</a></li>
+										</ul>
+													
+										<div class="tab-content">
+											<section id="defRole04-details" class="panel-group clearfix tab-pane fade in active clearfix">
+												<div class="panel">										
+													<ul class="list-group hanging-titles col-md-6">
+														<li class="list-group-item">
+															<h5>Date Created:</h5>
+															<p>1 Oct 2017</p>
+														</li>
+														<li class="list-group-item">
+															<h5>Date Modified</h5>
+															<p>30 Oct 2017</p>
+														</li>
+													</ul>
+													<ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Created by: </h5>
+                                                            <p>Bill Johnson</a></p>
+                                                        </li>
+														<li class="list-group-item">
+															<h5>Super User:</h5>
+															<p><input type="checkbox" /></p>
+														</li>
+													</ul>
+												</div>										
+											</section>
+			
+											<section id="defRole04-description" class="panel-group tab-pane fade clearfix">
+												<div class="panel">
+													<p>Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.</p>	
+												</div>
+											</section>
+			
+											<section id="defRole04-userPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>			
+											</section>
+			
+											<section id="defRole04-clientPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+											</section>
+			
+											<section id="defRole04-otherPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+											</section>
+										</div>
+											
+									</td>
+                                </tr>
+                                
+								<tr>											
+									<td>Staff</td>
+									<td>User role with very limited system permissions. Role ...</td>
+									<td>11 Oct 2017</td>
+									<td>29 Oct 2017</td>
+									<td>System</td>
+									<td class="tr-actions">
+										<div class="btn-group">								
+											<button type="button" class="btn btn-icon" data-target="#modal-editRole" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-edit"></i>
+											</button>
+											<button type="button" class="btn btn-icon" data-target="#modal-deleteRole" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-bin"></i>
+											</button>										
+											<button type="button" class="btn btn-icon" data-target="#defRole05-review" data-toggle="collapse">
+                                                <span class="caret"></span>
+											</button>										
+										</div>
+									</td>
+								</tr>
+								<tr class="tr-task-review collapse" id="defRole05-review">							
+									<td colspan="10">
+										<ul class="nav nav-tabs">
+											<li class="active"><a data-toggle="tab" href="#defRole05-details">Details</a></li>
+											<li><a data-toggle="tab" href="#defRole05-description">Description</a></li>
+											<li><a data-toggle="tab" href="#defRole05-userPermissions">User Permissions</a></li>
+											<li><a data-toggle="tab" href="#defRole05-clientPermissions">Client Permissions</a></li>
+											<li><a data-toggle="tab" href="#defRole05-otherPermissions">Other Permissions</a></li>
+										</ul>
+													
+										<div class="tab-content">
+											<section id="defRole05-details" class="panel-group clearfix tab-pane fade in active clearfix">
+												<div class="panel">										
+													<ul class="list-group hanging-titles col-md-6">
+														<li class="list-group-item">
+															<h5>Date Created:</h5>
+															<p>1 Oct 2017</p>
+														</li>
+														<li class="list-group-item">
+															<h5>Date Modified</h5>
+															<p>30 Oct 2017</p>
+														</li>
+													</ul>
+													<ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Created by: </h5>
+                                                            <p>Bill Johnson</a></p>
+                                                        </li>
+														<li class="list-group-item">
+															<h5>Super User:</h5>
+															<p><input type="checkbox" /></p>
+														</li>
+													</ul>
+												</div>										
+											</section>
+			
+											<section id="defRole05-description" class="panel-group tab-pane fade clearfix">
+												<div class="panel">
+													<p>Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.</p>	
+												</div>
+											</section>
+			
+											<section id="defRole05-userPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>			
+											</section>
+			
+											<section id="defRole05-clientPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+											</section>
+			
+											<section id="defRole05-otherPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+											</section>
+										</div>
+											
+									</td>
+                                </tr>
+                                
+                               
+																							
+                            </tbody>
+                            
+                            <!-- Table Section -->
+							<tbody class="tsection-spacer">
+                                <tr>                                        
+                                    <td colspan="10"></td>
+                                </tr>
+                            </tbody>
+                                                        
+                            <thead class="tsection-header">
+                                <tr>                                        
+                                    <th colspan="10">
+                                        <div class="tsection-header-panel clearfix">
+                                            <div class="tsection-header-title pull-left">
+                                                <span>Custom Roles</span>
+                                            </div>
+                                            <div class="tsection-header-details pull-right">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody class="tsection-body">
+                                <tr>											
+                                    <td>Assistant</td>
+                                    <td>User role with very limited system permissions. Role ...</td>
+                                    <td>11 Oct 2017</td>
+                                    <td>29 Oct 2017</td>
+                                    <td>System</td>
+                                    <td class="tr-actions">
+                                        <div class="btn-group">								
+                                            <button type="button" class="btn btn-icon" data-target="#modal-editRole" data-toggle="modal">
+                                                    <i class="cpa-icon cpa-icon-edit"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-deleteRole" data-toggle="modal">
+                                                    <i class="cpa-icon cpa-icon-bin"></i>
+                                            </button>										
+                                            <button type="button" class="btn btn-icon" data-target="#customRole01-review" data-toggle="collapse">
+                                                    <span class="caret"></span>
+                                            </button>										
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="tr-task-review collapse" id="customRole01-review">							
+                                    <td colspan="10">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a data-toggle="tab" href="#customRole01-details">Details</a></li>
+                                            <li><a data-toggle="tab" href="#customRole01-description">Description</a></li>
+                                            <li><a data-toggle="tab" href="#customRole01-userPermissions">User Permissions</a></li>
+                                            <li><a data-toggle="tab" href="#customRole01-clientPermissions">Client Permissions</a></li>
+                                            <li><a data-toggle="tab" href="#customRole01-otherPermissions">Other Permissions</a></li>
+                                        </ul>
+                                                    
+                                        <div class="tab-content">
+                                            <section id="customRole01-details" class="panel-group clearfix tab-pane fade in active clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Date Created:</h5>
+                                                            <p>1 Oct 2017</p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Date Modified</h5>
+                                                            <p>30 Oct 2017</p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Created by: </h5>
+                                                            <p>Bill Johnson</a></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Super User:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>										
+                                            </section>
+            
+                                            <section id="customRole01-description" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">
+                                                    <p>Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.</p>	
+                                                </div>
+                                            </section>
+            
+                                            <section id="customRole01-userPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>			
+                                            </section>
+            
+                                            <section id="customRole01-clientPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </section>
+            
+                                            <section id="customRole01-otherPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </section>
+                                        </div>
+                                            
+                                    </td>
+                                </tr>
+                                
+                                <tr>											
+                                    <td>Secretary</td>
+                                    <td>User role with very limited system permissions. Role ...</td>
+                                    <td>11 Oct 2017</td>
+                                    <td>29 Oct 2017</td>
+                                    <td>System</td>
+                                    <td class="tr-actions">
+                                        <div class="btn-group">								
+                                            <button type="button" class="btn btn-icon" data-target="#modal-editRole" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-edit"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-deleteRole" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-bin"></i>
+                                            </button>										
+                                            <button type="button" class="btn btn-icon" data-target="#customRole02-review" data-toggle="collapse">
+                                                <span class="caret"></span>
+                                            </button>										
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="tr-task-review collapse" id="customRole02-review">							
+                                    <td colspan="10">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a data-toggle="tab" href="#customRole02-details">Details</a></li>
+                                            <li><a data-toggle="tab" href="#customRole02-description">Description</a></li>
+                                            <li><a data-toggle="tab" href="#customRole02-userPermissions">User Permissions</a></li>
+                                            <li><a data-toggle="tab" href="#customRole02-clientPermissions">Client Permissions</a></li>
+                                            <li><a data-toggle="tab" href="#customRole02-otherPermissions">Other Permissions</a></li>
+                                        </ul>
+                                                    
+                                        <div class="tab-content">
+                                            <section id="customRole02-details" class="panel-group clearfix tab-pane fade in active clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Date Created:</h5>
+                                                            <p>1 Oct 2017</p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Date Modified</h5>
+                                                            <p>30 Oct 2017</p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Created by: </h5>
+                                                            <p>Bill Johnson</a></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Super User:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>										
+                                            </section>
+            
+                                            <section id="customRole02-description" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">
+                                                    <p>Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.</p>	
+                                                </div>
+                                            </section>
+            
+                                            <section id="customRole02-userPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>			
+                                            </section>
+            
+                                            <section id="customRole02-clientPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </section>
+            
+                                            <section id="customRole02-otherPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </section>
+                                        </div>
+                                            
+                                    </td>
+                                </tr>
+                                
+                                <tr>											
+                                    <td>Sr. Secretary</td>
+                                    <td>User role with very limited system permissions. Role ...</td>
+                                    <td>11 Oct 2017</td>
+                                    <td>29 Oct 2017</td>
+                                    <td>System</td>
+                                    <td class="tr-actions">
+                                        <div class="btn-group">								
+                                            <button type="button" class="btn btn-icon" data-target="#modal-editRole" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-edit"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon" data-target="#modal-deleteRole" data-toggle="modal">
+                                                <i class="cpa-icon cpa-icon-bin"></i>
+                                            </button>										
+                                            <button type="button" class="btn btn-icon" data-target="#customRole03-review" data-toggle="collapse">
+                                                <span class="caret"></span>
+                                            </button>										
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="tr-task-review collapse" id="customRole03-review">							
+                                    <td colspan="10">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a data-toggle="tab" href="#customRole03-details">Details</a></li>
+                                            <li><a data-toggle="tab" href="#customRole03-description">Description</a></li>
+                                            <li><a data-toggle="tab" href="#customRole03-userPermissions">User Permissions</a></li>
+                                            <li><a data-toggle="tab" href="#customRole03-clientPermissions">Client Permissions</a></li>
+                                            <li><a data-toggle="tab" href="#customRole03-otherPermissions">Other Permissions</a></li>
+                                        </ul>
+                                                    
+                                        <div class="tab-content">
+                                            <section id="customRole03-details" class="panel-group clearfix tab-pane fade in active clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Date Created:</h5>
+                                                            <p>1 Oct 2017</p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Date Modified</h5>
+                                                            <p>30 Oct 2017</p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Created by: </h5>
+                                                            <p>Bill Johnson</a></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Super User:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>										
+                                            </section>
+            
+                                            <section id="customRole03-description" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">
+                                                    <p>Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Some task description spanning multiple lines of text lorem ipsum lorem ipsum lorem ipsum lorem ipsum.</p>	
+                                                </div>
+                                            </section>
+            
+                                            <section id="customRole03-userPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Users:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>			
+                                            </section>
+            
+                                            <section id="customRole03-clientPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>View Assigned Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>View All Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Add Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Edit Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Delete Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Export Clients:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </section>
+            
+                                            <section id="customRole03-otherPermissions" class="panel-group tab-pane fade clearfix">
+                                                <div class="panel">										
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group hanging-titles col-md-6">
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <h5>Permission:</h5>
+                                                            <p><input type="checkbox" /></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </section>
+                                        </div>
+                                            
+                                    </td>
+                                </tr>
+                                
+                                
+                                
+                                                                                            
+                            </tbody>
+
+                            <!-- Table Section -->
+							<tbody class="tsection-spacer">
+                                <tr>                                        
+                                    <td colspan="10"></td>
+                                </tr>
+                            </tbody>
+
+
+							
+                            							
+							
+						</table>
+						
+					</div><!-- end page-list-table Ungrouped -->
+			    </div>
+
+			</div><!-- end row -->
+			</div>
+		</div><!-- end #content -->
+
+		<div class="modal modal-delete fade in" id="modal-deleteRole">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Delete Role</h4>
+					</div>
+					
+					<div class="modal-body clearfix">
+						<section>
+							<i class="cpa-icon cpa-icon-attention pull-left icon-thumb"></i>
+							<p>Are you sure you want to delete this role?</p>	
+						</section>					
+					</div>
+					
+					<div class="modal-footer">
+						<form>
+							<fieldset>													
+								<button type="submit" class="btn btn-danger">Delete</button>
+								<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>			
+							</fieldset>
+						</form>						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal modal-editRole modal-primary fade in" id="modal-editTime">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Edit Time Record</h4>
+					</div>
+					<div class="modal-body p0 clearfix">						
+						<form action="/" method="" class="form-horizontal">		
+							<section id="billing" class="panel-group">
+								<div class="panel">
+								<fieldset>
+									<div class="form-group disabled">
+										<label class="col-sm-3 control-label">Person: </label>
+										<div class="col-sm-6 input-block">
+											<input type="text" class="form-control" disabled placeholder="Jeremy Johnes">												
+										</div>											
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Started: </label>
+										<div class="col-sm-9">
+											
+											<div class="col-sm-4 form-inline">
+												<div class="input-group date" id="timerecord-date" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
+													<input type="text" class="form-control" placeholder="">
+													<span class="input-group-addon"><i class="cpa-icon cpa-icon-date"></i></span>
+												</div>
+											</div>
+											<div class="col-sm-3 form-inline">
+												<input type="text" class="form-control" size="1"><span> : </span><input type="text" class="form-control" size="1">
+											</div>
+											<div class="col-sm-4 form-inline">
+												<label class="radio"><input type="radio" class="form-control" name="ampm">a.m.</label>
+												<label class="radio"><input type="radio" class="form-control" name="ampm" >p.m</label>
+											</div>													
+																					
+										</div>	
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Time Worked: </label>
+										<div class="col-sm-2 input-block">												
+											<input type="text" class="form-control">												
+										</div>
+										<div class="col-sm-1 help-block">hrs</div>	
+										<div class="col-sm-2 input-block">												
+											<input type="text" class="form-control" >											
+										</div>
+										<div class="col-sm-1 help-block">min</div>	
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Notes: </label>
+										<div class="col-sm-9 input-block">
+											<textarea class="form-control" rows="4" placeholder=""></textarea>
+										</div>	
+									</div>
+								</fieldset>
+								
+								
+
+								<fieldset class="action-bar">												
+									<button type="submit" class="btn btn-success">Save</button>
+									<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
+								</fieldset>	
+								</div>
+
+							</section>						
+						</form>					
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="modal modal-editFile modal-primary fade in" id="modal-editFile">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Edit File</h4>
+					</div>
+					<div class="modal-body p0 clearfix">						
+						<form action="/" method="" class="form-horizontal">		
+							<section id="billing" class="panel-group">
+								<div class="panel">
+								<fieldset>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">File Name: </label>
+										<div class="col-sm-9">
+											<div class="input-group" id="">
+												<input type="text" class="form-control" placeholder="">
+												<span class="input-group-addon">.txt</span>
+											</div>																				
+										</div>	
+									</div>
+								</fieldset>
+								<fieldset>
+									
+									<div class="form-group">
+										<legend>Assign To</legend>
+										<label class="col-sm-3 control-label">Job: </label>
+										<div class="col-sm-6 input-block">
+											<select class="form-control " id="">
+												<option value="" selected="">--Select Job --</option>
+												<option value="1">Job Name</option>
+												<option value="2">Job Name</option>
+												<option value="3">Job Name</option>
+												<option value="4">Job Name</option>
+												<option value="5">Job Name</option>
+											</select>
+										</div>	
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Task: </label>
+										<div class="col-sm-6 input-block">
+											<select class="form-control " id="">
+												<option value="" selected="">--Select Task --</option>
+												<option value="1">Task Name</option>
+												<option value="2">Task Name</option>
+												<option value="3">Task Name</option>
+												<option value="4">Task Name</option>
+												<option value="5">Task Name</option>
+											</select>
+										</div>	
+									</div>
+								</fieldset>
+								
+								
+
+								<fieldset class="action-bar">												
+									<button type="submit" class="btn btn-success">Save</button>
+									<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>									
+								</fieldset>	
+								</div>
+
+							</section>						
+						</form>					
+					</div>
+					
+				</div>
+			</div>
+		</div>	
+        
+        <div class="modal modal-addRole modal-primary fade" id="modal-addRole">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Add Role</h4>
+                    </div>
+                    <div class="modal-body p0 clearfix">
+                        <ul class="nav nav-tabs navbar-inverse">
+                            <li class="active"><a data-toggle="tab" href="#roleDetails">Role Details</a></li>
+                            <li><a data-toggle="tab" href="#roleUserPermissions">User Permisssions</a></li>
+                            <li><a data-toggle="tab" href="#roleClientPermissions">Client Permisssions</a></li>
+                            <li><a data-toggle="tab" href="#roleOtherPermissions">Other Permisssions</a></li>
+                        </ul>
+                        <form action="/" method="" class="form-horizontal">
+                            <div class="tab-content">
+
+                                <section id="roleDetails" class="panel-group tab-pane fade in active">
+                                    <div class="panel">	
+                                        
+                                        <div class="row">
+                                            <div class="form-feedback col-sm-9 col-sm-offset-3">
+                                                <span>Please enter Values in the Highlighted Fields</span>	
+                                            </div>	
+                                        </div>	
+
+                                        <fieldset>                                            
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Role Name: </label>
+                                                <div class="col-sm-6 input-block">
+                                                    <input type="text" class="form-control">
+                                                </div>	
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Role Description: </label>
+                                                <div class="col-sm-9 input-block">
+                                                    <textarea class="form-control" rows="4" placeholder=""></textarea>
+                                                </div>	
+                                            </div>	
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Super User: </label>
+                                                <div class="col-sm-9 input-block">
+                                                    <label><input type="checkbox"> <small>(selecting this permission will override all other permissions)</small></label>
+                                                </div>	
+                                            </div>										
+                                        </fieldset>
+                                        <fieldset class="action-bar">												
+                                            <div class="pull-right">
+                                                <button type="submit" class="btn btn-success">Next</button>
+                                                <span> &nbsp; <a href="#">Finish Now</a></span>
+                                            </div>								
+                                        </fieldset>	
+                                    </div>   
+                                </section>
+
+                                <section id="roleUserPermissions" class="panel-group tab-pane fade">
+                                    <div class="panel">
+                                    <div class="row">
+                                        <div class="form-feedback col-sm-9 col-sm-offset-3">
+                                            <span>Please enter Values in the Highlighted Fields</span>	
+                                        </div>	
+                                    </div>	
+
+                                    <fieldset>                                    
+                                        <div class="form-group">
+                                            <label class="col-sm-6 control-label">View Assigned Users: </label>
+                                            <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                        </div>	
+                                        <div class="form-group">
+                                            <label class="col-sm-6 control-label">View All Users: </label>
+                                            <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                        </div>	
+                                        <div class="form-group">
+                                            <label class="col-sm-6 control-label">Add Users: </label>
+                                            <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                        </div>	
+                                        <div class="form-group">
+                                            <label class="col-sm-6 control-label">Edit Users: </label>
+                                            <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                        </div>	
+                                        <div class="form-group">
+                                            <label class="col-sm-6 control-label">Delete Users: </label>
+                                            <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                        </div>	
+                                        <div class="form-group">
+                                            <label class="col-sm-6 control-label">Export Users: </label>
+                                            <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                        </div>	                                 
+                                    </fieldset>
+    
+                                    <fieldset class="action-bar">												
+                                        <div class="pull-right">
+                                            <button type="submit" class="btn btn-success">Next</button>
+                                            <span> &nbsp; <a href="#">Finish Now</a></span>
+                                        </div>								
+                                    </fieldset>	
+                                    </div>
+                                </section>
+
+                                <section id="roleClientPermissions" class="panel-group tab-pane fade">
+                                    <div class="panel">
+                                        <div class="row">
+                                            <div class="form-feedback col-sm-9 col-sm-offset-3">
+                                                <span>Please enter Values in the Highlighted Fields</span>	
+                                            </div>	
+                                        </div>	
+
+                                        <fieldset>                                    
+                                            <div class="form-group">
+                                                <label class="col-sm-6 control-label">View Assigned Clients: </label>
+                                                <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                            </div>	
+                                            <div class="form-group">
+                                                <label class="col-sm-6 control-label">View All Clients: </label>
+                                                <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                            </div>	
+                                            <div class="form-group">
+                                                <label class="col-sm-6 control-label">Add Clients: </label>
+                                                <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                            </div>	
+                                            <div class="form-group">
+                                                <label class="col-sm-6 control-label">Edit Clients: </label>
+                                                <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                            </div>	
+                                            <div class="form-group">
+                                                <label class="col-sm-6 control-label">Delete Clients: </label>
+                                                <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                            </div>	
+                                            <div class="form-group">
+                                                <label class="col-sm-6 control-label">Export Clients: </label>
+                                                <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                            </div>	                                 
+                                        </fieldset>
+        
+                                        <fieldset class="action-bar">												
+                                            <div class="pull-right">
+                                                <button type="submit" class="btn btn-success">Next</button>
+                                                <span> &nbsp; <a href="#">Finish Now</a></span>
+                                            </div>								
+                                        </fieldset>		
+                                    </div>
+
+                                </section>
+
+                                <section id="roleOtherPermissions" class="panel-group tab-pane fade">
+                                    <div class="panel">
+                                        <div class="row">
+                                            <div class="form-feedback col-sm-9 col-sm-offset-3">
+                                                <span>Please enter Values in the Highlighted Fields</span>	
+                                            </div>	
+                                        </div>	
+
+                                        <fieldset>                                    
+                                            <div class="form-group">
+                                                <label class="col-sm-6 control-label">Permission 1: </label>
+                                                <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                            </div>	
+                                            <div class="form-group">
+                                                <label class="col-sm-6 control-label">Permission 2: </label>
+                                                <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                            </div>	
+                                            <div class="form-group">
+                                                <label class="col-sm-6 control-label">Permission 3: </label>
+                                                <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                            </div>	
+                                            <div class="form-group">
+                                                <label class="col-sm-6 control-label">Permission 4: </label>
+                                                <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                            </div>	
+                                            <div class="form-group">
+                                                <label class="col-sm-6 control-label">Permission 5: </label>
+                                                <div class="col-sm-1 input-block"><input type="checkbox"></div>	
+                                            </div>                                 
+                                        </fieldset>
+        
+                                        <fieldset class="action-bar">												
+                                            <div class="pull-right">
+                                                <button type="submit" class="btn btn-success">Finish</button>
+                                            </div>								
+                                        </fieldset>	
+                                    </div>
+                                </section>
+                            </div>
+                        </form>					
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+		
+	</div>
+	
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>	
+	<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    
+	<!-- Include Date Picker -->
+	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script src="assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+    <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+	<script src="assets/js/scripts.js"></script>
+    
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+	<script src="assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+	
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+</body>
+</html>

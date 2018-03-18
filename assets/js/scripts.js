@@ -1,4 +1,8 @@
 $( document ).ready(function() {
+    $( ".widget" ).height() = $( ".widget" ).width();
+    $( window ).resize(function() {
+        $( ".widget" ).height() = $( ".widget" ).width();
+      });
 
 
 /* Sidebar Menu

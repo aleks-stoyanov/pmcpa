@@ -824,20 +824,58 @@ label {
     border-radius: 4px;
 
 }
-.widget-default:hover, 
-.widget-default:focus, 
-.widget-default:active, 
-.widget-default.active, 
-.open .dropdown-toggle.widget-default {
-    background: #dde4e8;
-    border-color: #98a5ac;
-}
+
 .widget-group .widget.widget-default:not(.active) + .widget.widget-default,
 .input-group-btn .widget.widget-default:not(.active) + .widget.widget-default {
     border-left-color: #929ba1;
 }
 
 .widget.widget-back {padding-right: 23px;margin-top: 3px;}
+
+.dashboard-widgets {display: flex; min-height: 280px; margin-bottom: 30px;}
+.widget.widget-dashboard {color: #000;}
+.widget.widget-dashboard {position:relative; border-style: solid; border-width: 1px;padding: 0px; margin-bottom: 0px; margin-left: 30px;}
+.widget.widget-dashboard.widget-single-width {width:280px;}
+.widget.widget-dashboard.widget-double-width {width:590px;}
+
+.widget-dashboard .stats-title{position:relative;line-height:1;margin:0px}
+.widget-dashboard .stats-title h4{font-size:16px;color:#4c616b; text-transform: uppercase; margin: 0px; padding: 16px 0px; text-align: center; color: #fff;}
+.widget-dashboard .stats-icon{display: none;}
+.widget-dashboard .stats-info p{font-size: 5rem; font-weight:600;margin: 0px; padding: 5rem 0 0 0 ; color:#515b61; text-align: center;}
+.widget-dashboard .stats-info p span { color:#08aedd;font-size:36px;}
+.widget-dashboard .stats-link {position: absolute; bottom: 0px;right: 0; left: 0;}
+.widget-dashboard .stats-link a {display:block;padding:15px 15px;text-align:right;color:#333; font-size: 16px; font-weight:500;text-decoration:none}
+.widget-dashboard .stats-link a:focus,.widget-dashboard .stats-link a:hover{color:#348fe2;}
+.widget-dashboard .stats-icon.stats-icon-lg{font-size:52px;top:12px;right:21px}
+.widget-dashboard .stats-description {padding: 15px; font-size: 14px;}
+.widget-dashboard .stats-description .icon-dropcap { float: left; font-size: 48px; line-height: 36px; padding-top: 4px; padding-right: 8px; padding-left: 3px;}
+
+
+.widget.widget-dashboard.widget-primary {border-color:#348fe2; }
+.widget.widget-dashboard.widget-primary .stats-title {background-color:#348fe2; }
+.widget.widget-dashboard.widget-primary .icon-dropcap {color:#348fe2; }
+.widget.widget-dashboard.widget-alert {border-color:#f59c1a; }
+.widget.widget-dashboard.widget-alert .stats-title {background-color:#f59c1a; }
+.widget.widget-dashboard.widget-alert .icon-dropcap {color:#f59c1a; }
+.widget.widget-dashboard.widget-info {border-color:#0fbfcc; }
+.widget.widget-dashboard.widget-info .stats-title {background-color:#0fbfcc; }
+.widget.widget-dashboard.widget-info .icon-dropcap {color:#0fbfcc; }
+.widget.widget-dashboard.widget-default {border-color:#aeb5bd; }
+.widget.widget-dashboard.widget-default .stats-title {background-color:#aeb5bd; }
+.widget.widget-dashboard.widget-default .icon-dropcap {color:#aeb5bd; }
+.widget.widget-dashboard.widget-success {border-color:#57c35c; }
+.widget.widget-dashboard.widget-success .stats-title {background-color:#57c35c; }
+.widget.widget-dashboard.widget-success .icon-dropcap {color:#57c35c; }
+
+.borderlist{margin:0 0 56px 0;padding:0; list-style: none;}
+.borderlist>li>.borderlist-container{display:block;color:#333}
+.borderlist>li>.borderlist-container:focus,.borderlist>li>.borderlist-container:hover{background:#fafafa;text-decoration:none}
+.borderlist>li{border-bottom:1px solid #ddd}
+.borderlist-icon i{display:block;text-align:center}
+.borderlist-icon,.borderlist-title{display:table-cell;padding:10px}
+.borderlist-title{padding-right:15px}
+.borderlist-icon{text-align:center;font-size:14px;border-right:1px solid #ddd;}
+
 
 
 /* -------------------------------
@@ -2043,6 +2081,9 @@ a.text-white:focus {
 .list-group.hanging-titles .list-group-item {border: none; padding: 0px 0px 8px 0px; }
 .list-group.hanging-titles .list-group-item h5 {vertical-align: top; font-weight: bold; display: inline-block; min-width: 150px; margin-top: 0px;}
 .list-group.hanging-titles .list-group-item p { display: inline-block; font-size: 1.2em; margin-top: 0px;}
+
+.list-group.form-toggles .list-group-item {border: none; padding: 0px 0px 8px 0px; }
+.list-group.form-toggles .list-group-item label {padding-left: 15px; vertical-align: top; font-size: 16px; font-weight: normal; display: inline-block; min-width: 150px; margin-top: 0px;}
 
 
 .list-group.activity-labels .list-group-item {padding: 8px 0px 0px 0px; margin: 0px 0px;border-radius: 0px; border: none; border-bottom: 1px solid #ddd;}
